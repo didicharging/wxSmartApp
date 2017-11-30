@@ -1,0 +1,32 @@
+@import "/libs/daohang.wxss";
+.section{    
+   width: 100%;
+}    
+.section video{
+  width: 100%;
+}
+.a image{
+  width: 100%;
+}
+.xiu-box{
+    /* float: right; */
+    /* position: relative; */
+    /* top: 30rpx; */
+    margin:0 auto;
+    margin-top: 350rpx;
+    
+}
+
+.xiu-box view.xiu button{
+    /* padding: 10rpx; */
+    /* position: relative; */
+    z-index: 50;
+    border-radius: 30rpx;
+    width: 480rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 40rpx;
+    color: #fff;
+   text-align: center;
+    background-color: #ec0c0c;
+}

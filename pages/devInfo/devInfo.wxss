@@ -1,0 +1,48 @@
+/* pages/devInfo/devInfo.wxss */
+page{
+  background-color: #f0f0f0;
+}
+.banner{
+  width: 750rpx;
+  height: 310rpx;
+}
+.banner swiper{
+  height: 310rpx;
+}
+.banner image{
+  width: 750rpx;
+  height: 310rpx;
+}
+.dev-info{
+  background-color: #fff;
+  padding: 20rpx;
+  margin-top: 40rpx;
+}
+.dev-info>view{
+  line-height: 1.4rem;
+  font-size: 32rpx;
+}
+.use-user{
+  background-color: #fff;
+  padding: 20rpx;
+  margin-top: 40rpx;
+}
+.use-user .title{
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.img-box{
+  display: flex;
+  flex-direction: row;
+}
+.img-box>view{
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+.img-box>view image{
+  display: inline-block;
+  width: 80%;
+  border-radius: 50%;
+}

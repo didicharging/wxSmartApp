@@ -1,0 +1,74 @@
+<view class="user ">
+  <view class="state wallet">
+    <view class="title">账户状态</view>
+    <view class="state-name">普通账户</view>
+    <view class="btn">
+      <view bindtap="goToWalletLog">交易明细</view>
+    </view>
+  </view>
+  <!--<view class="tip">一次性充值5000元即可开通驿站权限，领取设备0使用费。</view>-->
+  <!-- <view class="wallet">
+    <view class="content title">
+      <view>
+        嘀嘀币<image class="coin" src="/images/coin.png"></image>
+      </view>
+      <text>{{walletInfo.electric || 0}}</text>
+    </view>
+  </view> -->
+  <view class="wallet">
+    <view class="content title">
+      <view> 嘀嘀币<image class="coin" src="/images/coin.png"></image></view>
+      <text>{{walletInfo.amount}}</text>
+    </view>
+    <view class="btn">
+      <!-- <view bindtap="bindWithdrawals">提现申请</view> -->
+    </view>
+  </view>
+
+  <view class="wallet">
+    <view class="content title">
+    
+    <view>共享金(元)</view>
+      <text>{{walletInfo.shareAmount}} 元</text>
+    </view>
+    
+    <view class="btn" bindtap="bindRefundMoney">
+      <view>退共享金</view>
+    </view> 
+  </view>
+
+ 
+
+</view>
+
+<view class="recharge">
+  <view class="title">选择充值金额</view>
+  <view class="content {{inputMoney=='off'?'on':''}}">
+    <view class="item">
+      <view data-money="200" class="{{choosePay=='200'?'on':''}}" bindtap="bindChoosePay">
+        <view>￥200</view>
+        <view>不赠送</view>
+      </view>
+    </view>
+    <view class="item">
+      <view data-money="500" class="{{choosePay=='500'?'on':''}}" bindtap="bindChoosePay">
+        <view>￥500</view>
+        <view>送￥50</view>
+      </view>
+    </view>
+    <view class="item">
+      <view data-money="1000" class="{{choosePay=='1000'?'on':''}}" bindtap="bindChoosePay">
+        <view>￥1000</view>
+        <view>送￥200</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="input-box {{inputMoney=='on'?'on':''}}">
+    <text>￥</text><input bindblur="bindInputBlur" type="number" focus="{{inputFocus}}" value='{{initMoney}}'/>
+  </view>  
+  
+</view>
+
+ <view class="input-money" bindtap="bindInputMoney">{{inputMoneyTip}}</view> 
+<view class="submit" bindtap="bindPayMoney">充 值</view>

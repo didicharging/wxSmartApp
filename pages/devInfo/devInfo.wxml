@@ -1,0 +1,28 @@
+<!--pages/devInfo/devInfo.wxml-->
+<view class="banner">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#fff">
+    <block wx:for="{{imgUrls}}" wx:key>
+      <swiper-item>
+        <image src="{{item.img_url}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="dev-info">
+  <view class="classname">设备编号：{{devInfo.deviceNo}}</view>
+  <view class="classname">设备类型：{{devInfo.name}}</view>
+  <view class="classname">设备厂商：{{devInfo.supplier}}</view>
+</view>
+
+<view class="use-user">
+  <view class="title">此设备之前使用过的用户</view>
+  <view class="img-box">
+    <text wx:if="{{userList.length == 0}}">此前没用用户使用过该设备</text>
+    <view wx:for="{{userList}}" wx:key="index">
+      <image bindtap="goToShareHistory" data-id="{{item.userId}}" mode="widthFix" src="{{item.headImg}}"></image>
+    </view>
+  </view>
+</view>
+

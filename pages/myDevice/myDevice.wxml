@@ -1,0 +1,71 @@
+<view class="flex-box">
+  <view class="{{logType=='inUser'?'on':''}}"  bindtap="bindgetInUserList">
+    <text>在用设备</text>
+  </view>
+  <view class="{{logType=='Rental'?'on':''}}"  bindtap="getRentalList">
+    <text>租电记录</text>
+  </view>
+  <view class="{{logType=='Scane'?'on':''}}"  bindtap="getScaneList">
+    <text>使用记录</text>
+  </view>
+</view>
+
+<block wx:if="{{logType=='inUser'}}">
+ 
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+      <view class="devTip" wx:if="{{devList.length == 0}}">没有设备</view>  
+
+      <view class="dev-item" wx:for="{{devList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+          <image src="{{item.imgUrl}}"></image>
+        </view>
+
+        <view class="dev-info">
+          <view class="dev-code">设备编号：{{item.deviceNo}}</view>
+          <view class="user-time">领取时间：{{item.inDate}}</view>
+        </view>
+      </view>
+    </scroll-view>
+     
+</block>
+
+<block wx:if="{{logType=='Rental'}}">
+ 
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+      <view class="devTip" wx:if="{{RentalList.length == 0}}">没有记录</view>  
+      <view class="dev-item" wx:for="{{RentalList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+     
+          <image src="{{item.device.imgUrl}}"></image>
+        </view>
+        <view class="dev-info">
+          <view class="dev-code">设备类型：{{item.deviceName}}</view>
+          <view class="user-time">开始时间：{{item.inDate}}</view>
+          <view class="user-time">到期时间：{{item.outDate}}</view>
+        </view>
+      </view>
+    </scroll-view>
+     
+</block>
+
+<block wx:if="{{logType=='Scane'}}">
+ 
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+      <view class="devTip" wx:if="{{ScaneList.length == 0}}">没有记录</view>  
+      <view class="dev-item" wx:for="{{ScaneList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+
+          <image src="{{item.device.imgUrl}}"></image>
+
+        </view>
+        <view class="dev-info">
+          <view class="dev-code">设备编号：{{item.device.deviceNo}}</view>
+          <view class="user-time">开始时间：{{item.inDate}}</view>
+          <view class="user-time">结束时间：{{item.outDate}}</view>
+        </view>
+      </view>
+    </scroll-view>
+     
+</block>
+
+

@@ -1,0 +1,52 @@
+
+<view class="section tc">
+  <video id="myVideo" src="http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/{{index}}.mp4"  controls='{{a}}'></video>
+
+  
+</view>
+
+
+<view class='block xiu-box'>
+    <view class='xiu'>
+        <button  open-type="share">分享给朋友</button>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+<view class="nav">
+  <view class="" bindtap='homePage' >
+    <image src="/images/shouye.jpg"></image>
+    <view>首页</view>
+  </view>
+  <view class="" bindtap="goToShare">
+    <image src="/images/fangdian.png"></image>
+    <view>发布</view>
+  </view>
+   <view class="scanCode" bindtap="scanCode">
+    <image src="/images/chudian.png"></image>
+     <view>扫一扫</view> 
+  </view>
+  <view class="" bindtap="goToMap">
+    <image src="/images/laidian.png"></image>
+    <view>附近</view>
+  </view>
+
+ 
+
+  <!-- <view class="" bindtap="goToNotice">
+    <image src="/images/tongzhi.png"></image>
+    <view>互动</view>
+  </view> -->
+
+  <view class="" bindtap="goToUser">
+    <image src="/images/wode.png"></image>
+    <view>我的</view>
+  </view>
+
+</view>

@@ -1,0 +1,8 @@
+<!--pages/userUp/userUp.wxml-->
+<view class="classname">
+  <view>
+    账户状态：<text>驿站账户</text>
+  </view>
+</view>
+
+ 

@@ -1,0 +1,10 @@
+/* pages/map/map.wxss */
+@import "/libs/daohang.wxss";
+map{
+  z-index: 100;
+}
+/* .wansi{
+  width: 100px;
+  height: 100rpx;
+  background: red;
+} */

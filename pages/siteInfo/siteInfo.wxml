@@ -1,0 +1,14 @@
+<view class="header">
+  <view class="name">
+    <text>中关村大恒科技驿站</text>
+    <text class="follow">+关注</text>
+  </view>
+  <view class="address">地址:北京市海淀区中关村创业大街大恒科技大厦</view>
+  <view class="items">
+    <view class="item number">充电宝数量:100</view>
+    <view class="item distance">距离:1.2km</view>
+    <view class="item here"><image src="/images/hereicon.png"></image>到这里去</view>
+    <view class="item phone"><image src="/images/phoneicon.png"></image>拨打电话</view>
+  </view>
+</view>
+<image src="/images/site.jpg"></image>

@@ -1,0 +1,157 @@
+page{
+  font-family: "Microsoft YaHei";
+  font-size: 28rpx;
+  font-weight: 500;
+}
+.user .title{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.user{
+  padding: 60rpx 40rpx 30rpx 40rpx;
+}
+.user .state>view{
+  display: inline-block;
+  width: 33.3%;
+}
+.user .state .state-name{
+  font-size: 28rpx;
+  color: #666;
+  text-align: left;
+}
+.up-state{
+  text-align: right;
+}
+.up-state text{
+  font-size: 32rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  background-color: #b3b3b3;
+}
+.coin{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -4rpx;
+  margin-left:10rpx;
+
+}
+.content>view{
+  display: inline-block;
+  width: 180rpx;
+}
+.tip{
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  color: #f4d000;
+}
+.wallet{
+   margin-bottom: 60rpx; 
+}
+.wallet:last-child{
+    margin-bottom: 0rpx;
+}
+.wallet>view{
+  display: inline-block;
+  font-size: 32rpx;
+}
+.wallet .content{
+  width: 60%;
+}
+.wallet .content>text{
+  margin-left: 40rpx;
+}
+.wallet .btn{
+  width: 40%;
+  text-align: right;
+}
+.wallet .btn>view{
+  display: inline-block;
+  padding: 16rpx 40rpx;
+  width: 135rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  color: #fff;
+  background-color: #999;
+}
+.recharge{
+  border-top: 12rpx solid #e6e6e6;
+  padding: 0rpx 40rpx 40rpx 40rpx;
+}
+.recharge .title{
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #666;
+  padding: 24rpx 0rpx 42rpx 0rpx;
+}
+.recharge .content{
+  display: none;
+  flex-direction: row;
+}
+.recharge .content .item{
+  flex: 1;
+  text-align: center;
+}
+.recharge .content .item>view{
+  display: inline-block;
+  width: 180rpx;
+  padding: 12rpx 0rpx;
+  border-radius: 8rpx;
+  border: 2px solid #fae988;
+  color: #999;
+}
+.recharge .content .item>view view:last-child{
+  font-size: 24rpx;
+}
+.input-money{
+  width: 450rpx;
+  text-align: center;
+  margin: 0 auto;
+  padding: 16rpx 0rpx;
+  color: #ccc;
+  background-color: #f2f2f2;
+  border-radius: 16rpx;
+}
+.submit{
+  width: 450rpx;
+  text-align: center;
+  margin: 0 auto;
+  padding: 16rpx 0rpx;
+  color: #666;
+  background-color: #f4d000;
+  border-radius: 16rpx;
+  margin-top: 160rpx;
+  font-weight: 600;
+}
+.input-box{
+  border-bottom: 1px solid #e6e6e6;
+  display: none;
+}
+.input-box text{
+  font-size: 80rpx;
+  vertical-align: bottom;
+}
+.input-box input{
+  display: inline-block;
+  width: 400rpx;
+  font-size: 76rpx;
+  height: 76rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  position: relative;
+  top: 20rpx;
+}
+.recharge .item .on{
+  background-color: #f4d000;
+}
+.recharge .item .on view{
+  color: #fff;
+}
+.recharge .on{
+  display: flex;
+}
