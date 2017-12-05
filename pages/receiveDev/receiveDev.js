@@ -1,12 +1,17 @@
 import { reToMainPage } from "../../libs/router";
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
 let userInfoSync = wx.getStorageSync("userInfo");
 let index = 1;
 
 Page({
 
   data: {
+    IMG_PATH: IMG_PATH,
     items: [
       { name: '充值200元', value: 200 },
       { name: '充值500(送50)元', value: 500, checked: 'true' },

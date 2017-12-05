@@ -1,12 +1,18 @@
 import { goToUser, goToShare, goToMyWallet, goToUserInfo, reToMainPage } from "../../libs/router";
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
+
 let userInfoSync = wx.getStorageSync("userInfo");
 let time = 60;
 let again = true;
 // console.log(userInfoSync);
 Page({
   data:{
+    IMG_PATH: IMG_PATH,
     phone: '',
     codeTrue: '',
     code: '',

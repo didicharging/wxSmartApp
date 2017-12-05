@@ -1,4 +1,4 @@
-<!-- <image class="homeback" mode="widthFix" src="/images/homeback.jpg"></image> -->
+<!-- <image class="homeback" mode="widthFix" src="{{IMG_PATH}}/homeback.jpg"></image> -->
 <scroll-view class="scroll-box" scroll-y lower-threshold="50" bindscrolltolower="bindLower" bindscrolltoupper="bindUpper">
   <view class="banner">
     <swiper indicator-dots="{{indicatorDots}}"
@@ -42,7 +42,7 @@
             </view>
             <view class="info-content">
              <view class="local">
-                <image src='{{item.user.profile_image?item.user.profile_image:"/images/niming.png"}}'></image>
+                <image src='{{item.user.profile_image?item.user.profile_image:"{{IMG_PATH}}/niming.png"}}'></image>
                 <!-- <text>{{item.address}}</text> -->
               </view> 
               <view class="nick">
@@ -64,7 +64,7 @@
             <image src="{{item.imgUrl}}" mode="widthFix"></image>
             <view class="info-content">
               <view class="local">
-                <image src='{{item.user.profile_image?item.user.profile_image:"/images/niming.png"}}'></image>
+                <image src='{{item.user.profile_image?item.user.profile_image:"{{IMG_PATH}}/niming.png"}}'></image>
                 <!-- <text>{{item.address}}</text> -->
               </view> 
               <view class="nick">
@@ -89,31 +89,31 @@
 
 <view class="nav">
 <view class="" >
-    <image src="/images/shoye2.jpg"></image>
+    <image src="{{IMG_PATH}}/shoye2.jpg"></image>
     <view>首页</view>
   </view>
   <view class="" bindtap="goToShare">
-    <image src="/images/fangdian.png"></image>
+    <image src="{{IMG_PATH}}/fangdian.png"></image>
     <view>发布</view>
   </view>
    <view class="scanCode" bindtap="scanCode">
-    <image src="/images/chudian.png"></image>
+    <image src="{{IMG_PATH}}/chudian.png"></image>
      <view>扫一扫</view> 
   </view>
   <view class="" bindtap="goToMap">
-    <image src="/images/laidian.png"></image>
+    <image src="{{IMG_PATH}}/laidian.png"></image>
     <view>救援</view>
   </view>
 
  
 
   <!-- <view class="" bindtap="goToNotice">
-    <image src="/images/tongzhi.png"></image>
+    <image src="{{IMG_PATH}}/tongzhi.png"></image>
     <view>互动</view>
   </view> -->
 
   <view class="" bindtap="goToUser">
-    <image src="/images/wode.png"></image>
+    <image src="{{IMG_PATH}}/wode.png"></image>
     <view>我的</view>
   </view>
 
@@ -124,7 +124,7 @@
      <view bindtap="bindCloseMask" class="close" ></view> 
   </view>
   <view class="img-box">
-    <image src="/images/hongbao.png"></image>
+    <image src="{{IMG_PATH}}/hongbao.png"></image>
   </view>
   <view class="content">
     <view class="success">您已分享成功</view>
@@ -136,5 +136,5 @@
 </view>
 
 <!-- <view class="mask {{openTip?'mask-on':''}}" bindtap="closeNewUserMask">
-   <image class="newUser" mode="widthFix" src="/images/newUser.png"></image>
+   <image class="newUser" mode="widthFix" src="{{IMG_PATH}}/newUser.png"></image>
 </view> -->

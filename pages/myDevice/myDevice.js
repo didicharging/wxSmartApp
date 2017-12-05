@@ -2,11 +2,14 @@ import { goToUser, goToShare, goToMyWallet, goToUserInfo, goToMyDevice } from ".
 import moment from "../../libs/moment"; // 引入moment插件
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+let IMG_PATH = app.globalData.IMG_PATH;
 let userInfoSync = wx.getStorageSync("userInfo");
 
 
 Page({
   data:{
+    IMG_PATH: IMG_PATH,
     scrollHeight: "100%",
     logType:"inUser",
 

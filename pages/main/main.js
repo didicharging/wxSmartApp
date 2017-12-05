@@ -11,6 +11,7 @@ import {
 
 let app = getApp();
 let PATH = app.globalData.PATH;
+let IMG_PATH = app.globalData.IMG_PATH;
 let userInfoSync = wx.getStorageSync("userInfo");
 let windowWidth = wx.getStorageSync("windowWidth");
 let imgWidth = windowWidth * 0.48;
@@ -23,6 +24,7 @@ let arr2 = [];
 let switchScroll = true;
 Page({
   data: {
+    IMG_PATH: IMG_PATH,
      imgUrls:[],
     indicatorDots: true,
     autoplay: true,

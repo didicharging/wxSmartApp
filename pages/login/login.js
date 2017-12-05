@@ -1,12 +1,15 @@
 // pages/login/login.js
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+let IMG_PATH = app.globalData.IMG_PATH;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    IMG_PATH: IMG_PATH,
     showPage: false
   },
 
@@ -282,7 +285,8 @@ function wxLogin(that, newUser) {
                   
                   wx.redirectTo({
                     // url: '../main/main?sence=' + that.data.sence
-                    url: '../main/main?newUser=' + newUser
+                    url: '../map/map'
+                  
                   })
                 } else {
                   wx.hideLoading();

@@ -7,20 +7,34 @@ import {
 
 let app = getApp();
 let PATH = app.globalData.PATH;
+let IMG_PATH = app.globalData.IMG_PATH;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-
-                      
-  },
+      stations:null,
+      IMG_PATH: IMG_PATH
+                       
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     let that = this;
     let local = app.globalData.location;
+
+    //that.setData
+
+    // that.setData({
+    //   IMG_PATH: IMG_PATH
+    // });
+
+
+
+
+    //获取用户信息
     wx.getSystemInfo({
       success: (res) => {
      
@@ -35,64 +49,52 @@ Page({
         })
       }
     });
-    
-
-     
+        
     let mapControls = [
       {
         id: 1,
-        iconPath: '/images/sos.png',
+        iconPath: IMG_PATH+'/scanCode.png',
         position: {
           left: that.data.windowWeight / 2-50,
-          // top: 300 - 50,
           top: that.data.windowHeight-200,
           width: 100,
           height: 100
         },
         clickable: true
-      }
-      // {
-      //   id: 2,
-      //   iconPath: '/images/sos.png',
-      //   position: {
-      //     left: that.data.windowWeight / 2 + 80,
-      //     // top: 300 - 50,
-      //     top: that.data.windowHeight - 170,
-      //     width: 70,
-      //     height: 70
-      //   },
-      //   clickable: true
-      // },
-      // {
-      //   id: 3,
-      //   iconPath: '/images/sos.png',
-      //   position: {
-      //     left: that.data.windowWeight / 2 - 150,
-      //     top: that.data.windowHeight - 170,
-      //     width: 70,
-      //     height: 70
-      //   },
-      //   clickable: true
-      // },
+      },
+       {
+        id: 2,
+        iconPath: IMG_PATH +'/sos.png',
+        position: {
+          left: that.data.windowWeight / 2 + 70,       
+          top: that.data.windowHeight - 160,
+          width: 50,
+          height: 50
+        },
+        clickable: true
+      },
+      {
+        id: 3,
+        iconPath: IMG_PATH +'/share.png',
+        position: {
+          left: that.data.windowWeight / 2 - 120,
+          top: that.data.windowHeight - 160,
+          width: 50,
+          height: 50
+        },
+        clickable: true
+      },
   
-
-
     ];
     
     that.setData({
-      controls: mapControls,
-   
+      controls: mapControls,  
     })
 
-
-
-
-
-
-
-    getLocalPoint(that);
+    getLocalPoint(that); 
   },
   
+ 
   // 去地图
   goToMap: function () {
     gofujin(app.globalData.location)
@@ -104,10 +106,7 @@ Page({
   },
   // 我的
   goToUser: function () {
-    // goToUser();
-    wx.reLaunch({
-      url: '/pages/user/user'
-    })
+    goToUser();
   },
   // 分享
   goToShare: function () {
@@ -117,10 +116,11 @@ Page({
   },
   //首页
   homePage: function () {
-    wx.reLaunch({
+    wx.redirectTo({
       url: '/pages/main/main',
     })
   },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -128,57 +128,80 @@ Page({
     this.mapCtx = wx.createMapContext('myMap'); 
   },
  
- 
-
-
   callouttap(e) {
-    console.log(e.markerId)
-    console.log(this.data.mapMarks)
-    if (e.markerId ==10){
-      wx.makePhoneCall({
-        phoneNumber: '15088726293' //仅为示例，并非真实的电话号码
-      })
-    }
-    if (e.markerId == 6) {
-      wx.makePhoneCall({
-        phoneNumber: '13693541067' //仅为示例，并非真实的电话号码
-      })
-    }
-     if (e.markerId == 3) {
-      wx.makePhoneCall({
-        phoneNumber: '13522408052' //仅为示例，并非真实的电话号码
-      })
-    } 
-    if (e.markerId == 7) {
-      wx.makePhoneCall({
-        phoneNumber: '15010571129' //仅为示例，并非真实的电话号码
-      })
-    }
-    if (e.markerId == 9) {
-      wx.makePhoneCall({
-        phoneNumber: '18101034645' //仅为示例，并非真实的电话号码
-      })
-    }
-    if (e.markerId == 5) {
-      wx.makePhoneCall({
-        phoneNumber: '13241801273' //仅为示例，并非真实的电话号码
-      })
-    }
-    if (e.markerId == 1) {
-      wx.makePhoneCall({
-        phoneNumber: '18618357887' //仅为示例，并非真实的电话号码
-      })
-    }
-  },
+       console.log(e.markerId),
+      console.log(this.data.stations[1].phone),
+         wx.makePhoneCall({
+         phoneNumber: this.data.stations[1].phone
+         });
+    },
+
   
   controltap:function(e){
 
-    wx.makePhoneCall({
-      phoneNumber: '4001851018'
-    })
+   //扫码用电    
+    if(e.controlId==1){
+     
+      scansaoma(app.globalData.userId, goToReceiveDev, PATH)
+    }
+    
+    //呼叫救援
+    if (e.controlId == 2) {
+      console.log("yui");
+      wx.showModal({
+        title: '提示',
+        content: '您将播打4001851018,由我们的客服人员手动为您下单',
+        success: function (res) {
+          if (res.confirm) {
+            wx.makePhoneCall({
+          phoneNumber: '4001851018'
+          });
 
+          } else if (res.cancel) {
+           
+          }
+        }
+      })
+    }
+
+    //分享设备
+    if (e.controlId == 3) {
+      console.log("nfipuopap");
+      wx.switchTab({
+          url: '../share/share',
+        });
+    }
+  
   },
  
+  // 去通知
+  goToNotice: function () {
+    wx.navigateTo({
+      url: '../user/notice/notice?id=' + app.globalData.userId
+    });
+  },
+
+  // 去地图
+  goToMap: function () {
+    gofujin(app.globalData.location)
+  },
+  // 触电扫码
+  scanCode: function () {
+    let that = this;
+    scansaoma(app.globalData.userId, goToReceiveDev, PATH)
+  },
+  // 我的
+  goToUser: function () {
+    goToUser();
+  },
+  // 分享
+  goToShare: function () {
+    let that = this;
+    gofenxaing()
+
+  },
+
+
 
 
   // 坐标点改变
@@ -199,6 +222,7 @@ Page({
     }
   }
 })
+
 
 function getLocalPoint(that) {
   wx.request({
@@ -237,12 +261,17 @@ function getLocalPoint(that) {
 
         // 驿站定位
         let stationlist = res.data.result.stationlist;
+        
+        that.setData({
+          stations: stationlist,
+
+        })
 
         console.log(stationlist);
         for (let i = 0; i < stationlist.length; i++) {
           let mark = {
             iconPath: "/images/station.png",
-            id: stationlist[i].id,
+            id: i,
             latitude: stationlist[i].latitude,
             longitude: stationlist[i].longitude,
             width:40,
@@ -263,13 +292,13 @@ function getLocalPoint(that) {
         console.log(markArr)
         that.setData({
           mapMarks: markArr,
+         
         })
+        
       }
     }
   });
 
-
-
-
+  
 
 }

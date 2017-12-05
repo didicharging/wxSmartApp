@@ -7,11 +7,3 @@
   </button>
   
 </view>
-<!--<view class='share-btn' >-->
-<!--<view class='share-btn' wx:if="{{showGoHomeBtn}}">-->
-     <!--<button  bindtap='bindHome'>
-        返回首页
-    </button>-->
-    <!--</view>>-->
-<!--</view>-->
-<!--<view class='go-home' bindtap='bindGoHome'>返回首页</view>-->

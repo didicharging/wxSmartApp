@@ -63,32 +63,32 @@
 
 <view class="nav">
 <view class="" bindtap="homePage">
-    <image src="/images/shouye.jpg"></image>
+    <image src="{{IMG_PATH}}/shouye.jpg"></image>
     <view>首页</view>
   </view>
   <view class="" >
-    <image src="/images/fenxiang2.jpg"></image>
+    <image src="{{IMG_PATH}}/fenxiang2.jpg"></image>
     <view>发布</view>
   </view>
    <view class="scanCode" bindtap="scanCode">
-    <image src="/images/chudian.png"></image>
+    <image src="{{IMG_PATH}}/chudian.png"></image>
      <view>扫一扫</view> 
   </view>
   
   <view class="" bindtap="goToMap">
-    <image src="/images/laidian.png"></image>
+    <image src="{{IMG_PATH}}/laidian.png"></image>
     <view>救授</view>
   </view>
 
  
 
   <!-- <view class="" bindtap="goToNotice">
-    <image src="/images/tongzhi.png"></image>
+    <image src="{{IMG_PATH}}/tongzhi.png"></image>
     <view>互动</view>
   </view> -->
 
   <view class="" bindtap="goToUser">
-    <image src="/images/wode.png"></image>
+    <image src="{{IMG_PATH}}/wode.png"></image>
     <view>我的</view>
   </view>
 

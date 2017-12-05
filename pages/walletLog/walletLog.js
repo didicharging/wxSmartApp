@@ -3,11 +3,18 @@ import moment from "../../libs/moment"; // 引入moment插件
 let app = getApp();
 let userInfoSync = wx.getStorageSync("userInfo");
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
+
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    IMG_PATH: IMG_PATH,
     logType: 4
   },
   /**

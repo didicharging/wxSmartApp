@@ -16,13 +16,6 @@
     <view>附近</view>
   </view>
 
- 
-
-  <!-- <view class="" bindtap="goToNotice">
-    <image src="/images/tongzhi.png"></image>
-    <view>互动</view>
-  </view> -->
-
   <view class="" bindtap="goToUser">
     <image src="/images/wode.png"></image>
     <view>我的</view>

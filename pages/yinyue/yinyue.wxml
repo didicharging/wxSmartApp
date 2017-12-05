@@ -1,6 +1,6 @@
 
 <view class="section tc">
-  <video id="myVideo" src="http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/{{index}}.mp4"  controls='{{a}}'></video>
+  <video id="myVideo" src="{IMG_PATH}/{{index}}.mp4"  controls='{{a}}'></video>
 
   
 </view>

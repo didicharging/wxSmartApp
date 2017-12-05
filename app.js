@@ -1,9 +1,9 @@
 //app.js
 
 //let path = "https://appv2.didicharging.com/di";
- let path = "http://localhost/di";
+// let path = "http://localhost/di";
 //let path ="https://app.liguangxu.top/di";
-//let path = "https://api.didicharging.com/di";
+let path = "https://api.didicharging.com/di";
 
 App({
   onLaunch: function () {
@@ -66,7 +66,7 @@ App({
  
   globalData: {
     PATH: path, 
-    
+    IMG_PATH: "http://didicharging-v2.oss-cn-beijing.aliyuncs.com/code",
     userInfo: null,  
     account: null
   }

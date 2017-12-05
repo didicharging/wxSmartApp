@@ -1,20 +1,20 @@
 <!--pages/shareHistory/shareHistory.wxml-->
 <view class="header">
-  <image class="background" src="/images/sharehistory.jpg"></image>
+  <image class="background" src="{{IMG_PATH}}/sharehistory.jpg"></image>
   <view class="user-box">
     <image class="userImg" src="{{userInfo.profile_image}}"></image>
     <view class="name">{{userInfo.nick_name}}</view>
     <view class="btn-box">
       <view class="mess" bindtap="bindToLetter">
-        <image src="/images/historyMess.png"></image>
+        <image src="{{IMG_PATH}}/historyMess.png"></image>
         <text>私信</text>
       </view>
       <view class="follow" wx:if="{{!isNotice}}" bindtap="bindFollow" data-id="{{userId}}">
-        <image src="/images/historyFollow.png"></image>
+        <image src="{{IMG_PATH}}/historyFollow.png"></image>
         <text>关注</text>
       </view> 
       <view class="follow" wx:if="{{isNotice}}" bindtap="bindDelFollow" data-id="{{userId}}">
-        <image src="/images/okicon.png"></image>
+        <image src="{{IMG_PATH}}/okicon.png"></image>
         <text>已关注</text>
       </view>
     </view>

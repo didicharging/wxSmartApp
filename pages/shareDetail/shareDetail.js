@@ -6,10 +6,14 @@ import {
 
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
 let userInfoSync = wx.getStorageSync("userInfo");
 let pushComment = true;
 Page({
   data: {
+    IMG_PATH: IMG_PATH,
     content: '',
     indicatorDots: true,
     autoplay: true,

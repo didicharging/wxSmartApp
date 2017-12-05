@@ -1,10 +1,16 @@
 import { reToMainPage } from "../../libs/router";
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
 let userInfoSync = wx.getStorageSync("userInfo");
 var util = require('../../utils/util.js')
 Page({
   data: {
+    IMG_PATH: IMG_PATH,
     logs: []
   },
   onLoad: function () {

@@ -9,8 +9,15 @@ import {
 let app = getApp();
 let userInfoSync = wx.getStorageSync("userInfo");
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
+
+
 Page({
   data:{
+    IMG_PATH: IMG_PATH,
     inputMoney: 'off',
     inputFocus: false,
     inputMoneyTip: '手动输入充值金额',

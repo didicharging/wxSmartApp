@@ -28,7 +28,7 @@ export function scansaoma(user, goToReceiveDev, PATH){
             data: {
               userId: user,
               deviceNo: code,
-       
+             // deviceNo:"didi7010000331"
             },
             //post success
             success: function (data) {

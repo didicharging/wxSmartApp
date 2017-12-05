@@ -4,6 +4,10 @@ import {
 } from "../../libs/saoma";
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
 let userInfoSync = wx.getStorageSync("userInfo");
 let QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 let qqmapsdk;
@@ -11,7 +15,8 @@ let flag = 0;
 let shareType = true;
 Page({
   data: {
-    upLodingImg:"/images/upimg.jpg",
+    IMG_PATH: IMG_PATH,
+    upLodingImg: IMG_PATH+"/upimg.jpg",
     shareTypes: ["分享图片", "分享设备"],
     // shareTypes: ["分享图片"],
     // chooseMood: ["自定义心情", "Hello World!"],

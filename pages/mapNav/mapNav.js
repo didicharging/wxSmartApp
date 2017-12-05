@@ -2,11 +2,15 @@
 // let QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 // let qqmapsdk;
 let app = getApp();
+let PATH = app.globalData.PATH;
+
+let IMG_PATH = app.globalData.IMG_PATH;
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    IMG_PATH: IMG_PATH,
     index: 0,
     switchTip: '目标位置'
   },
@@ -75,7 +79,7 @@ Page({
       //   }
       // },
       {
-        iconPath: "/images/local.png",
+        iconPath: IMG_PATH+"/local.png",
         id: 1,
         latitude: options.lat,
         longitude: options.lng,

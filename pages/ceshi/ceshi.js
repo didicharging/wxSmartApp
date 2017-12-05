@@ -1,8 +1,15 @@
 //index.js  
 //获取应用实例  
-var app = getApp()
+
+let app = getApp();
+let PATH = app.globalData.PATH;
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
+
 Page({
   data: {
+    IMG_PATH: IMG_PATH,
     circleList: [],//圆点数组  
     awardList: [],//奖品数组  
     colorCircleFirst: '#FFDF2F',//圆点颜色1  

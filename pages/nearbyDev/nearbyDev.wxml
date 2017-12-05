@@ -10,13 +10,13 @@
     <view class="operations">
       <view class="flex-row">
         <view class="flex-item">
-          <image src="/images/phoneicon.png"></image>
+          <image src="{{IMG_PATH}}/phoneicon.png"></image>
         </view>
         <view class="flex-item">
-          <image src="/images/phoneicon.png"></image>
+          <image src="{{IMG_PATH}}/phoneicon.png"></image>
         </view>
         <view class="flex-item">
-          <image src="/images/phoneicon.png"></image>
+          <image src="{{IMG_PATH}}/phoneicon.png"></image>
         </view>
       </view>
       <view class="flex-row">

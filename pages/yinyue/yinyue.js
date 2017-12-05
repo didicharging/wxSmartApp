@@ -4,7 +4,16 @@ import {
 import { goToUser, goToShare, goToMyWallet, goToUserInfo, goToMyDevice, goToFollowList, goToFansList, goToPhoneTest, goToReceiveDev } from "../../libs/router";
 let app = getApp();
 let PATH = app.globalData.PATH;
+
+
+let IMG_PATH = app.globalData.IMG_PATH;
+
+
+
 Page({
+  data: {
+    IMG_PATH: IMG_PATH
+  },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
