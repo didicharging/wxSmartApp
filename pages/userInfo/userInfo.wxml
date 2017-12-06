@@ -44,12 +44,14 @@
       <!-- <input disabled="true" type="number" placeholder="输入手机号" placeholder-class="placeholder" bindtap="bindTestPhone" bindinput="bindinputPhone" value="{{user.mobile}}"  /> -->
     </view>
   </view>
+
   <!--<view class="item">
     <view class="title">身份证号码</view>
     <view class="info">
       <input placeholder="输入身份证号码" placeholder-class="placeholder" bindinput="bindinputIdCard" />
     </view>
   </view>-->
+
 </view>
 
 <view class="submit" bindtap="submit">完成</view>
@@ -58,7 +60,7 @@
   
   <view class="container">
     <view class="close-mask">
-      <image bindtap="bindCloseMask" src="/images/close-icon.png"></image>
+      <image bindtap="bindCloseMask" src="{{IMG_PATH}}/close-icon.png"></image>
     </view>
     <view class="phone-box">
       <input bindinput="bindPhone" placeholder="请输入手机号" placeholder-class="placeholder" value="{{phone}}" />
@@ -67,6 +69,7 @@
       <input bindinput="bindCode" placeholder="输入验证码" placeholder-class="placeholder" value="{{code}}"/>
       <view bindtap="bindGetCode" class="classname">{{getCodeText}}</view>
     </view>
+    
 
     <view class="test-sub" bindtap="bindSubCode">提交</view>
   </view>

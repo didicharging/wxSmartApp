@@ -25,7 +25,7 @@
 .nav>.scanCode{
   position: relative;
 } 
-.nav>.scanCode image{
+.nav>.scanCode image{ 
   width: 96rpx;
   height: 96rpx;
   padding: 8rpx;

@@ -13,11 +13,6 @@
   </view>
 </view>
 
-
-
-
-
-
 <view class="content-box">
   <view class="item"  wx:if="{{walletList.length == 0}}">
     <text>无记录</text>

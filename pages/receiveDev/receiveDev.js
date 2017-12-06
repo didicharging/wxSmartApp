@@ -14,9 +14,9 @@ Page({
     IMG_PATH: IMG_PATH,
     items: [
       { name: '充值200元', value: 200 },
-      { name: '充值500(送50)元', value: 500, checked: 'true' },
+      { name: '充值500(送50)元', value: 500 },
       { name: '充值1000(送200)元', value: 1000},
-      { name: '充值0元', value: 0 }
+      { name: '充值0元', value: 0, checked: 'true' }
       
     ],
     money :null,

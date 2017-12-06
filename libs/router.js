@@ -63,7 +63,7 @@ export function goToScaneCode(isManager, deviceId, deviceNo) {
   let url = '../scaneCode/scaneCode?isManager=' + isManager + '&deviceId=' + deviceId
             + '&deviceNo=' + deviceNo;
 
-  redirectTo(url);
+  navigateTo(url);
 }
 
 // 支付使用费

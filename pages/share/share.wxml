@@ -77,7 +77,7 @@
   
   <view class="" bindtap="goToMap">
     <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>救授</view>
+    <view>救援</view>
   </view>
 
  

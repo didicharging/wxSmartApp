@@ -70,4 +70,5 @@ App({
     userInfo: null,  
     account: null
   }
+  
 })

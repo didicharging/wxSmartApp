@@ -17,7 +17,7 @@
   </view> -->
   <view class="wallet">
     <view class="content title">
-      <view> 嘀嘀币<image class="coin" src="/images/coin.png"></image></view>
+      <view> 嘀嘀币<image class="coin" src="{{IMG_PATH}}/coin.png"></image></view>
       <text>{{walletInfo.amount}}</text>
     </view>
     <view class="btn">

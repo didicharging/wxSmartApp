@@ -35,6 +35,8 @@
     "pages/walletLog/walletLog",
     "pages/mapNav/mapNav"
   ],
+  
+
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#ffd843",

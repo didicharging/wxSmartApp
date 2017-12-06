@@ -151,6 +151,7 @@ export function gofujin(location) {
   })
 
 }
+
 // 分享
 export function gofenxaing(){
   let that = this;
@@ -184,3 +185,4 @@ export function tipModal(tip) {
     duration: 3000
   })
 }
+

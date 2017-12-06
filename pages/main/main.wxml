@@ -107,10 +107,6 @@
 
  
 
-  <!-- <view class="" bindtap="goToNotice">
-    <image src="{{IMG_PATH}}/tongzhi.png"></image>
-    <view>互动</view>
-  </view> -->
 
   <view class="" bindtap="goToUser">
     <image src="{{IMG_PATH}}/wode.png"></image>
