@@ -2,17 +2,15 @@
   "pages":[
     "pages/login/login",
     "pages/yinyue/yinyue",
-
-    
+  
     "pages/map/map",
     "pages/myWallet/myWallet",
     "pages/myDevice/myDevice",
-
+    "pages/startService/startService",
     "pages/payUseFee/payUseFee",
     "pages/receiveDev/receiveDev",
     "pages/scaneCode/scaneCode", 
 
-    "pages/award/award",    
     "pages/activePage/activePage",
     "pages/agreement/agreement",
     "pages/main/main",

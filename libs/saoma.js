@@ -23,8 +23,9 @@ export function scansaoma(user, goToReceiveDev, PATH){
           let code = str.substr(str.indexOf("=") + 1);
           // console.log(code);
           wx.request({
-            url: PATH + '/resource-service/device/getDeviceState',
+            url: PATH + '/resource-service/device/getDeviceInfo',
             method: 'GET',
+            
             data: {
               userId: user,
               deviceNo: code,
@@ -39,10 +40,8 @@ export function scansaoma(user, goToReceiveDev, PATH){
               if (data.statusCode == 200 && data.data.status == 211) {
                 console.log("有欠款");
      
-
                 wx.showModal({
-                  title: '提示',
-   
+                  title: '提示',   
                   content: '您有未支付订单共计：' + data.data.money+"元，详情请在我的钱包查看消费日志",
                   showCancel: false,
                   confirmText: "开始支付",
@@ -51,50 +50,50 @@ export function scansaoma(user, goToReceiveDev, PATH){
                     
                   }
                 });
-
                 return;
               }
 
               // 押金不足
               if (data.statusCode == 200 && data.data.status == 213) {
                 var money = data.data.money;
-
                 console.log("押金不足");
-
-                // let rental;
-                // if (device.rentalType == 1) rental = device.rentalH;
-                // if (device.rentalType == 2) rental = device.rental;
-                // if (device.rentalType == 3) rental = device.rentalM;
-
-                // console.log(rental);
-
                 goToReceiveDev(money, device.id);
-
               }
+
               //状态异常 直接弹窗提示
               if (data.statusCode == 200 && data.data.status == 210) {
-                if (data.data.device) {
-                  console.log("状态异常");
-                  // tipModal(data.data.message);
-                  wx.showToast({
-                    title: data.data.message,
-                    icon: 'loading',
-                    duration: 3000
-                  })
-                  return;
-                }
+                
+                wx.showModal({
+                  title: '提示',
+                  content: data.data.message,
+                  showCancel:false,
+                  success: function (res) {
+                    if (res.confirm) {
+                         return ;
+
+                    } 
+                  }
+                })
+
+
+      
               }
-              //状态正常 跳功能选择画面
-              if (data.statusCode == 200 && data.data.status == 200) {
+
+              //状态正常 跳转老的扫码页面 
+              if (data.statusCode == 200 && data.data.status == 200 ) {
                 goToScaneCode(data.data.isManager, device.id, device.deviceNo);
               }
 
-              // tipModal(data.data.message);
-              wx.showToast({
-                title: data.data.message,
-                icon: 'loading',
-                duration: 3000
-              })
+              //状态正常 跳转新的服务页面
+              if (data.statusCode == 200 && data.data.status == 201) {
+                wx.navigateTo({
+                  url: '../startService/startService?isManager='+data.data.isManager+"&deviceId="+device.id,
+                })
+    
+                console.log("管理者： "+data.data.isManager);
+              }
+
+              
 
             }
           })

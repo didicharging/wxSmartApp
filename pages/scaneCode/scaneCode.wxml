@@ -1,6 +1,6 @@
 
 <view class="rectangle">
-     <image src="../../images/juxing4.png"></image> 
+     <image src="{{IMG_PATH}}/juxing4.png"></image> 
     
 
     <view class="device">
