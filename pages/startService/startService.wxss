@@ -54,7 +54,6 @@ page{
 }
 
 .user{
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -68,6 +67,7 @@ page{
   height: 80px;
   margin: 60rpx;
   font-size: 60rpx;
+  border-radius: 40rpx;
 }
 
 .manager{
@@ -84,7 +84,8 @@ page{
     width: 80%;
     height: 100px;
     margin: 40rpx;
-    font-size: 80rpx;
+    font-size: 70rpx;
+    border-radius: 40rpx;
 
 }
 

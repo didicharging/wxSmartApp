@@ -102,53 +102,11 @@
   </view> 
   
   <view class="list-item1" data-page="myCode" >
-    <view class="list-text1">版本号：v2.2.31</view>
+    <view class="list-text1">版本号：v2.3.23</view>
   </view>
 </view>
 
- <!-- <view class="items">
-  <view class="item" data-page="close" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/thunder.png"></image>
-    <text>触电</text>
-  </view>
-  <view class="item" data-page="fansList" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/fans.png"></image>
-    <text>粉丝</text>
-  </view> 
-  <view class="item" data-page="userInfo" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/info.png"></image>
-    <text>完善信息</text>
-  </view>
-  <view class="item" data-page="followList" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/follow.png"></image>
-    <text>关注</text>
-  </view>
-</view>
-<view class="items">
-  <view class="item" data-page="userInfo" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/info.png"></image>
-    <text>完善信息</text>
-  </view>
-  <view class="item" data-page="myWallet" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/wallet.png"></image>
-    <text>我的钱包
-      <text class="mar-l-10">0.00元</text>
-    </text>
-  </view>
-  <view class="item data-page="myDevice" bindtap="goToNewPage">
-    <image src="../..{{IMG_PATH}}/dev.png">"</image>
-    <text>我的设备
-      <text class="mar-l-10">0个</text>
-    </text>
-  </view>
-</view>
 
-<view class="list-group">
-  <view class="list-item">
-    <image src="{{IMG_PATH}}/wallet.png"></image>
-    <view class="classname">我的钱包</view>
-  </view>
-</view> -->
  <view class="nav">
 <view class="" bindtap="homePage">
     <image src="{{IMG_PATH}}/shouye.jpg"></image>

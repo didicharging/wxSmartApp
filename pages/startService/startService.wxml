@@ -24,6 +24,8 @@
  <block wx:if="{{isManager=='false'}}">
 <view class='user'>
     <button bindtap="buyStart" type="primary">购买</button> 
+  
+ 
     <button bindtap="startService" type="primary">搭火</button>  
     </view>
 </block> 
