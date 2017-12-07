@@ -2,7 +2,7 @@
   "pages":[
     "pages/login/login",
     "pages/yinyue/yinyue",
-    "pages/ceshi/ceshi",
+
     
     "pages/map/map",
     "pages/myWallet/myWallet",
@@ -23,17 +23,17 @@
     "pages/userList/userList",
     "pages/userInfo/userInfo",
     "pages/shareInfo/shareInfo",
-    "pages/siteInfo/siteInfo",
+
     "pages/nearbyDev/nearbyDev",
     "pages/share/share",
     "pages/shareHistory/shareHistory",
     "pages/devInfo/devInfo",
     "pages/shareDetail/shareDetail",
-    "pages/userUp/userUp",
+
     "pages/followList/followList",
     "pages/fansList/fansList",
-    "pages/walletLog/walletLog",
-    "pages/mapNav/mapNav"
+    "pages/walletLog/walletLog"
+
   ],
   
 

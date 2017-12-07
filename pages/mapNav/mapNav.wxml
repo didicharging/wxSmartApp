@@ -1,5 +1,0 @@
-<!--pages/mapNav/mapNav.wxml-->
-<map longitude="{{mapData.lng}}" latitude="{{mapData.lat}}" markers="{{markers}}" />
-<!--<view class="btn" bindtap="bindSwitch">
-  {{switchTip}}
-</view>-->
