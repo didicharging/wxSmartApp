@@ -125,7 +125,7 @@
   </view>
   <view class="" bindtap="goToMap">
     <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>附近</view>
+    <view>有电</view>
   </view>
 
  
