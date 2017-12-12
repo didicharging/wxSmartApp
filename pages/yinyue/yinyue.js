@@ -2,23 +2,24 @@ import {
   scansaoma, gofujin, gofenxaing
 } from "../../libs/saoma";
 import { goToUser, goToShare, goToMyWallet, goToUserInfo, goToMyDevice, goToFollowList, goToFansList, goToPhoneTest, goToReceiveDev } from "../../libs/router";
+
 let app = getApp();
 let PATH = app.globalData.PATH;
-
-
 let IMG_PATH = app.globalData.IMG_PATH;
+let VIDEO_PATH = app.globalData.VIDEO_PATH;
 
 
 
 Page({
-  data: {
-    IMG_PATH: IMG_PATH
-  },
+
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
+
   inputValue: '',
   data: {
+    IMG_PATH: IMG_PATH,
+    VIDEO_PATH: VIDEO_PATH,
     src: '',
     danmuList: [
       {
@@ -79,13 +80,7 @@ Page({
       hide: true
     })
     let path_share;
-    // if (res.from === 'button') {
-    //   // 来自页面内转发按钮
-    //   console.log(res.target)
-    //   path_share = '/pages/login/login?type=share&id=' + that.data.id
-    // } else {
-    //     path_share = '/pages/login/login';
-    // }
+  
     path_share = '/pages/yinyue/yinyue?type=share&id=' + that.data.index + "&invideCode=" + app.globalData.userId
     return {
       title: '爱心分享图片，轻松月入百万！',

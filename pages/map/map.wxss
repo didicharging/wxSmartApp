@@ -23,6 +23,9 @@ map{
 .mask-on{
   display: block;
 }
+cover-view{
+  font-size: 40rpx;
+}
 
 
 .mask-on .container{
@@ -33,7 +36,7 @@ map{
   margin-left: 5%;
   padding-bottom: 5%;
   padding-top: 1%;
-  border: 1px solid #d1b381;
+  /* border: 1px solid #d1b381; */
 
 }
 
@@ -41,30 +44,32 @@ map{
 
 .mask-on .desc{
   width: 90%;
-  padding-left: 5%;
+  padding-left: 10%;
+  border-radius: 20rpx;
+  background-color: #fff;
+
 }
 
 .station-desc{
-  background-color: #fff;
 
   padding: 20rpx 20rpx;
 
 }
 
 .chargeMan-desc{
-  background-color: #fff;
+
 
   padding: 20rpx 20rpx;
 }
 
 .phone-desc{
-  background-color: #fff;
+
 
   padding: 20rpx 20rpx;
 }
 
 .address-desc{
-  background-color: #fff;
+
 
   padding: 20rpx 20rpx;
 }
@@ -96,8 +101,8 @@ map{
 
 } 
  .close-mask image{
-  width: 60rpx;
-  height: 60rpx;
+  width: 60rpx; 
+  height: 60rpx; 
 } 
 
 

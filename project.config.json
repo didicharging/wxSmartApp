@@ -24,9 +24,9 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "boul",
-					"pathName": "pages/map/map",
+					"pathName": "pages/yinyue/yinyue",
 					"query": ""
 				}
 			]

@@ -9,6 +9,7 @@
   background-color: #fff;
   padding-top: 10rpx;
   z-index: 600;
+
 }
 .nav>view{
   flex: 1;

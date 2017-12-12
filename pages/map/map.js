@@ -46,10 +46,10 @@ Page({
         id: 2,
         iconPath: '/images/sos.png',
         position: {
-          left: that.data.windowWeight / 2 - 60,
-          top: that.data.windowHeight - 150,
-          width: 120,
-          height: 120
+          left: that.data.windowWeight / 2 - 35,
+          top: that.data.windowHeight - 100,
+          width: 70,
+          height: 70
         },
         clickable: true
       },
@@ -207,6 +207,29 @@ Page({
 
 //定位用
 function getLocalPoint(that) {
+ wx.request({
+   url: PATH +"/resource-service/wallet/getWalletInfoByUserId",
+   header: {
+     'Access-Token': app.globalData.accessToken,
+   },
+   method: "GET",
+   data: {
+     userId: app.globalData.userId,
+   },
+   success: function (res) {
+     
+     if (res.data.status == 200){
+     
+       that.setData({
+         wallet: res.data.wallet
+       });
+     }
+
+   }
+
+ })
+
+
   wx.request({
     url: PATH + "/resource-service/map/getPointList",
     header: {

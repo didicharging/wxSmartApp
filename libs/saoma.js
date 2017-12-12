@@ -23,13 +23,13 @@ export function scansaoma(user, goToReceiveDev, PATH){
           let code = str.substr(str.indexOf("=") + 1);
           // console.log(code);
           wx.request({
-            url: PATH + '/resource-service/device/getDeviceInfo',
-            method: 'GET',
-            
+          //  url: PATH + '/resource-service/device/getDeviceInfo',
+            url: PATH + '/resource-service/device/getDeviceState',         
+            method: 'GET',            
             data: {
               userId: user,
               deviceNo: code,
-             // deviceNo:"didi7010000331"
+              //deviceNo:"didi7010060150"
             },
             //post success
             success: function (data) {

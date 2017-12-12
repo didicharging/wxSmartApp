@@ -13,10 +13,10 @@
 
     <view class='choose-type'>
         <view class="">
-            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">推 荐</view>
+            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">秀秀</view>
         </view>
         <view class="">
-            <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="new">最 新</view>
+            <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="new">内涵</view>
         </view>
            <view class="">
             <view class="status-btn {{status=='video'?'on':''}}"  bindtap='bindStatus' data-status="video">视 频</view>
@@ -43,7 +43,7 @@
             <view class="info-content">
              <view class="local">
                 <image src='{{item.user.profile_image?item.user.profile_image:"{{IMG_PATH}}/niming.png"}}'></image>
-                <!-- <text>{{item.address}}</text> -->
+    
               </view> 
               <view class="nick">
                 <text>{{item.user.nick_name}}</text>
@@ -52,10 +52,7 @@
               <view class="amount">
                 <text>浏览量:{{item.readCount}}</text>
               </view>
-              <!-- <view class="local" wx:if="{{item.address != null}}"> 
-                <text>{{item.address}}</text>
-              </view> -->
-              <!-- <view class="text">{{item.content}}</view> -->
+
             </view>
           </view>
         </view>
@@ -105,9 +102,6 @@
     <view>有电</view>
   </view>
 
- 
-
-
   <view class="" bindtap="goToUser">
     <image src="{{IMG_PATH}}/wode.png"></image>
     <view>我的</view>
@@ -130,7 +124,3 @@
     <button open-type="share" class="classname">邀请好友</button>
   </view>
 </view>
-
-<!-- <view class="mask {{openTip?'mask-on':''}}" bindtap="closeNewUserMask">
-   <image class="newUser" mode="widthFix" src="{{IMG_PATH}}/newUser.png"></image>
-</view> -->

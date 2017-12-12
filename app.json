@@ -10,6 +10,7 @@
     "pages/payUseFee/payUseFee",
     "pages/receiveDev/receiveDev",
     "pages/scaneCode/scaneCode", 
+    "pages/paySuccess/paySuccess",
 
     "pages/activePage/activePage",
     "pages/agreement/agreement",

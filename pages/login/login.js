@@ -285,7 +285,7 @@ function wxLogin(that, newUser) {
                   
                   wx.redirectTo({
                      url: '../main/main?sence=' + that.data.sence
-                   // url: '../map/map'
+                   //url: '../map/map'
                   
                   })
                 } else {

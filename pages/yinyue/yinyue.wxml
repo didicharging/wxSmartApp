@@ -1,6 +1,6 @@
 
 <view class="section tc">
-  <video id="myVideo" src="{IMG_PATH}/{{index}}.mp4"  controls='{{a}}'></video>
+  <video id="myVideo" src="{{VIDEO_PATH}}/{{index}}.mp4"  controls='{{a}}'></video>
 
   
 </view>
@@ -13,39 +13,25 @@
 </view>
 
 
-
-
-
-
-
-
-<view class="nav">
-  <view class="" bindtap='homePage' >
-    <image src="/images/shouye.jpg"></image>
+ <view class="nav">
+<view class="" bindtap="homePage">
+    <image src="{{IMG_PATH}}/shouye.jpg"></image>
     <view>首页</view>
   </view>
   <view class="" bindtap="goToShare">
-    <image src="/images/fangdian.png"></image>
+    <image src="{{IMG_PATH}}/fangdian.png"></image>
     <view>发布</view>
   </view>
    <view class="scanCode" bindtap="scanCode">
-    <image src="/images/chudian.png"></image>
+    <image src="{{IMG_PATH}}/chudian.png"></image>
      <view>扫一扫</view> 
   </view>
   <view class="" bindtap="goToMap">
-    <image src="/images/laidian.png"></image>
-    <view>附近</view>
+    <image src="{{IMG_PATH}}/laidian.png"></image>
+    <view>有电</view>
   </view>
-
- 
-
-  <!-- <view class="" bindtap="goToNotice">
-    <image src="/images/tongzhi.png"></image>
-    <view>互动</view>
-  </view> -->
-
-  <view class="" bindtap="goToUser">
-    <image src="/images/wode.png"></image>
+  <view class="" >
+    <image src="{{IMG_PATH}}/wode.png"></image>
     <view>我的</view>
   </view>
 

@@ -5,11 +5,11 @@
     <image class="backicon" src="{{IMG_PATH}}/backicon.png"></image>
   </view>
   <view class="items">
-    <view class="item">
+    <view class="item" data-page="myWallet" bindtap="goToNewPage">
       <image class="coin" src="{{IMG_PATH}}/coin.png"></image>
       <text>嘀嘀币：{{userInfo.amount}}</text>
     </view>
-    <view class="item">
+    <view class="item" data-page="myDevice" bindtap="goToNewPage">
       <!-- <text>分享：{{userInfo.sharePictureNum + userInfo.shareDeviceNum}}</text> -->
       <text>设备：{{userInfo.deviceCount }}</text>
     </view>
@@ -125,12 +125,7 @@
     <view>有电</view>
   </view>
 
- 
 
-  <!-- <view class="" bindtap="goToNotice">
-    <image src="{{IMG_PATH}}/tongzhi.png"></image>
-    <view>互动</view>
-  </view> -->
 
   <view class="" >
     <image src="{{IMG_PATH}}/wode2.png"></image>

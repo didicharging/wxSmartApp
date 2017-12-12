@@ -2,22 +2,28 @@
 
 <block wx:if="{{!maskState}}">
   <map id="myMap" scale="11" controls="{{controls}}" markers="{{mapMarks}}" show-location longitude="{{longitude}}" latitude="{{latitude}}" style="width: 100%;height: {{windowHeight}}px" bindmarkertap="markertap" bindcontroltap="controltap">
+
+  
+  <cover-view>
+    <cover-view>您的余额：{{wallet.amount}}嘀嘀币</cover-view>
+    <cover-view>您的押金：{{wallet.shareAmount}}元</cover-view>
+  </cover-view>
+
   </map>
 </block>
-
-
 
               
 <block wx:if="{{maskState}}">
 
- <image src='{{IMG_PATH}}/mapback.jpg' style="width: 100%;height: {{windowHeight}}px"></image>
+ <image src='{{IMG_PATH}}/mapback.png' style="width: 100%;height: {{windowHeight}}px"></image>
 
   <view class="mask mask-on">
 
     <view class="container">
 
       <view class="close-mask">
-        <image bindtap="bindCloseMask" src="{{IMG_PATH}}/close-icon.png"></image>
+        <image bindtap="bindCloseMask" src="{{IMG_PATH}}/close-icon.png"></image>      
+        
       </view>
 
       <view class='desc'>
@@ -33,8 +39,8 @@
 
       <view class='find'>
 
-        <button bindtap="findStation" type="primary">找到它</button>
-        <button bindtap="callChargeMan" type="primary">联系它</button>
+        <button bindtap="findStation" type="primary">找到他</button>
+        <button bindtap="callChargeMan" type="primary">联系他</button>
 
       </view>
 
