@@ -1,0 +1,81 @@
+page{
+  font-family: "Microsoft YaHei";
+  font-size: 32rpx;
+}
+
+.rectangle{
+  position:relative;
+  width: 100%;
+  height: 280rpx;
+
+  background: #ffd843;
+  
+}
+
+
+
+
+/*设备描述  */
+.device{
+  padding-top:40rpx; 
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+
+
+.device image{
+  width: 200rpx;
+  height: 200rpx;
+} 
+
+.device .desc{
+   margin-left: 20rpx;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+
+/*金额  */
+ .yuan{
+  margin-top:60rpx; 
+  width: 100%;
+  display: flex;
+  justify-content:center; 
+  font-size: 100rpx;
+}
+
+.wechat-pay {
+  margin-top: 80rpx;
+  background: red;
+  width: 600rpx;
+  height: 150rpx;
+  color: #fff;
+  font-size: 60rpx;
+ 
+}
+
+
+.des{
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+  margin-top:120rpx;
+  margin-left: 5%;
+}
+
+
+.des .content{
+ 
+  padding: 5rpx; 
+  text-align: left;
+}
+
+
+
+
+
+
+
+

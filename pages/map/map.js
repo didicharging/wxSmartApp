@@ -43,17 +43,44 @@ Page({
     let mapControls = [
 
       {
-        id: 2,
-        iconPath: '/images/sos.png',
+        id: 1,
+        iconPath: '/images/kefu.png',
         position: {
-          left: that.data.windowWeight / 2 - 35,
-          top: that.data.windowHeight - 100,
-          width: 70,
-          height: 70
+          left: 21,
+          top: that.data.windowHeight - 51,
+          width: 40,
+          height: 40
         },
         clickable: true
       },
+      
+      {
+        id: 2,
+        iconPath: '/images/chudian.png',
+        position: {
+          left: that.data.windowWeight / 2 - 35,
+          top: that.data.windowHeight - 102,
+          width: 80,
+          height: 80
+        },
 
+        clickable: true
+      },
+
+
+      {
+        id: 3,
+        iconPath: '/images/wode3.png',
+        position: {
+          left: that.data.windowWeight  - 61,
+          top: that.data.windowHeight - 51,
+          width: 40,
+          height: 40
+        },
+        clickable: true
+      }
+
+      
 
     ];
 
@@ -104,24 +131,43 @@ Page({
    
    let that=this;
 
-    if (e.controlId == 2) {
+   //打客户电话
+    if (e.controlId == 1) {
       console.log("yui");
       wx.showModal({
         title: '提示',
-        content: '您将播打4001851018,由我们的客服人员手动为您下单',
+        content: '联系客服：4001851018',
         success: function (res) {
           if (res.confirm) {
             wx.makePhoneCall({
               phoneNumber: '4001851018'
             });
     
-
           } else if (res.cancel) {
 
           }
         }
       })
     }
+
+    //扫码
+    if (e.controlId == 2) {
+      console.log("yui");
+      scansaoma(app.globalData.userId, goToReceiveDev, PATH);
+        
+      
+    }
+
+    //我的
+    if (e.controlId == 3) {
+
+       wx.navigateTo({
+         url: '../user/user',
+       })
+
+
+    }
+
   },
   
 
@@ -183,7 +229,7 @@ Page({
   // 触电扫码
   scanCode: function () {
     let that = this;
-    scansaoma(app.globalData.userId, goToReceiveDev, PATH)
+    scansaoma(app.globalData.userId, goToReceiveDev, PATH);
   },
   // 我的
   goToUser: function () {

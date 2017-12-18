@@ -45,12 +45,6 @@
     </view>
   </view>
 
-  <!--<view class="item">
-    <view class="title">身份证号码</view>
-    <view class="info">
-      <input placeholder="输入身份证号码" placeholder-class="placeholder" bindinput="bindinputIdCard" />
-    </view>
-  </view>-->
 
 </view>
 

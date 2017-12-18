@@ -57,6 +57,7 @@ Page({
             'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/19.jpg',
     ]
   },
+
   onShow: function () {
     // console.log("ref");
     wx.showShareMenu({
@@ -70,6 +71,8 @@ Page({
     });
    
   },
+
+
   mengbanbindtap:function(e){
     console.log(e)
     wx.navigateTo({
@@ -178,7 +181,18 @@ Page({
       })
     }
 
+   //开始定时函数
+    let timeInterval = setInterval(function () {
+
+      
+   //   getmyWallet(that);
+  
+    }, 10000);
+
     getBanner(that);
+
+   
+
     that.setData({
       arr1: [],
       arr2: []
@@ -191,7 +205,6 @@ Page({
         status: 'new'
       })
     }
-
 
 
     if (options.sence && options.sence != "undefined") {
@@ -231,7 +244,7 @@ Page({
     }
     setTimeout(function () {
       guanbi(that)
-    }, 5000)
+    }, 2000)
   },
   bindUpper: function (e) {
     let that = this;
@@ -313,6 +326,7 @@ function editUserModal() {
     }
   })
 }
+
 function tipModal(tip) {
   wx.showToast({
     title: tip,
@@ -343,18 +357,7 @@ function getShareList(that, page, status) {
     success: function (res) {
       console.log(res);
       switchScroll = true;
-      if (res.statusCode == 200 && res.data.status == 201) {
-        wx.showModal({
-          title: '提示',
-          content: '您上次结算'+(res.data.autoPayCount+res.data.unpayCount)+'单，共支付嘀嘀币'+res.data.autoPayFree+'，微信共支付' + res.data.unpayFree + '元',
-          showCancel: false,
-          confirmText: "我知道了",
-          success: function (res) {
-            getShareList(that, 1, that.data.status);
-          }
-        })
-        return;
-      }
+  
       if (res.statusCode == 200 && res.data.status == 200) {
         let list = res.data.result.data
         if (list.length == 0) {
@@ -367,6 +370,7 @@ function getShareList(that, page, status) {
         setTimeout(function () { 
           wx.hideToast();
         }, 500);
+ 
         // console.log(list);
         that.setData({
           shareList: list
@@ -394,19 +398,6 @@ function getShareList(that, page, status) {
           arr1: arr1,
           arr2: arr2
         })
-      } else if (res.statusCode == 200 && res.data.status == 211) {
-        app.globalData.payDataInfo = res;
-        wx.showToast({
-          title: "你有未完成的设备使用订单",
-          icon: 'loading',
-          duration: 2500,
-          success: function () {
-            setTimeout(function () {
-              goToPayUseFee();
-            }, 2500);
-          }
-        });
-
       }
     }
   })
@@ -434,6 +425,89 @@ function getBanner(that) {
   })
 }
 
+ //调取个人钱包函数
+ function getmyWallet(that){
+
+   wx.request({
+     url: PATH + "/account-service/user/getUserInfoById",
+     header: {
+       'Access-Token': app.globalData.accessToken,
+     },
+     method: "GET",
+     data: {
+       id: app.globalData.userId
+     },
+     success: function (res) {
+
+       if (res.data.status == 200) {
+
+         let amount = res.data.user.amount;
+         let electric = res.data.user.electric;
+         try {
+           var value = wx.getStorageSync('key');
+
+           if (value == null || value < amount ) {
+           wx.playBackgroundAudio({
+             dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/sound/didi.wav',
+           })
+
+             wx.setStorage({
+               key: "key",
+               data: amount
+             });             
+           }
+
+           if (value == null || value > amount) {
+
+             wx.playBackgroundAudio({
+               dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/sound/didi1.wav',
+             })
+
+             wx.setStorage({
+               key: "key",
+               data: amount
+             });
+           }
+
+           var value1 = wx.getStorageSync('key1');
+
+           console.log("value: "+value1);    
+
+           if (value1 == null || value1 < electric) {
+      
+             wx.playBackgroundAudio({
+               dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/sound/didi2.wav',
+    
+             })
+
+             wx.setStorage({
+               key: "key1",
+               data: electric
+             });
+
+             wx.showModal({
+               title: '提示',
+               content: '有人给你点赞了，请在消息列表查看',
+               showCancel:false,
+               success: function (res) {
+                
+               }
+             })
+
+
+           }
+
+
+         } catch (e) {
+           console.log();
+         }
+
+       }
+     },
+   });
+
+ }
+
 // 关闭模态框
 function guanbi (that) {
   that.setData({
@@ -444,6 +518,5 @@ function guanbi (that) {
 function yinyue() {
   wx.playBackgroundAudio({
     dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/didi.wav',
-
   })
 }

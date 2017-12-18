@@ -1,0 +1,21 @@
+<view>
+
+  <view class='pay'>
+    <view class='img'>
+      <image class='payok' src="/images/paySuccess.png"></image>
+    </view>
+
+
+
+  </view>
+
+
+  <view class='warm'>
+
+    <view class='img'>    
+      <image class='charing' src="/images/charging.png"></image>
+    </view>
+    
+  </view>
+
+</view>

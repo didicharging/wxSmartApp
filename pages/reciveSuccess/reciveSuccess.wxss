@@ -1,0 +1,31 @@
+page{
+  font-family: "Microsoft YaHei";
+  font-size: 32rpx;
+}
+
+
+.pay .img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pay .img .payok{
+  margin-top: 311rpx;
+  width: 340rpx;
+  height: 80rpx;
+} 
+
+
+.warm .img{
+  margin-top: 248rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.warm .charing{
+  width: 480rpx;
+  height: 100rpx;
+}
+

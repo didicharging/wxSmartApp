@@ -22,7 +22,17 @@ Page({
     inputFocus: false,
     inputMoneyTip: '手动输入充值金额',
     initMoney: null,
-    walletInfo:null
+    walletInfo:null,
+    items: [
+      { name: '10', value: '10' },
+      { name: '50', value: '50' },
+      { name: '100', value: '100' },
+      { name: '500', value: '500' },
+      { name: '1000', value: '1000' },
+      { name: '2000', value: '2000' },
+    ],
+
+
   },
   onLoad: function (option) {
     let that = this;
@@ -138,16 +148,16 @@ Page({
                 if (res.statusCode == 200 && res.data.status == 211) {
                   console.log("有欠款");
 
-
                   wx.showModal({
                     title: '提示',
 
-                    content: '您有未支付订单共计：' + res.data.money + "元，详情请在我的钱包查看消费日志",
+                    // content: '您有未支付订单共计：' + res.data.money + "元，详情请在我的钱包查看消费日志",
+                    content:  res.data.message,
+                    showCancel: false,
                     showCancel: false,
                     confirmText: "开始支付",
                     success: function (res) {
                       payDebt(app.globalData.userId);
-
                     }
                   });
                   return;
@@ -155,7 +165,7 @@ Page({
 
                 if (res.statusCode == 200 && res.data.status == 200){
                 wx.showToast({
-                  title: '共享金退还成功',
+                  title: '提交成功，预计1到3天到帐',
                   icon: 'loading',
                   duration: 1500,
                   success: function () {
@@ -175,19 +185,6 @@ Page({
                 });
               }
 
-                
-              // wx.showToast({
-              //   title: "你有未完成的设备使用订单",
-              //   icon: 'loading',
-              //   duration: 2500,
-              //   success: function () {
-              //     setTimeout(function () {
-              //       goToPayUseFee();
-              //     }, 2500);
-              //   }
-              // });
-
-
 
             }
           });
@@ -199,12 +196,14 @@ Page({
   },
 
 
-  bindChoosePay:function (e) {
-    console.log(e);
-    this.setData({
-      choosePay: e.currentTarget.dataset.money
-    });
+
+  radioChange: function (e) {
+
+    let that = this;
+    console.log('选择要充值的金额为：', e.detail.value);
+    this.setData({ choosePay: e.detail.value });
   },
+
   // 选择手动输入金额
   bindInputMoney: function () {
     if (this.data.inputMoney == 'off') {
@@ -223,6 +222,8 @@ Page({
       });
     }
   },
+
+  
   bindInputBlur: function (e) {
     this.setData({
       choosePay: e.detail.value 
@@ -265,6 +266,8 @@ function getWalletInfo (that) {
           walletInfo: res.data.wallet,
           deviceCount: res.data.deviceCount
         });
+        
+
       }
     }
   })
@@ -302,7 +305,7 @@ function pay(money, that) {
                 setTimeout(function () {
                   getWalletInfo(that);
                 }, 1500);
-                yinyue()
+         
               }
             });
           },
@@ -316,12 +319,3 @@ function pay(money, that) {
 }
 
 
-
-
-function yinyue() {
-  wx.playBackgroundAudio({
-    dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/didi.wav',
-
-
-  })
-}

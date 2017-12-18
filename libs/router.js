@@ -49,13 +49,12 @@ export function goToUserList (id) {
 }
 // 领取设备
 
-// goToReceiveDev(money, device.id);
-export function goToReceiveDev(money,deviceId) {
+// export function goToReceiveDev(money,deviceId) {
   
-  let url = '../receiveDev/receiveDev?money=' + money + '&deviceId=' + deviceId;
+//   let url = '../receiveDev/receiveDev?money=' + money + '&deviceId=' + deviceId;
 
-  navigateTo(url);
-}
+//   navigateTo(url);
+// }
 
 // 跳到扫码功能选择画面
 export function goToScaneCode(isManager, deviceId, deviceNo) {

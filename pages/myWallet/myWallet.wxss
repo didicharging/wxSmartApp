@@ -2,14 +2,18 @@ page{
   font-family: "Microsoft YaHei";
   font-size: 28rpx;
   font-weight: 500;
+
 }
 .user .title{
   font-size: 32rpx;
   font-weight: 600;
 }
 .user{
-  padding: 60rpx 40rpx 30rpx 40rpx;
+  padding: 43rpx 40rpx 30rpx 46rpx;
+  border-bottom:10rpx solid rgb(233, 233, 233); 
+
 }
+
 .user .state>view{
   display: inline-block;
   width: 33.3%;
@@ -19,16 +23,7 @@ page{
   color: #666;
   text-align: left;
 }
-.up-state{
-  text-align: right;
-}
-.up-state text{
-  font-size: 32rpx;
-  padding: 16rpx 24rpx;
-  border-radius: 16rpx;
-  color: #fff;
-  background-color: #b3b3b3;
-}
+
 .coin{
   display: inline-block;
   width: 40rpx;
@@ -38,8 +33,8 @@ page{
   position: relative;
   top: -4rpx;
   margin-left:10rpx;
-
 }
+
 .content>view{
   display: inline-block;
   width: 180rpx;
@@ -79,35 +74,45 @@ page{
   color: #fff;
   background-color: #999;
 }
+
 .recharge{
-  border-top: 12rpx solid #e6e6e6;
-  padding: 0rpx 40rpx 40rpx 40rpx;
+   width: 100%;
+   height: 300rpx;
+   padding: 0rpx 40rpx 40rpx 40rpx; 
+
 }
+
 .recharge .title{
   font-size: 32rpx;
   font-weight: 600;
-  color: #666;
-  padding: 24rpx 0rpx 42rpx 0rpx;
+
+  padding: 42rpx 0rpx 50rpx 0rpx;
+
+  text-align: left;
+
 }
-.recharge .content{
-  display: none;
-  flex-direction: row;
+
+ .radio-group {
+ position: relative;
+ width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content:center;
+} 
+
+ .radio-group .item {
+   padding-top:20rpx; 
+   width: 30%;
 }
-.recharge .content .item{
-  flex: 1;
-  text-align: center;
+
+ .radio-group text {
+   position: relative;
+   left: 60rpx;
+   top: -30rpx;
+   width: 30%;
+   color: red;
 }
-.recharge .content .item>view{
-  display: inline-block;
-  width: 180rpx;
-  padding: 12rpx 0rpx;
-  border-radius: 8rpx;
-  border: 2px solid #fae988;
-  color: #999;
-}
-.recharge .content .item>view view:last-child{
-  font-size: 24rpx;
-}
+
 .input-money{
   width: 450rpx;
   text-align: center;
@@ -118,19 +123,21 @@ page{
   border-radius: 16rpx;
 }
 .submit{
-  width: 450rpx;
-  text-align: center;
-  margin: 0 auto;
-  padding: 16rpx 0rpx;
-  color: #666;
-  background-color: #f4d000;
-  border-radius: 16rpx;
-  margin-top: 160rpx;
-  font-weight: 600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.submit image{
+  padding-top: 42rpx;
+  width: 480rpx;
+  height: 102rpx ;
+}
+
 .input-box{
   border-bottom: 1px solid #e6e6e6;
   display: none;
+  padding-top:50rpx; 
 }
 .input-box text{
   font-size: 80rpx;

@@ -18,8 +18,15 @@ Page({
   },
 
   onLoad: function (option) {
-    
+    console.log(option);
+    if(option.page=='device'){
+      wx.navigateTo({
+        url: '../myDevice/myDevice',
+      })
+    }
+
   },
+   
   onShow: function () {
     let that = this;
     wx.request({
@@ -27,7 +34,9 @@ Page({
       header: {
         'Access-Token': app.globalData.accessToken,
       },
+
       method: "GET",
+      
       data: {
         id: app.globalData.userId
       },

@@ -9,9 +9,12 @@
     "pages/startService/startService",
     "pages/payUseFee/payUseFee",
     "pages/receiveDev/receiveDev",
+    "pages/reciveSuccess/reciveSuccess",
+    
     "pages/scaneCode/scaneCode", 
     "pages/paySuccess/paySuccess",
-
+    "pages/payShareSuccess/payShareSuccess",    
+    "pages/payShare/payShare",
     "pages/activePage/activePage",
     "pages/agreement/agreement",
     "pages/main/main",
@@ -22,7 +25,7 @@
     "pages/userList/userList",
     "pages/userInfo/userInfo",
     "pages/shareInfo/shareInfo",
-
+    "pages/reciveCharging/reciveCharging",
     "pages/nearbyDev/nearbyDev",
     "pages/share/share",
     "pages/shareHistory/shareHistory",

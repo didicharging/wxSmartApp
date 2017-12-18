@@ -1,5 +1,5 @@
 /* pages/devInfo/devInfo.wxss */
-page{
+/* page{
   background-color: #f0f0f0;
 }
 .banner{
@@ -22,17 +22,66 @@ page{
   line-height: 1.4rem;
   font-size: 32rpx;
 }
+ */
+
+page{
+  font-family: "Microsoft YaHei";
+  font-size: 32rpx;
+}
+
+.rectangle{
+  position:relative;
+  width: 100%;
+
+  background: #ffd843;
+  
+}
+
+/*设备描述  */
+.device{
+  padding-top:20rpx; 
+  padding-bottom: 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+
+}
+.device .img{
+    display: flex;
+    justify-content:center;
+    flex-direction:column;
+}
+.device image{
+  width: 200rpx;
+  height: 200rpx;
+} 
+
+.device .desc{
+   margin-left: 30rpx;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
 .use-user{
   background-color: #fff;
   padding: 20rpx;
-  margin-top: 40rpx;
+
+  
 }
 .use-user .title{
-  font-size: 32rpx;
-  font-weight: 500;
-  margin-bottom: 20rpx;
+
+  padding-top: 20rpx;
+  font-weight: 600;
+  color: rgb(0 , 0, 0);
+  padding-bottom: 32rpx;
+  border-bottom: solid 4rpx rgb(216 , 216, 216)
+
 }
+
+
 .img-box{
+  margin-top: 36rpx;
   display: flex;
   flex-direction: row;
 }

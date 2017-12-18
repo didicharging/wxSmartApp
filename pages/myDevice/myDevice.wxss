@@ -3,73 +3,55 @@ page{
   font-size: 28rpx;
 }
 
-.flex-box{
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid #f4d000;
-}
-.flex-box view{
-  flex: 1;
-  text-align: center;
-}
-.flex-box view text{
-  font-size: 32rpx;
-  display: inline-block;
-  padding: 20rpx 10rpx;
-  vertical-align: top;
-}
-
-view.on text{
-
-  background-color: #f4d000;
-  color: #fff;
-}
-
-
-
-
 .devTip{
   font-size: 40rpx;
   text-align: center;
   margin: 60rpx;
+  position: relative;
 }
+
+
 .dev-item{
   border-bottom: 1px solid #ccc;
   padding: 24rpx 30rpx;
+  display: flex;
+  position: relative;
 }
-.dev-item>view{
-  display: inline-block;
-}
+
 .dev-item .img-box{
-  width: 120rpx;
-}
+
+  margin-right:40rpx  
+} 
+
 .img-box image{
   width: 80rpx;
   height: 80rpx;
-  vertical-align: bottom;
 }
+
 .dev-item .dev-info{
-  width: 420rpx;
+  width: 410rpx;
   font-size: 24rpx;
-  position: relative;
-  top: -8rpx;
+   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
-.dev-item .seach-btn{
-  vertical-align: top;
-  text-align: right;
-  width: 150rpx;
+
+ .dev-info view{
+  width: 410rpx;
+} 
+
+
+
+
+.dev-item .dev-remainder{
+    display: flex;
+    align-items: center;
 }
-.dev-item .seach-btn image{
-  width: 28rpx;
-  height: 28rpx;
-  vertical-align: middle;
-  position: relative;
-  top: -2rpx;
-}
-.dev-item .seach-btn>view{
-  padding: 16rpx 24rpx;
-  background-color: #f4d000;
-  color: #fff;
-  margin: 0 auto;
-  border-radius: 16rpx;
-}
+
+
+
+
+
+

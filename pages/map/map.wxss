@@ -25,6 +25,7 @@ map{
 }
 cover-view{
   font-size: 40rpx;
+  color:#5D5D5D;
 }
 
 

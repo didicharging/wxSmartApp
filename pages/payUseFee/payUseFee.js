@@ -23,15 +23,15 @@ Page({
         unpayCount: payDataInfo.data.unpayCount,
         totalDayCount: payDataInfo.data.totalDayCount,
         unpayFree: payDataInfo.data.unpayFree
-    //   payFee: payDataInfo.data.payFee
+
     });
   },
   bindWechatPay: function () {
-    // let payDataInfo = app.globalData.payDataInfo;
+
     wx.showToast({
       title: '加载中',
       icon: 'loading',
-      // duration: 1500
+  
     })
     wx.request({
       url: PATH + '/resource-service/share/getShareList',

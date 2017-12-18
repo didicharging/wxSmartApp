@@ -42,7 +42,7 @@
             </view>
             <view class="info-content">
              <view class="local">
-                <image src='{{item.user.profile_image?item.user.profile_image:"{{IMG_PATH}}/niming.png"}}'></image>
+                <image src='{{item.user.profile_image?item.user.profile_image:"../..//images/niming.png"}}'></image>
     
               </view> 
               <view class="nick">

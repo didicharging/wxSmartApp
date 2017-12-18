@@ -270,7 +270,7 @@ function wxLogin(that, newUser) {
               },
               //post success
               success: function (res2) {
-                // console.log(res2);
+                 console.log(res2);
                 if (res2 && res2.statusCode == 200) {
                   wx.hideLoading();
                   app.globalData.accessToken = res2.data.result.accessToken;
@@ -283,11 +283,14 @@ function wxLogin(that, newUser) {
                   } 
 
                   
+                  let mainPage = res2.data.pages ? res2.data.pages : '../map/map?sence='; 
                   wx.redirectTo({
-                     url: '../main/main?sence=' + that.data.sence
-                   //url: '../map/map'
-                  
+                    //  url: '../main/main?sence=' + that.data.sence
+                   //  url: '../map/map?sence=' + that.data.sence
+                    url: res2.data.pages  + that.data.sence         
+
                   })
+
                 } else {
                   wx.hideLoading();
                   wx.showLoading({

@@ -1,7 +1,7 @@
 //app.js
 
-//let path = "https://appv2.didicharging.com/di";
- let path = "http://localhost/di";
+
+let path = "http://localhost/di";
 //let path ="https://app.liguangxu.top/di";
 //let path = "https://api.didicharging.com/di";
 
@@ -20,7 +20,7 @@ App({
         // console.log(kScreenW, kScreenH);
       }
     });
-    
+     
   },
 
   getUserInfo: function (cb) {
@@ -36,7 +36,7 @@ App({
               success: function (res) {
                 console.log(res);
                 app.globalData.userInfo = res.userInfo
-                // typeof cb == "function" && cb(that.globalData.userInfo)
+            
                 wx.request({
                   url: path + '/gateway/onMiniProgramLogin',
                   method: 'post',

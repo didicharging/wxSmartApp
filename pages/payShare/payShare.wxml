@@ -1,0 +1,26 @@
+
+
+<view class="rectangle">
+
+           <view class="device">              
+              <image src="{{device.imgUrl}}"></image>              
+              <view class='desc'>
+                <view class="code"> 设备编号：{{device.deviceNo}}</view>
+                <view class="code1">设备名称：{{device.name}}</view> 
+                <view class="code3">设备押金：{{device.shareMoney}}元</view> 
+                <view class="code4">设备租金：{{rental}}元/{{rentalType}}</view>  
+              </view> 
+            </view>       
+
+</view>
+
+<view class="yuan">￥650</view>
+
+<button class="wechat-pay" bindtap="wechatPay" disabled="{{canPay}}">微信支付</button>
+
+<view class="des">
+
+  <view class="content">1.嘀嘀币1元=100嘀嘀币</view>
+  <view class="content">2.设备租金以嘀嘀几点结算，嘀嘀币不足时，无法退押金，您需要补交押金，您需要补交所欠费的嘀嘀币</view>
+
+</view> 

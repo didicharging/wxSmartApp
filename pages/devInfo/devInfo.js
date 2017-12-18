@@ -24,24 +24,8 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    let id = options.id;
-
-    wx.request({
-      url: PATH + '/resource-service/share/getBanner',
-      method: 'get',
-      header: {
-        'Access-Token': app.globalData.accessToken,
-      },
-      success: function (res) {
-        console.log(res);
-        if (res.statusCode == 200 && res.data.status == 200) {
-          that.setData({
-            imgUrls: res.data.list
-          });
-        }
-      }
-    });
-
+    //let id = options.id;
+    let id=3;
 
     wx.request({
       url: PATH + "/resource-service/device/getDeviceDetail",
@@ -55,6 +39,24 @@ Page({
       success: function (res) {
         console.log(res);
         if (res.data.status == 200) {
+
+          if (res.data.device.rentalType == 1) {
+            that.setData({ rentalType: "小时" });
+            that.setData({ rental: parseFloat(res.data.device.rentalH ) });
+          }
+
+          if (res.data.device.rentalType == 2) {
+            that.setData({ rentalType: "日" });
+            that.setData({ rental: parseFloat(res.data.device.rental ) });
+          }
+
+          if (res.data.device.rentalType == 3) {
+            that.setData({ rentalType: "月" });
+            that.setData({ rental: parseFloat(res.data.device.rentalM) });
+          }
+
+
+
           that.setData({
             devInfo: res.data.device,
             userList: res.data.pastUserList
@@ -78,8 +80,12 @@ Page({
   },
   goToShareHistory: function (e) {
     let id = e.currentTarget.dataset.id;
-    wx.redirectTo({
+    // wx.redirectTo({
+    //   url: '../shareHistory/shareHistory?id=' + id
+    // });
+
+    wx.navigateTo({
       url: '../shareHistory/shareHistory?id=' + id
-    });
+    })
   }
 })

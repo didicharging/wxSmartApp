@@ -9,7 +9,7 @@ let IMG_PATH = app.globalData.IMG_PATH;
 let userInfoSync = wx.getStorageSync("userInfo");
 let time = 60;
 let again = true;
-// console.log(userInfoSync);
+
 Page({
   data:{
     IMG_PATH: IMG_PATH,

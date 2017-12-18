@@ -5,8 +5,8 @@
 
   
   <cover-view>
-    <cover-view>您的余额：{{wallet.amount}}嘀嘀币</cover-view>
-    <cover-view>您的押金：{{wallet.shareAmount}}元</cover-view>
+    <cover-view>余额：{{wallet.amount}}嘀嘀币</cover-view>
+    <cover-view>押金：{{wallet.shareAmount}}元</cover-view>
   </cover-view>
 
   </map>
@@ -32,7 +32,6 @@
 
         <view class='chargeMan-desc'>充电大侠：{{station.user}} </view>
 
-        <view class='phone-desc'>联系电话：{{station.phone}} </view>
 
         <view class='address-desc'>站点地址：{{station.address}}</view>
       </view>
