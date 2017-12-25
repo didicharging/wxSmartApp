@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.0",
 	"appid": "wxb578ca87ab1f91c7",
-	"projectname": "%E5%98%80%E5%98%80%E5%85%85%E7%94%B5",
+	"projectname": "didi",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -26,7 +26,7 @@
 				{
 					"id": 0,
 					"name": "boul",
-					"pathName": "pages/yinyue/yinyue",
+					"pathName": "pages/reciveSuccess/reciveSuccess",
 					"query": ""
 				}
 			]

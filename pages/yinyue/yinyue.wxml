@@ -1,17 +1,23 @@
+<!--视频详情页 貌似没有用 -->
 
 <view class="section tc">
-  <video id="myVideo" src="{{VIDEO_PATH}}/{{index}}.mp4"  controls='{{a}}'></video>
+  <video id="myVideo" src="{{VIDEO_PATH}}/{{index}}.mp4"  controls='{{a}}' binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls
+></video>
 
   
 </view>
 
 
 <view class='block xiu-box'>
-    <view class='xiu'>
-        <button  open-type="share">分享给朋友</button>
-    </view>
+     <view class="btn-area">
+        <view>发送弹幕</view>
+        <input bindblur="bindInputBlur" auto-focus class="text" />
+      </view>
+      <view class='metohd'>
+        <button bindtap="bindSendDanmu"  class="footer_btn" plain >发送弹幕</button>
+        <button  open-type="share" class='footer-btn1'>分享给朋友</button>
+      </view>
 </view>
-
 
  <view class="nav">
 <view class="" bindtap="homePage">

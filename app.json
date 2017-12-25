@@ -1,49 +1,56 @@
-{
-  "pages":[
+////////////////{
+  "pages": [
     "pages/login/login",
+    
+    "pages/Sharing/Sharing",
+    "pages/equipment/equipment",
+    "pages/walletLog/walletLog",
+    
     "pages/yinyue/yinyue",
-  
     "pages/map/map",
     "pages/myWallet/myWallet",
     "pages/myDevice/myDevice",
+    "pages/surrender/surrender",
     "pages/startService/startService",
-    "pages/payUseFee/payUseFee",
+    "pages/recharge/recharge",
     "pages/receiveDev/receiveDev",
     "pages/reciveSuccess/reciveSuccess",
-    
-    "pages/scaneCode/scaneCode", 
+    "pages/scaneCode/scaneCode",
     "pages/paySuccess/paySuccess",
-    "pages/payShareSuccess/payShareSuccess",    
+    "pages/payShareSuccess/payShareSuccess",
     "pages/payShare/payShare",
     "pages/activePage/activePage",
     "pages/agreement/agreement",
     "pages/main/main",
     "pages/user/user",
     "pages/user/letter/letter",
+    "pages/details/details",
+    "pages/postpone/postpone",
     "pages/user/myCode/myCode",
-    "pages/user/notice/notice", 
+    "pages/user/notice/notice",
     "pages/userList/userList",
     "pages/userInfo/userInfo",
+    "pages/sufficient/sufficient",
     "pages/shareInfo/shareInfo",
+    
     "pages/reciveCharging/reciveCharging",
     "pages/nearbyDev/nearbyDev",
     "pages/share/share",
     "pages/shareHistory/shareHistory",
     "pages/devInfo/devInfo",
     "pages/shareDetail/shareDetail",
-
     "pages/followList/followList",
+    
     "pages/fansList/fansList",
-    "pages/walletLog/walletLog"
-
+    
+    "pages/payUseFee/payUseFee",
+    "pages/bill/bill"
   ],
-  
-
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffd843",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "debug": false
 }

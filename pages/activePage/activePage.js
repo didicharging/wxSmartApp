@@ -1,3 +1,5 @@
+//活动页面基本没有
+
 // pages/activePage/activePage.js
 let app = getApp();
 let PATH = app.globalData.PATH;
@@ -21,6 +23,7 @@ Page({
     })
     getActive(this);
   },
+
   bindHome: function () {
     wx.reLaunch({
       url: '../main/main',

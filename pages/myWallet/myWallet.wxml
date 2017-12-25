@@ -1,34 +1,68 @@
 <view class="user ">
-
-  <view class="state wallet">
+  <view class='above'>
+    <view class='above-one'>
+      <text class='above-one-first'>账户状态</text>
+      <text class='common'>{{walletInfo.stateName}}</text>
+      <text class='button' bindtap="goToWalletLog">账单</text>
+    </view>
+    <view class='above-one'>
+      <text class='above-one-first'>共享金额</text>
+      <text class='common'>{{walletInfo.shareAmount}}</text>
+      <text class='button' bindtap="examine">查看</text>
+    </view>
+    <view class='above-one'>
+      <text class='above-one-first'>共享服务</text>
+      <text class='common'>{{walletInfo.canReturnShare}}</text>
+      <text class='button' bindtap="serve">查看</text>
+    </view>
+    <view class='above-one'>
+      <text class='above-one-first'>滴滴币<image class="coin" src="{{IMG_PATH}}/coin.png"></image></text>
+      <text class='common comment'>{{walletInfo.amount}}</text>
+      <text class='button'>提现</text>
+    </view>
+  </view>
+  <!-- <view class="state wallet">
     <view class="title">账户状态</view>
-    <view class="state-name">{{walletInfo.stateName}} </view>
+    <view class="state-name">{{walletInfo.stateName}}</view>
     <view class="btn">
-      <view bindtap="goToWalletLog">交易明细</view>
+      <view bindtap="goToWalletLog">账单</view>
     </view>
   </view>
 
-  <view class="wallet">
+    <view class="wallet">
+    <view class="content title"> -->
+    
+    <!-- <view>共享金额</view>
+      <text>{{walletInfo.shareAmount}}</text>
+    </view>
+    
+    <view class="btn" bindtap="bindRefundMoney">
+      <view>查看</view>
+    </view> 
+  </view>
+    <view class="wallet">
+    <view class="content title"> -->
+    
+    <!-- <view>共享服务</view>
+      <text>{{walletInfo.canReturnShare}}</text>
+    </view>
+    
+    <view class="btn" bindtap="bindRefundMoney">
+      <view>查看</view>
+    </view> 
+  </view> -->
+
+  <!-- <view class="wallet">
     <view class="content title">
       <view> 嘀嘀币<image class="coin" src="{{IMG_PATH}}/coin.png"></image></view>
       <text>{{walletInfo.amount}}</text>
     </view>
     <view class="btn">
-      <!-- <view bindtap="bindWithdrawals">提现申请</view> -->
+       <view bindtap="bindWithdrawals">提现</view> 
     </view>
-  </view>
+  </view> -->
 
-  <view class="wallet">
-    <view class="content title">
-    
-    <view>共享金(元)</view>
-      <text>{{walletInfo.shareAmount}} 元</text>
-    </view>
-    
-    <view class="btn" bindtap="bindRefundMoney">
-      <view>退共享金</view>
-    </view> 
-  </view>
+  
 
 
 </view>

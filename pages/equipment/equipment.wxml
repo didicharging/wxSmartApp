@@ -1,0 +1,43 @@
+<view class='circle-box'>
+  <view class='top'>
+    <view class='money'>
+      <text class='money'>开通服务</text>
+    </view>
+    <view  class='amount-paid'>
+      <text>5</text>
+    </view>
+  </view>
+  <view class='middle'>
+    <view class='middle-one'>
+      <view class='writing'>3</view>
+      <view class='character'>已领用</view>
+    </view>
+    <view class='middle-tow'>
+      <view class='writing'>1</view>
+      <view class='character'>可领用</view>
+    </view>
+    <view class='middle-three'>
+      <view class='writing'>1</view>
+      <view class='character'>已欠费</view>
+    </view>
+  </view>
+  <view class='base'>
+    <view class='btn' bindtap="detail">
+      <text>查看详情</text>
+    </view>
+    <view class='below'>
+        <view class='below-one' bindtap="recharg">
+          <text class='recharge'>续租</text>
+          <text class='arrows'></text>
+        </view>
+        <view class='below-one' bindtap="surrende">
+          <text class='recharge'>退租</text>
+          <text class='arrows'></text>
+        </view>
+        <view class='below-one' bindtap="rechar">
+          <text class='recharge'>充电</text>
+          <text class='arrows'></text>
+        </view>
+    </view>
+  </view>
+</view>

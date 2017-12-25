@@ -85,6 +85,11 @@ Page({
       duration: 1500
     });
   },
+  Sharing: function () {
+    wx.navigateTo({
+      url: '../myWallet/myWallet?id=' + app.globalData.userId
+    })
+  },
   goToNotice: function () {
     wx.navigateTo({
       url: '../user/notice/notice?id=' + app.globalData.userId
@@ -95,6 +100,16 @@ Page({
     wx.navigateTo({
       url: '../shareHistory/shareHistory?id=' + app.globalData.userId
     });
+  },
+  detai:function(){
+    wx.navigateTo({
+      url: '../details/details'
+    })
+  },
+  follow:function(){
+    wx.navigateTo({
+      url: '../followList/followList',
+    })
   },
   // 去地图
   goToMap: function () {
@@ -121,4 +136,6 @@ Page({
       url: '/pages/main/main',
     })
   }
+
+  
 })

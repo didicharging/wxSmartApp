@@ -1,8 +1,8 @@
 //app.js
 
 
-let path = "http://localhost/di";
-//let path ="https://app.liguangxu.top/di";
+//let path = "http://localhost/di";
+let path ="https://app.liguangxu.top/di";
 //let path = "https://api.didicharging.com/di";
 
 App({
@@ -16,12 +16,12 @@ App({
         wx.setStorageSync('kScreenW', kScreenW)
         wx.setStorageSync('kScreenH', kScreenH)
         wx.setStorageSync('windowWidth', res.windowWidth)
-        wx.setStorageSync('windowHeight', res.windowHeight)
-        // console.log(kScreenW, kScreenH);
+        wx.setStorageSync('windowHeight', res.windowHeight)        
+
       }
     });
      
-  },
+  }, 
 
   getUserInfo: function (cb) {
     var that = this;
@@ -48,10 +48,13 @@ App({
                   },
                   //post success
                   success: function (res2) {
+
                     console.log(res2);
-                  
+
                     app.globalData.accessToken = res2.data.result.accessToken;
+                    
                     app.globalData.userId = res2.data.result.data.id;
+
                   }
                 })
               }

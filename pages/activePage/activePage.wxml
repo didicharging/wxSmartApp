@@ -1,3 +1,4 @@
+<!--活动页面  -->
 <!--pages/activePage/activePage.wxml-->
  <image bindlongtap="bindSaveImg" data-url="{{activeImg}}" class="active-img" src="{{activeImg}}" mode="widthFix"></image> 
 <view class="invitation">

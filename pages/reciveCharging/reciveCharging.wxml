@@ -1,15 +1,14 @@
-<view class="rectangle">
-
-  <view class="device">
-    <image src="{{device.imgUrl}}"></image>
-    <view class='desc'>
-      <view class="code"> 设备编号：{{device.deviceNo}}</view>
-      <view class="code1">设备名称：{{device.name}}</view>
-      <view class="code3">设备押金：{{device.shareMoney}}元</view>
-      <view class="code4">设备租金：{{rental}}嘀嘀币/{{rentalType}}</view>
+<view class="user ">
+  <view class='above'>
+    <view class='above-one'>
+       <view class='money'>
+      <text class='money'>共享金额(元)</text>
+      </view>
+      <view  class='amount-paid'>
+        <text>1500</text>
+      </view>
     </view>
   </view>
-
 </view>
 
 <view class="recharge">
@@ -24,22 +23,9 @@
         <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}￥
       </label>
 
-      <label class='item'>
-        <text>赠20</text>
-      </label>
-
-      <label class='item'>
-        <text>赠30</text>
-      </label>
-
-      <label class='item'>
-        <text>赠50</text>
-      </label>
-
     </radio-group>
 
   </block>
-
 
   <block wx:if="{{inputMoney=='on'?'on':''}}">
 
@@ -53,39 +39,8 @@
 </view>
 
 <view class="input-money" bindtap="bindInputMoney">{{inputMoneyTip}}</view>
-<view class="submit" bindtap="bindPayMoney">充 值</view>
+<view class="submit" bindtap="bindPayMoney">
 
-
-<view class="des">
-
-  <view class="content">1.嘀嘀币1元=100嘀嘀币</view>
-  <view class="content">2.设备租金以嘀嘀几点结算，嘀嘀币不足时，无法退押金，您需要补交押金，您需要补交所欠费的嘀嘀币</view>
-
-</view> 
-
- <view class="nav">
-<view class="" bindtap="homePage">
-    <image src="{{IMG_PATH}}/shouye.jpg"></image>
-    <view>首页</view>
-  </view>
-  <view class="" bindtap="goToShare">
-    <image src="{{IMG_PATH}}/fangdian.png"></image>
-    <view>发布</view>
-  </view>
-   <view class="scanCode" bindtap="scanCode">
-    <image src="{{IMG_PATH}}/chudian.png"></image>
-     <view>扫一扫</view> 
-  </view>
-  <view class="" bindtap="goToMap">
-    <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>有电</view>
-  </view>
-
-
-
-  <view class="" >
-    <image src="{{IMG_PATH}}/wode2.png"></image>
-    <view>我的</view>
-  </view>
+  <image src='{{IMG_PATH}}/charging.png'></image>
 
 </view>

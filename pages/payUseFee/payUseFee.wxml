@@ -1,3 +1,5 @@
+<!--现在没有了，原来是用来支付超期罚单的  -->
+
 <view>
 
   <view class="time-tip" wx:if="{{info.autoPayCount != 0}}">

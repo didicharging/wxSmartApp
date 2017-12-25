@@ -1,4 +1,7 @@
 <!--pages/shareHistory/shareHistory.wxml-->
+
+<!--分享列表  -->
+
 <view class="header">
   <image class="background" src="{{IMG_PATH}}/sharehistory.jpg"></image>
   <view class="user-box">

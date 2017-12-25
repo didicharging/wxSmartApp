@@ -40,9 +40,15 @@ page{
   justify-content: center;
 }
 
-.warm .charing{
-
-  width: 480rpx;
+.charing{
+  display: block;
+  width: 70%;
   height: 100rpx;
-
+  background: #ffd843;
+  line-height:100rpx;
+  text-align: center;
+  border-radius:10rpx;
+  margin-top: 100rpx;
+  font-size: 40rpx;
+  letter-spacing: 5rpx;
 }

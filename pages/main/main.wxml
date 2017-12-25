@@ -10,10 +10,11 @@
       </block>
     </swiper>
   </view>
-
+     
+    <!-- 导航栏 -->
     <view class='choose-type'>
         <view class="">
-            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">秀秀</view>
+            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">悬疑</view>
         </view>
         <view class="">
             <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="new">内涵</view>
@@ -23,6 +24,7 @@
         </view>  
     </view>
     
+    <!--视频  -->
   <block wx:if="{{status=='video'}}">
       <view class="section tc" wx:for='{{divoe}}' wx:key='id'>
         <!-- <video id="myVideo" src="{{item}}" bindfullscreenchange="aa" bindplay="bindplayvideo"   ></video> -->
@@ -33,6 +35,8 @@
       </view>
      
   </block>
+
+  <!-- 图片-->
   <block wx:else>
       <view class="images-box flex-box" >
         <view class="box-1">
@@ -71,10 +75,7 @@
               <view class="amount">
                 <text>浏览量：{{item.readCount}}</text>
               </view>
-              <!-- <view class="local" wx:if="{{item.address != null}}">
-                <text>{{item.address}}</text>
-              </view> -->
-              <!-- <view class="text">{{item.content}}</view> -->
+
             </view>
           </view>
         </view>
@@ -84,6 +85,8 @@
   
 </scroll-view>
 
+
+<!--  -->
 <view class="nav">
 <view class="" >
     <image src="{{IMG_PATH}}/shoye2.jpg"></image>
@@ -99,7 +102,7 @@
   </view>
   <view class="" bindtap="goToMap">
     <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>有电</view>
+    <view>触电</view>
   </view>
 
   <view class="" bindtap="goToUser">
@@ -109,6 +112,7 @@
 
 </view>
 
+<!--发图成功后的提醒  -->
 <view class="mask {{openMask?'mask-on':''}}">
   <view>
      <view bindtap="bindCloseMask" class="close" ></view> 

@@ -1,0 +1,76 @@
+page{
+  font-family: "Microsoft YaHei";
+  font-size: 28rpx;
+}
+.devTip{
+  font-size: 40rpx;
+  text-align: center;
+  margin: 60rpx;
+  position: relative;
+}
+.arrows{
+  /* font-size: 45rpx; */
+  float: right;
+  margin-left: 15rpx;
+  color: #c7c6cc;
+  /* margin: 72rpx;  */
+  border-left: 5rpx solid; 
+  border-bottom: 5rpx solid;  
+  width: 20rpx; 
+  height: 20rpx;
+  transform: rotate(229deg);
+  margin-top: 5rpx;
+}
+.dev-item{
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx 20rpx;
+  display: flex;
+  position: relative;
+}
+
+.dev-item .img-box{
+
+  margin-right:40rpx  
+} 
+
+.img-box image{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.dev-item .dev-info{
+  width: 410rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dev-item .dev-info view{
+  margin-top: 10rpx;
+}
+
+ .dev-info view{
+  width: 410rpx;
+} 
+.title-one{
+  font-size: 34rpx;
+  margin-right:10rpx;
+  color: #000; 
+  font-weight:550;
+}
+.title-tow{
+  color: #b2b2b2;
+}
+
+
+.dev-item .dev-remainder{
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+
+
+
+
+

@@ -18,8 +18,7 @@ Page({
     IMG_PATH: IMG_PATH,
     upLodingImg: IMG_PATH+"/upimg.jpg",
     shareTypes: ["分享图片", "分享设备"],
-    // shareTypes: ["分享图片"],
-    // chooseMood: ["自定义心情", "Hello World!"],
+
     mood: " 爱是一种体会，即使心碎也会觉得甜蜜 自定义心情",
     shareType: "分享图片",
     deviceCode: "选择要分享的设备编号",

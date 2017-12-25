@@ -8,6 +8,15 @@ let PATH = app.globalData.PATH;
 let IMG_PATH = app.globalData.IMG_PATH;
 let VIDEO_PATH = app.globalData.VIDEO_PATH;
 
+function getRandomColor() {
+  let rgb = []
+  for (let i = 0; i < 3; ++i) {
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+  return '#' + rgb.join('')
+}
 
 
 Page({
@@ -136,5 +145,5 @@ Page({
     wx.reLaunch({
       url: '/pages/main/main',
     })
-  },
+  }
 })

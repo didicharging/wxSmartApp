@@ -1,0 +1,104 @@
+page{
+  background-color: #e9e9e9;
+}
+.top{
+  width: 100%;
+  height: 360rpx;
+  background: #ffd43f;
+  position: relative;
+}
+.top text{
+  margin-left:27rpx; 
+}
+.money{
+  font-size: 35rpx;
+  width: 100%;
+  height: 65rpx;
+  line-height: 65rpx;
+  margin-top: 25rpx;
+  margin: 0 auto;
+}
+.amount-paid{
+  font-size: 100rpx;
+  width: 100%;
+  margin-top: 50rpx;
+  font-weight: 500;
+}
+.middle{
+  width: 90%;
+  height: 200rpx;
+  background: #ffffff;
+  position: absolute;
+  top: 270rpx;
+  left: 5%;
+  border-radius:15rpx;
+  text-align: center;
+  display: flex;
+  border: 1rpx solid #d8d8d8;
+}
+.middle-one{
+  width: 50%;
+  height: 80%;
+  border-right: 1rpx solid #d8d8d8;
+  margin-top:20rpx; 
+  line-height: 50rpx;
+  
+}
+.middle-tow{
+  width: 50%;
+  height: 80%;
+  margin-top:20rpx;
+  line-height: 50rpx;
+}
+.writing{
+  margin-top: 35rpx;
+  font-size: 50rpx;
+}
+.character{
+  font-size: 30rpx;
+  color: #b6b6b6;
+}
+.base{
+  width: 100%;
+  height: 550rpx;
+  background: #fff;
+  padding-top: 20%;
+}
+.btn{
+  width: 60%;
+  height: 100rpx;
+  background: #ffd843;
+  color: #000;
+  border-radius: 50rpx;
+  margin: 0 auto;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
+.below{
+  margin-top: 6%;
+}
+.below-one{
+  width: 100%;
+  height: 100rpx;
+  border-top:1rpx solid #d8d8d8;
+  line-height: 100rpx; 
+}
+.recharge{
+  font-size: 35rpx;
+  line-height: 100rpx;
+  margin-left: 25rpx;
+}
+.arrows{
+  /* font-size: 45rpx; */
+  float: right;
+  margin-right: 35rpx;
+  color: #c7c6cc;
+  /* margin: 72rpx;  */
+  border-left: 5rpx solid; 
+  border-bottom: 5rpx solid;  
+  width: 30rpx; 
+  height: 30rpx;
+  transform: rotate(230deg);
+  margin-top: 35rpx;
+}

@@ -1,52 +1,156 @@
-@import "/libs/daohang.wxss";
 page{
   font-family: "Microsoft YaHei";
+  font-size: 28rpx;
+  font-weight: 500;
+
+}
+.user .title{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.user{
+  padding: 43rpx 40rpx 30rpx 46rpx;
+  background-color:#ffd43f;
+}
+
+/*账号*/
+.circle-box{
+  background-color: #e9e9e9;
+}
+.above{
+  width: 100%;
+  height: 200rpx;
+}
+.above-one{
+  width: 100%;
+  height: 110rpx;
+}
+.money{
+  font-size: 35rpx;
+  width: 100%;
+  margin-top: 15rpx;
+  margin: 0 auto;
+}
+.amount-paid{
+  font-size: 100rpx;
+  width: 100%;
+  margin-top: 25rpx;
+  font-weight: 500;
+}
+.above-one-first{
+  font-size: 35rpx;
+  text-align: left;
+  margin-left:30rpx;
+  float: left;
+  color: #000;
+}
+.common{
+}
+.button{
+  display: block;
+  width: 170rpx;
+  height: 65rpx;
+  background: #ffd843;
+  float: right;
+  line-height: 60rpx;
+  color: #000;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  margin-top:35rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  border-radius:15rpx;
+  font-size:35rpx;
+  color: #000;
+  letter-spacing:5rpx; 
+}
+.comment{
+  margin-left: 20rpx;
+}
+
+
+
+
+.user .state>view{
+  display: inline-block;
+  width: 33.3%;
+}
+.user .state .state-name{
+  font-size: 28rpx;
+  color: #666;
+  text-align: left;
+}
+
+.coin{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -4rpx;
+  margin-left:10rpx;
+}
+
+.content>view{
+  display: inline-block;
+  width: 180rpx;
+}
+.tip{
+  text-align: center;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  color: #f4d000;
+}
+.wallet{
+   margin-bottom: 60rpx; 
+}
+.wallet:last-child{
+    margin-bottom: 0rpx;
+}
+.wallet>view{
+  display: inline-block;
   font-size: 32rpx;
 }
-
-.rectangle{
-  position:relative;
-  width: 100%;
-  background: #ffd843;
+.wallet .content{
+  width: 60%;
 }
-
-/*设备描述  */
-.device{
-  padding-top:40rpx; 
-  width: 100%;
-  display: flex;
-  justify-content:center;
-  padding-bottom:47rpx; 
+.wallet .content>text{
+  margin-left: 40rpx;
 }
-
-
-.device image{
-  width: 200rpx;
-  height: 200rpx;
-} 
-
-.device .desc{
-   margin-left: 30rpx;
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
+.wallet .btn{
+  width: 160rpx;
+  height: 60rpx;
+  text-align: right;
+}
+.wallet .btn>view{
+  display: inline-block;
+  padding: 16rpx 40rpx;
+  width: 135rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  color: #fff;
+  background-color: #999;
 }
 
 .recharge{
    width: 100%;
    height: 300rpx;
    padding: 0rpx 40rpx 40rpx 40rpx; 
+
 }
 
 .recharge .title{
-  font-size: 32rpx;
+  font-size: 35rpx;
   font-weight: 600;
-  color: #666;
-  padding: 24rpx 0rpx 42rpx 0rpx;
+
+  padding: 42rpx 0rpx 50rpx 0rpx;
+
+  text-align: left;
+
 }
 
-.radio-group {
-
+ .radio-group {
  position: relative;
  width: 100%;
  display: flex;
@@ -67,9 +171,6 @@ page{
    color: red;
 }
 
-
-
-
 .input-money{
   width: 450rpx;
   text-align: center;
@@ -80,17 +181,17 @@ page{
   border-radius: 16rpx;
 }
 .submit{
-  width: 450rpx;
-  height:50rpx;
-  text-align: center;
-  margin: 0 auto;
-  padding: 16rpx 0rpx;
-  color: #666;
-  background-color: #f4d000;
-  border-radius: 16rpx;
-  margin-top: 80rpx;
-  font-weight: 600;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.submit image{
+  padding-top: 42rpx;
+  width: 480rpx;
+  height: 102rpx ;
+}
+
 .input-box{
   border-bottom: 1px solid #e6e6e6;
   display: none;
@@ -118,18 +219,4 @@ page{
 }
 .recharge .on{
   display: flex;
-}
-.des{
-  text-align: center;
-  font-size: 30rpx;
-  color: #666;
-  margin-top:30rpx;
-  margin-left: 5%;
-}
-
-
-.des .content{
- 
-  padding: 5rpx; 
-  text-align: left;
 }

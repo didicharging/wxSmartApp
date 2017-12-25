@@ -1,0 +1,41 @@
+<view class="user ">
+  <view class='above'>
+    
+  </view>
+</view>
+
+<view class="recharge">
+
+  <view class='htphed'>
+    <text class="title">选择充值金额</text>
+    <text class='met'>滴滴币余额:155</text>
+  </view>
+    
+  <block wx:if="{{inputMoney=='off'?'on':''}}">
+
+    <radio-group class="radio-group content {{inputMoney=='off'?'on':''}}" bindchange="radioChange">
+
+      <label class='item' wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}月
+      </label>
+
+    </radio-group>
+
+  </block>
+
+  <block wx:if="{{inputMoney=='on'?'on':''}}">
+
+    <view class="input-box {{inputMoney=='on'?'on':''}}">
+
+      <text>月</text>
+      <input bindblur="bindInputBlur" type="number" focus="{{inputFocus}}" value='{{initMoney}}' />
+    </view>
+  </block>
+
+</view>
+
+<view class="submit" bindtap="bindPayMoney">
+  <view><text>15000滴滴币</text></view>
+  <image src='{{IMG_PATH}}/charging.png'></image>
+
+</view>

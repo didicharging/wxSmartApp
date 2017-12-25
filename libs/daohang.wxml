@@ -13,7 +13,7 @@
   </view>
   <view class="" bindtap="goToMap">
     <image src="/images/laidian.png"></image>
-    <view>附近</view>
+    <view>触电</view>
   </view>
 
   <view class="" bindtap="goToUser">

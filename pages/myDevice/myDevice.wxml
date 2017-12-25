@@ -1,6 +1,4 @@
 
-
- 
     <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
 
       <view class="devTip" wx:if="{{devList.length == 0}}">没有设备</view>  
@@ -11,12 +9,16 @@
         </view>
 
         <view class="dev-info">
-          <view >设备编号：{{item.deviceNo}}</view>
-          <view >领取时间：{{item.inDate}}</view>
+          <view class='title'>
+          <text class='title-one'>{{item.name}}</text>
+          <text class='met'>{{item.deviceNo}}</text>
+        </view>
+          <view class='title-tow'>时间：{{item.inDate}}</view>
         </view>
 
         <view class='dev-remainder'>
            <text>{{item.timeInfo}}</text>
+           <text class='arrows'></text>
         </view>
 
       </view>

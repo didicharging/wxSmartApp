@@ -1,4 +1,10 @@
 import { reToMainPage } from "../../libs/router";
+
+import {
+  scansaoma, gofujin, gofenxaing, getDeviceState
+} from "../../libs/saoma";
+
+
 let app = getApp();
 let PATH = app.globalData.PATH;
 
@@ -22,10 +28,10 @@ Page({
 
   onLoad: function (options) {
 
-
     let that = this;
 
     this.setData({ money: options.money });
+    this.setData({ reminShare: options.reminShare });
     this.setData({ canPay: false });
     console.log(this.data.money);
 
@@ -36,8 +42,7 @@ Page({
         'Access-Token': app.globalData.accessToken,
       },
       data: {
-       // deviceId: options.deviceId,
-         deviceId:"3",
+        deviceId: options.deviceId,
       },
       success: function (data) {
         console.log(data)
@@ -45,12 +50,12 @@ Page({
 
         if (data.data.device.rentalType == 1) {
           that.setData({ rentalType: "小时" });
-          that.setData({ rental: parseFloat(data.data.device.rentalH / 100.0) });
+          that.setData({ rental: parseFloat(data.data.device.rentalH ) });
         }
 
         if (data.data.device.rentalType == 2) {
           that.setData({ rentalType: "日" });
-          that.setData({ rental: parseFloat(data.data.device.rental / 100.0) });
+          that.setData({ rental: parseFloat(data.data.device.rental ) });
         }
 
         if (data.data.device.rentalType == 3) {
@@ -58,18 +63,56 @@ Page({
           that.setData({ rental: parseFloat(data.data.device.rentalM / 100.0) });
         }
 
-        that.setData({
-
-          deviceNo: options.deviceNo,
-          payMoney: (parseFloat(that.data.money) + parseFloat(500) + that.data.rental).toFixed(2),
-          shareMoney: options.shareMoney,
-
-        });
-
       }
 
     });
 
+    // wx.request({
+    //   url: PATH + '/resource-service/wallet/getWalletInfoByUserId',
+    //   method: 'get',
+    //   header: {
+    //     'Access-Token': app.globalData.accessToken,
+    //   },
+    //   data: {
+    //     userId: app.globalData.userId
+    //   },
+    //   //post success
+    //   success: function (res) {
+    //     console.log(res)
+    //     if (res.data.status == 200) {
+    //       that.setData({
+    //         wallet: res.data.wallet,  
+    //       });
+    //     }
+    //   }
+    // })
+
+  },
+
+  // 去地图
+  goToMap: function () {
+    gofujin(app.globalData.location)
+  },
+  // 触电扫码
+  scanCode: function () {
+    let that = this;
+    scansaoma(app.globalData.userId, goToReceiveDev, PATH)
+  },
+  // 我的
+  goToUser: function () {
+    goToUser();
+  },
+  // 分享
+  goToShare: function () {
+    let that = this;
+    gofenxaing()
+
+  },
+  //首页
+  homePage: function () {
+    wx.redirectTo({
+      url: '/pages/main/main',
+    })
   },
 
   // 支付
@@ -77,22 +120,25 @@ Page({
 
     console.log("开始支付押金");
     let that = this;
+
+    if(!that.data.canPay){
+
+
     that.setData({ canPay: true });
 
     wx.request({
       url: PATH + "/resource-service/pay/payShare",
       data: {
         userId: app.globalData.userId,
-
         deviceNo: that.data.device.deviceNo,
-        money: that.data.payMoney
+        money: that.data.money
       },
 
       success: function (res) {
         console.log(res.data);
-
+         
         if (res.data.status == 200) {
-
+ 
           var payInfo = res.data.payInfo;
           wx.requestPayment({
             'timeStamp': payInfo.timeStamp,
@@ -106,34 +152,9 @@ Page({
               console.log("开始扫码逻辑");
               console.log(res);
 
-              wx.request({
-                url: PATH + '/resource-service/device/reciveDevice',
-                method: 'GET',
-                header: {
-                  'Access-Token': app.globalData.accessToken,
-                },
-                data: {
-                  userId: app.globalData.userId,
-                  deviceId: that.data.device.id,
-                },
-                success: function (data) {
-                  console.log(data)
-                  let device = data.data.device;
-
-
-                  wx.showToast({
-                    title: data.data.message,
-                    icon: 'loading',
-                    duration: 3000,
-                    success: function () {
-                      setTimeout(function () {
-                        reToMainPage();
-                      }, 3000)
-                    }
-                  })
-
-                }
-              });
+              getDeviceState(app.globalData.userId, that.data.device.deviceNo, PATH);
+  
+          
 
             },
 
@@ -150,7 +171,12 @@ Page({
 
       }
 
-    })
+    });
+    }
+
+    
+
+
 
   }
 

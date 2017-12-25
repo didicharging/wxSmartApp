@@ -7,6 +7,7 @@ import {
   payDebt
 } from "publiceFn";
 
+
 //扫码
 export function scansaoma(user, goToReceiveDev, PATH){
  
@@ -22,11 +23,14 @@ export function scansaoma(user, goToReceiveDev, PATH){
         if (num != -1) {
           let code = str.substr(str.indexOf("=") + 1);
            
-          getDeviceState(user, code, PATH);
+          wx.redirectTo({
+            url: '../scaneCode/scaneCode?deviceNo=' + code,
+          });
 
         }
       }
     },
+
     fail: function (res) {
       // 失败
       // console.log(res);
@@ -53,7 +57,6 @@ export function getDeviceState(user,code,PATH){
 
       // 余额不足 请求充值余额
       if (data.statusCode == 200 && data.data.status == 211) {
-        console.log("有欠款");
 
         wx.redirectTo({
           url: '../reciveCharging/reciveCharging?deviceId=' + data.data.device.id,
@@ -85,9 +88,6 @@ export function getDeviceState(user,code,PATH){
       // 押金不足
       if (data.statusCode == 200 && data.data.status == 213) {
         var money = data.data.money;
-        console.log("押金不足");
-
-
         wx.redirectTo({
           url: '../payShare/payShare?deviceId=' + data.data.device.id+'&money='+data.data.money,
         })
@@ -110,7 +110,7 @@ export function getDeviceState(user,code,PATH){
 
       }
 
-      //状态正常 跳转到领取成功页面
+      // 状态正常 跳转到领取成功页面
       if (data.statusCode == 200 && data.data.status == 200) {
         // goToScaneCode(data.data.isManager, device.id, device.deviceNo);
 
@@ -121,17 +121,19 @@ export function getDeviceState(user,code,PATH){
       }
 
       //开始拉取功能列表
-      if (data.statusCode == 200 && data.data.status == 201) {
+      // if (data.statusCode == 200 && data.data.status == 200) {
 
-        console.log("拉取功能列表");
-        wx.navigateTo({
-          url: '../scaneCode/scaneCode?deviceId=' + data.data.device.id,
-        })
+      //   console.log("拉取功能列表");
+      //   wx.navigateTo({
+      //     url: '../scaneCode/scaneCode?deviceId=' + data.data.device.id,
+      //   })
 
-      }
+      // }
 
     }
   })
+
+
 }
 
 

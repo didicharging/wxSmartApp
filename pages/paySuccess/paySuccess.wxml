@@ -1,3 +1,4 @@
+<!--基本没用  -->
 
 <view class="rectangle">
      <image src="{{IMG_PATH}}/juxing4.png"></image> 
@@ -24,11 +25,11 @@
 <view class='center'>
  
       <view>      
-       <image class='payok' src="/images/paySuccess.png"></image>  
+       <image class='payok' src="{{IMG_PATH}}/paySuccess.png"></image>  
       </view>
 
       <view>
-       <image class='lookdevice' src="/images/lookDevice.jpg"></image>   
+       <image class='lookdevice' src="{{IMG_PATH}}/lookDevice.jpg"></image>   
       </view>
 
 
@@ -50,7 +51,7 @@
   </view>
   <view class="" bindtap="goToMap">
     <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>有电</view>
+    <view>触电</view>
   </view>
 
   <view class="" bindtap="goToUser">

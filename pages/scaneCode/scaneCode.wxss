@@ -1,89 +1,73 @@
+@import "/libs/daohang.wxss";
 page{
   font-family: "Microsoft YaHei";
   font-size: 32rpx;
 }
 
 .rectangle{
+  position:relative;
   width: 100%;
-  /* height: 264rpx; */
-  border-top: 1rpx solid white;
-  height: 320rpx;
-  position: relative;
-  
-}
-.rectangle image{
-  width: 100%;
-  height: 100%;
+  background: #ffd843;
 }
 
+/*设备描述  */
 .device{
-
-  padding-left: 10rpx;
-  position: relative; 
-  top: -310rpx;    
-  left: 0;
-}
-
-.device view{
-  margin: 3rpx;
-}
-
-.enoughElc{
-  font-size: 48rpx;
-  color: green;
-}
-
-.LessElc{
-  font-size: 48rpx;
-  color: red;
-}
-
-
-.recive{
- 
+  padding-top:40rpx; 
   width: 100%;
-  height: 40%;
-}
-.recive image{
-   padding-top: 40rpx; 
-   padding-left: 175rpx; 
-
-  width: 400rpx;
-  height: 400rpx;
-}
-
-.user{
-
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; 
-  margin-top:20px;
-
+  justify-content:center;
+  padding-bottom:47rpx; 
 }
 
-.user button{
-  width: 80%;
-  height: 80px;
-  margin: 60rpx;
+
+.device image{
+  width: 200rpx;
+  height: 200rpx;
+} 
+
+.device .desc{
+   margin-left: 30rpx;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.message{
+  text-align: center;
   font-size: 60rpx;
+  margin-top: 170rpx;
 }
 
-.manager{
-
-  margin-top:40rpx; 
+.opration{
+  margin-top: 70rpx;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-
 }
 
-.manager button{
-    width: 80%;
-    height: 100px;
-    margin: 40rpx;
-    font-size: 80rpx;
+ .opration image{
+ width: 480rpx;
+ height: 100rpx;
+} 
+
+.des{
+  margin-top: 120rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
 }
+
+.des .content{
+  display: flex;
+
+}
+/*文字*/
+.character{
+  color: #ccc;
+  float: right;
+  margin-top: 30rpx;
+  margin-right: 20rpx;
+}
+
+
+
 
 

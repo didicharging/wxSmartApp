@@ -57,6 +57,7 @@ Page({
                 showCancel: false,
                 confirmText: "知道了"
             })
+
       } else {
           wx.showModal({
               title: '确认申请提现',
@@ -96,6 +97,7 @@ Page({
           })
       }
   },
+  
   // 退共享金
   bindRefundMoney: function () {
     let that = this;
@@ -114,7 +116,7 @@ Page({
     };
 
      if (that.data.walletInfo.canReturnShare==0){
-         console.log("aaaa ");
+      
           wx.showModal({
           title: '退共享金失败',
           content: '请归还设备后重试！！！',           
@@ -125,6 +127,7 @@ Page({
         return;
      };
 
+
     wx.showModal({
       title: '退还共享金',
       content: '您的享金共有： ' + that.data.walletInfo.shareAmount + " 元，现领取设备： " + that.data.deviceCount + "个,可退共享金共" +                    that.data.walletInfo.canReturnShare+"元",
@@ -134,12 +137,15 @@ Page({
           wx.request({
             url: PATH + '/resource-service/wallet/refundShareMoney',
             method: 'GET',
+            
             header: {
               'Access-Token': app.globalData.accessToken,
             },
+
             data: {
               userId: app.globalData.userId
             },
+            
             //post success
             success: function (res) {
               console.log(res)
@@ -194,8 +200,41 @@ Page({
       }
     });    
   },
+  examine:function(){
+    wx.navigateTo({
+      url: '../Sharing/Sharing'
+    })
+  },
+  serve:function(){
+    wx.navigateTo({
+      url: '../equipment/equipment'
+    })
+  },
+  // 去地图
+  goToMap: function () {
+    gofujin(app.globalData.location)
+  },
+  // 触电扫码
+  scanCode: function () {
+    let that = this;
+    scansaoma(app.globalData.userId, goToReceiveDev, PATH)
+  },
+  // 我的
+  goToUser: function () {
+    goToUser();
+  },
+  // 分享
+  goToShare: function () {
+    let that = this;
+    gofenxaing()
 
-
+  },
+  //首页
+  homePage: function () {
+    wx.redirectTo({
+      url: '/pages/main/main',
+    })
+  },
 
   radioChange: function (e) {
 
@@ -249,6 +288,8 @@ Page({
   }
 })
 function getWalletInfo (that) {
+
+
   wx.request({
     url: PATH + '/resource-service/wallet/getWalletInfoByUserId',
     method: 'get',
@@ -271,6 +312,9 @@ function getWalletInfo (that) {
       }
     }
   })
+
+
+  
 }
 
 function pay(money, that) {

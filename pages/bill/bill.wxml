@@ -1,0 +1,30 @@
+<view class="user ">
+  <view class='above'>
+    <view class='above-one'>
+       <view class='money'>
+      <text class='money'>共享金额(元)</text>
+      </view>
+      <view  class='amount-paid'>
+        <text>1500</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="recharge">
+
+  <view class="title">提现金额</view>
+  <view class='moneys'>
+    <text class='bold'>￥</text>
+    <input class='input' focus='' type='number' value=''></input>
+  </view>
+  <view class='text'>
+    <text class='titl'>可提现余额500</text>
+    <view class='present'>
+      <view class='btn'>
+        <text>查看详情</text>
+      </view>
+    </view>
+  </view>
+  
+</view>

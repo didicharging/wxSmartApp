@@ -26,21 +26,5 @@
       <view>{{item.content}}</view>
     </view>
   </view>
-  <!-- <view class="item {{id == myId?'my':'call'}}">
-    <view class="info">
-      <view class="box">
-        <view class="name">Helloween</view>
-        <view class="time">2017-07-07</view>
-      </view>
-      <image src="/images/shareInfo.jpg"></image>
-    </view>
-    <view class="desc">
-      <view>hahahahhahahahhahahahhahahahahahaha
-      hhahahahahahahahhahahahahahahahhahahahahaha
-      hahhahahahahahahahhahahahahahahahhahahahahahaha
-      hhahahahahahahahhahahahahahahahhahahahahahahahhaha
-      hahahahahahhahahahahahahahhahahahahahahahhahahahahaha
-      ahhahahahahahahahhahahaha</view>
-    </view>
-  </view> -->
+
 </view>

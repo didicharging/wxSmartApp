@@ -1,3 +1,5 @@
+<!--用户注册信息  -->
+
 <view class="header">
   <view class="user-img">
    <image src="{{userInfo.avatarUrl}}"></image>

@@ -41,7 +41,7 @@ Page({
     let id = e.currentTarget.dataset.id;
     console.log(id);
     wx.navigateTo({
-      url: '../devInfo/devInfo?id=' + id,
+      url: '../postpone/postpone?id=' + id,
     })
     
   }

@@ -82,18 +82,21 @@ Page({
       });
       return;
     }
+    
     if (e.currentTarget.dataset.type == 1) {
       this.setData({
         walletList: this.data.arr2
       });
       return;
     }
+
     if (e.currentTarget.dataset.type == 2) {
       this.setData({
         walletList: this.data.arr3
       });
       return;
     }
+    
     if (e.currentTarget.dataset.type == 4) {
       this.setData({
         walletList: this.data.arr4
@@ -101,6 +104,7 @@ Page({
     }
     
   },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,3 +1,5 @@
+<!--分享详情页  -->
+
 
 <!-- <view class="btn-group" wx:if="{{source != 'list'}}">
   <view class="btn-item">
@@ -125,7 +127,7 @@
   </view>
   <view class="" bindtap="goToMap">
     <image src="{{IMG_PATH}}/laidian.png"></image>
-    <view>有电</view>
+    <view>触电</view>
   </view>
 
  

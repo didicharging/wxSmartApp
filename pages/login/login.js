@@ -81,10 +81,13 @@ Page({
       }
     }
   },
+
+ //首次登录函数
   onLoad: function (options) {
     console.log(options);
     let that = this;
     getActive(this);
+
     if (options){
       this.setData({
         sence: options.sence
@@ -94,6 +97,8 @@ Page({
         sence: null
       });
     }
+
+    // 扫个人二维码进来的用户
     if (options.invideCode) {
         that.setData({
             invideCode: options.invideCode
@@ -103,13 +108,15 @@ Page({
             invideCode: ''
         })
     }
+
     if (options.type == 'share') {
         that.setData({
             types: options.type,
             id: options.id
         })
     }
-
+    
+    //扫电池二维码进来的用户直接调扫码 目前这段代码没有用
     if (options.sence && options.sence != "undefined") {
       let code = options.scene;
       wx.request({
@@ -138,7 +145,8 @@ Page({
         }
       })
     }
-    /////
+
+    //拉取用户授权 
     wx.getSetting({
       success(auth) {
         if (!auth.authSetting['scope.userInfo'] && !auth.authSetting['scope.userLocation']) {
@@ -172,7 +180,9 @@ Page({
                                 }
                               })
                             } else {
-                              wxLogin(that, 'yes');
+
+                              wxLogin(that, 'yes');  //
+                            
                             }
                           }
                         })
@@ -245,11 +255,15 @@ function getSet(that) {
   })
 }
 
+
+//
 function wxLogin(that, newUser) {
   
   wx.showLoading({
     title: '加载中',
   })
+
+ 
   wx.login({
     success: function (res1) {
       if (res1.code) {
@@ -258,6 +272,8 @@ function wxLogin(that, newUser) {
             console.log(res);
             app.globalData.userInfo = res.userInfo
             // typeof cb == "function" && cb(that.globalData.userInfo)
+
+           //调后台的登录接口
             wx.request({
                 url: PATH + '/gateway/onMiniProgramLogin',
               method: 'post',
@@ -282,13 +298,18 @@ function wxLogin(that, newUser) {
                       return
                   } 
 
-                  
+                  // 登录成功后 要跳转的页面
                   let mainPage = res2.data.pages ? res2.data.pages : '../map/map?sence='; 
+
+                  console.log("url: "+mainPage);
+
                   wx.redirectTo({
                     //  url: '../main/main?sence=' + that.data.sence
                    //  url: '../map/map?sence=' + that.data.sence
-                    url: res2.data.pages  + that.data.sence         
-
+                    url: mainPage + that.data.sence     
+                    //url: '../reciveCharging/reciveCharging'
+                    //url: '../scaneCode/scaneCode'
+                    // pages
                   })
 
                 } else {
@@ -313,6 +334,8 @@ function wxLogin(that, newUser) {
     }
   })
 }
+
+//点击轮播图 跳转到活动页面 目前关闭了
 function getActive(that) {
   wx.request({
     url: PATH + "/resource-service/share/getActive",

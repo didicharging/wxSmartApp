@@ -678,4 +678,6 @@ left:-10rpx;
 .username{
   margin-top: 6rpx;
 }
-
+.choose-type{
+  margin-bottom: 13rpx;
+}

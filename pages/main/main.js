@@ -5,7 +5,7 @@ import {
   getShareScore
 } from "../../libs/publiceFn";
 import {
-  scansaoma, gofujin, gofenxaing
+  scansaoma, gofujin, gofenxaing,getDeviceState
 } from "../../libs/saoma";
 //获取应用实例
 
@@ -36,6 +36,7 @@ Page({
     openTip: false,
     status: "new",
     confalse:false,
+    // 视频列表
     divoe: ['http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/1.jpg',
             'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/2.jpg',
             'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/video/3.jpg',
@@ -72,13 +73,15 @@ Page({
    
   },
 
-
+  //调视频详情
   mengbanbindtap:function(e){
     console.log(e)
     wx.navigateTo({
       url: '/pages/yinyue/yinyue?index=' + e.currentTarget.dataset.index,
     })
   },
+
+  //调图片详情
   bindShareDetail: function (e) {
     goToShareDetail(e.currentTarget.dataset.id, 'home');
   },
@@ -96,6 +99,7 @@ Page({
       getShareList(that, 1, status);
     }
   },
+
   // 关注
   bindFollow: function () {
     let that = this;
@@ -110,6 +114,7 @@ Page({
         userId:app.globalData.userId,
         followUserId:app.globalData.userId //模拟id
       },
+
       success: function (res) {
         // console.log(res);
         if (res.data.status == 200) {
@@ -122,6 +127,7 @@ Page({
             }
           })
         }
+
         if (res.data.status == 210) {
           wx.showToast({
             title: res.data.message,
@@ -129,6 +135,7 @@ Page({
             duration: 2000
           })
         }
+
       }
     });
   },
@@ -170,7 +177,8 @@ Page({
       openTip: false
     })
   },
-  // 加载
+  
+  //
   onLoad: function (options) {
     console.log("options", options);
 
@@ -181,14 +189,15 @@ Page({
       })
     }
 
-   //开始定时函数
+   //开始定时函数 每隔10秒 调一次钱包 如果钱包余额有增长响一次音乐 
+
     let timeInterval = setInterval(function () {
 
-      
    //   getmyWallet(that);
   
     }, 10000);
-
+   
+  // 获取轮播图列表
     getBanner(that);
 
    
@@ -198,6 +207,7 @@ Page({
       arr2: []
     });
 
+
     if (options.share && options.share == 'ok') {
       that.setData({
         openMask: true,
@@ -205,8 +215,6 @@ Page({
         status: 'new'
       })
     }
-
-
     if (options.sence && options.sence != "undefined") {
       let code = options.scene;
       wx.request({
@@ -237,7 +245,6 @@ Page({
     }
    
     // 列表信息
-
     getShareList(that, that.data.page, that.data.status);
     if (that.data.openMask!= false){
       yinyue()
@@ -296,9 +303,9 @@ Page({
         wx.getShareInfo({
           shareTicket: res.shareTickets[0],
           success: function (res) {
-            // console.log(res);
-            //获取嘀嘀币
-            getShareScore(app.globalData.userId);
+         
+          getShareScore(app.globalData.userId);
+          
           },
           complete: function (res) {
             // console.log(res);
@@ -312,6 +319,7 @@ Page({
   }
 })
 
+//这块目前没有 
 function editUserModal() {
   wx.showModal({
     title: "提示",
@@ -327,6 +335,7 @@ function editUserModal() {
   })
 }
 
+//弹窗提示
 function tipModal(tip) {
   wx.showToast({
     title: tip,
@@ -334,13 +343,14 @@ function tipModal(tip) {
     duration: 3000
   })
 }
-// 获取列表
+
+// 拉取图片列表
 function getShareList(that, page, status) {
   wx.showToast({
     title: '加载中',
     icon: 'loading',
   })
-
+  
   wx.request({
     url: PATH + '/resource-service/share/getShareList',
     method: 'get',
@@ -493,8 +503,6 @@ function getBanner(that) {
                 
                }
              })
-
-
            }
 
 
@@ -512,11 +520,5 @@ function getBanner(that) {
 function guanbi (that) {
   that.setData({
     openMask: false
-  })
-}
-
-function yinyue() {
-  wx.playBackgroundAudio({
-    dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/didi.wav',
   })
 }

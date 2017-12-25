@@ -6,14 +6,14 @@ page{
 .flex-box{
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #f4d000;
+  border-bottom: 5rpx solid #f0f0f0;
 }
 .flex-box view{
   flex: 1;
   text-align: center;
 }
 .flex-box view text{
-  font-size: 32rpx;
+  font-size: 35rpx;
   display: inline-block;
   padding: 20rpx 10rpx;
   vertical-align: top;
@@ -21,17 +21,21 @@ page{
 view.on text{
   /*margin-top: 8rpx;
   padding: 15rpx 10rpx 20rpx 10rpx;*/
-  /*border-bottom: 4rpx solid #f4d000;*/
-  background-color: #f4d000;
-  color: #fff;
+  border-bottom: 10rpx solid #f4d000;
+  /* background-color: #f4d000;
+  color: #fff; */
 }
 .content-box .item{
   padding: 16rpx 30rpx;
-  font-size: 24rpx;
+  font-size: 32rpx;
   border-bottom: 1px solid #ccc;
+  height: 70rpx;
 }
 .price{
+  height: 100%;
   float: right;
+  position: relative;
+  top: -30rpx;
 }
 /*.content-box{
   display: none;
@@ -39,3 +43,26 @@ view.on text{
 .content-on{
   display: block;
 }*/
+.coin{
+  display: inline-block;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: rpx;
+  vertical-align: middle;
+  position: relative;
+  top: -5rpx;
+  float: left;
+  line-height: 80rpx;
+}
+.text{
+  font-size: 25rpx;
+  color: #adadad;
+  margin-left: 10rpx;
+  float: left;
+}
+.tex{
+  float: left;
+  display: block;
+  width: 70%;
+  margin-left: 10rpx;
+}

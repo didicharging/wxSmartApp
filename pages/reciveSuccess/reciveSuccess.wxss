@@ -1,3 +1,4 @@
+@import "/libs/daohang.wxss";
 page{
   font-family: "Microsoft YaHei";
   font-size: 32rpx;
@@ -16,16 +17,15 @@ page{
   height: 80rpx;
 } 
 
-
 .warm .img{
-  margin-top: 248rpx;
+  margin-top: 28rpx;
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.warm .charing{
+.warm .lookDevice{
+  margin-top: 245rpx;
   width: 480rpx;
   height: 100rpx;
 }
-

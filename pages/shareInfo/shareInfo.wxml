@@ -1,3 +1,5 @@
+<!--这个基本没用  -->
+
 <view class="header">
   <view class="name">
     <image src="{{userInfo.avatarUrl}}"></image>

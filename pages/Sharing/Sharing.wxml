@@ -1,0 +1,43 @@
+<view class='circle-box'>
+  <view class='top'>
+    <view class='money'>
+      <text class='money'>共享金额(元)</text>
+    </view>
+    <view  class='amount-paid'>
+      <text>1500</text>
+    </view>
+  </view>
+  <view class='middle'>
+    <view class='middle-one'>
+      <view class='writing'>1000</view>
+      <view class='character'>已占用</view>
+    </view>
+    <view class='middle-tow'>
+      <view class='writing'>500</view>
+      <view class='character'>可使用</view>
+    </view>
+  </view>
+  <view class='base'>
+    <view class='btn'>
+      <text>查看详情</text>
+    </view>
+    <view class='below'>
+        <view class='below-one' bindtap="recharg">
+          <text class='recharge'>充值</text>
+          <text class='arrows'></text>
+        </view>
+        <view class='below-one' bindtap="withdraw">
+          <text class='recharge'>提现</text>
+          <text class='arrows'></text>
+        </view>
+        <view class='below-one'>
+          <text class='recharge'>购买</text>
+          <text class='arrows'></text>
+        </view>
+        <view class='below-one'>
+          <text class='recharge'>转让</text>
+          <text class='arrows'></text>
+        </view>
+    </view>
+  </view>
+</view>

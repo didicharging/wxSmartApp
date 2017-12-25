@@ -1,36 +1,69 @@
-<view class="rectangle">
-  <image src="{{IMG_PATH}}/juxing4.png"></image>
+<!--扫码页面  -->
 
+<view class="rectangle">
 
   <view class="device">
-
-
-    <view class="deviceNo">设备编号：{{device.deviceNo}}</view>
-    <view class="deviceName">设备名称：{{device.name}}</view>
-
-    <view class="sh">设备押金：￥{{device.shareMoney}} </view>
-
-    <view class="rental">计费方式：租金按{{rentalType}}计费，单价{{rental}}嘀嘀币</view>
-
-    <view class="status">
-      <text>设备状态：</text>
-      <block wx:if="{{device.state!=99}}">
-        <text class='enoughElc'>设备正常</text>
-      </block>
-      <block wx:if="{{device.state==99}}">
-        <text class='LessElc'>设备损坏</text>
-      </block>
+    <image src="{{device.imgUrl}}"></image>
+    <view class='desc'>
+      <view class="code"> 设备编号：{{device.deviceNo}}</view>
+      <view class="code1">设备名称：{{device.name}}</view>
+      <view class="code3">设备押金：{{device.shareMoney}}元</view>
+      <view class="code4">设备租金：{{rental}}嘀嘀币/{{rentalType}}</view>
     </view>
-
   </view>
+
+</view>
+<view>
+  <view class='character'>共享金余额：{{device.rentalH}}￥</view>
+</view>
+<view class='message'>
+ {{message}} 
+</view>
+
+<view class='opration' bindtap='getDeviceState'>
+  <image  src='{{IMG_PATH}}/recive.png'></image>
+</view>
+
+<view class='des'>
+   <view class='content'>
+      <view >1.</view>
+      <view>1元=100嘀嘀币</view>
+   </view>
+
+   <view class='content'>
+      <view >2.</view>
+      <view>帐户余额可在我的钱包查看</view>
+   </view>
+
+    <view class='content'>
+      <view >3.</view>
+      <view>设备租金欠费时，您需要还清欠费才可以退押金</view>
+   </view>
 
 </view>
 
 
-
-
-  <view class='user'>
-    <button bindtap="changeDevice" type="primary">换电</button>
-    <button bindtap="reciveDevice" type="primary">租电</button>
-
+<view class="nav">
+  <view class="" bindtap="homePage">
+    <image src="{{IMG_PATH}}/shoye2.jpg"></image>
+    <view>首页</view>
   </view>
+  <view class="" bindtap="goToShare">
+    <image src="{{IMG_PATH}}/fangdian.png"></image>
+    <view>发布</view>
+  </view>
+  <view class="scanCode" bindtap="scanCode">
+    <image src="{{IMG_PATH}}/chudian.png"></image>
+    <view>扫一扫</view>
+  </view>
+  <view class="" bindtap="goToMap">
+    <image src="{{IMG_PATH}}/laidian.png"></image>
+    <view>触电</view>
+  </view>
+
+  <view class="" bindtap="goToUser">
+    <image src="{{IMG_PATH}}/wode.png"></image>
+    <view>我的</view>
+  </view>
+
+</view>
