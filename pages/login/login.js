@@ -235,6 +235,12 @@ Page({
       }
     })
   },
+  gologe: function () {
+    wx.redirectTo({
+      url: '../main/main',
+    })
+
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -322,7 +328,7 @@ function wxLogin(that, newUser) {
 
                     })
                            
-                  }, 3000);
+                  }, 10000);
 
                 } else {
                   wx.hideLoading();

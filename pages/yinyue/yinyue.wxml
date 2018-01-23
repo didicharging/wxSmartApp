@@ -25,7 +25,7 @@
 </view>
 
 <view class='banner'>
-   <image src='{{imgUrls.img_url}}'></image>
+   <!-- <image src='{{imgUrls.img_url}}'></image> -->
 </view>
 
 <view class="nav">

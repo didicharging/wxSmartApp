@@ -57,19 +57,20 @@ button {
     z-index: 20;
   bottom: 0;
 }
-.invitation button{
-  color: #fff;
- width: 50%;
-  height: 100rpx;
-    line-height: 100rpx;
-    text-align: center;
-    font-size: 32rpx;  
-   
-    /*font-weight: 600;*/
-    background-color: red;
-   float: left;
-    margin: 0;
-    border: none;
-    /* border-radius: 20rpx; */
-  /* margin-bottom: 40rpx; */
+
+.btn{
+  position: fixed;
+  z-index: 99;
+  /* color: #fff; */
+  /* width: 200rpx;
+  height: 50rpx; */
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border: 1rpx solid #000;
+  top: 15rpx;
+  right: 15rpx;
+  border-radius:10rpx;
+  font-size: 30rpx;
+  background: #fff;
 }
