@@ -1,11 +1,11 @@
 //app.js
 
 
-//let path = "http://localhost/di";
+let path = "http://localhost/di";
 
 //let path ="https://app.liguangxu.top/di";
 
-let path = "https://api.didicharging.com/di";
+//let path = "https://api.didicharging.com/di";
 
 App({
   onLaunch: function () {

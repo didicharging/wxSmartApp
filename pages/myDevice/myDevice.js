@@ -20,16 +20,29 @@ Page({
     getInUserList(that);
   
   },
- 
-  onHide:function(){
-    console.log("onHide");
- 
-  },
 
-  onUnload: function () {
-    console.log("onUnload");
-  },
 
+  bindStatus: function (e) {
+    let that = this;
+    let status = e.currentTarget.dataset.status;
+    // console.log(status)
+    that.setData({
+      status: status
+    });
+    // console.log(status)
+    if (that.data.status == 'user') {
+      getInUserList(this);
+    }
+
+    if (that.data.status == 'invest') {
+      getInvestList(this);
+    }
+
+    
+
+
+
+  },
 
 
   bindgetInUserList: function () {
@@ -78,6 +91,36 @@ function getInUserList(e) {
 
 
 
+    }
+  });
+
+  console.log("拉取设备列表正常");
+
+}
+
+function getInvestList(e) {
+
+  let that = e;
+
+  wx.request({
+    url: PATH + '/resource-service/device/getInvestList',
+    method: 'get',
+    header: {
+      'Access-Token': app.globalData.accessToken,
+    },
+
+    data: {
+      userId: app.globalData.userId
+    },
+
+    success: function (res) {
+      console.log(res);
+      if (res.statusCode == 200 && res.data.status == 200) {
+        that.setData({
+          devList: res.data.result
+        });
+      }
+      
     }
   });
 
