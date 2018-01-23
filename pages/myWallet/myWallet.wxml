@@ -55,7 +55,7 @@
       </label>
 
       <label class='item'>
-        <text>赠20</text>
+        <text>赠10</text>
       </label>
 
       <label class='item'>
@@ -63,7 +63,7 @@
       </label>
 
       <label class='item'>
-        <text>赠50</text>
+        <text>赠70</text>
       </label>
 
     </radio-group>
@@ -86,5 +86,9 @@
 
   <image src='{{IMG_PATH}}/charging.png'></image>
 
+
 </view>
 
+<view class='invest'>
+  <button>投资</button>
+</view>

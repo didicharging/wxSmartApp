@@ -15,7 +15,7 @@
         </view> 
 
         <view class='dev-remainder'>
-           <image src='https://didicharging-v2.oss-cn-beijing.aliyuncs.com/code/phoneicon.png'></image>
+           <image src='https://didicharging-v2.oss-cn-beijing.aliyuncs.com/code/phoneUser.png'></image>
         </view>
 
       </view>

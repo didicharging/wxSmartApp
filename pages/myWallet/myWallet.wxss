@@ -162,3 +162,14 @@ page{
 .recharge .on{
   display: flex;
 }
+
+.invest{
+  padding-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.invest button{
+  width: 40%;
+}
+

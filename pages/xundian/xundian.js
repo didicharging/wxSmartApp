@@ -28,22 +28,22 @@ Page({
   },
 
   goToDevInfo: function (e) {
+    
+   
+    console.log(e.currentTarget.dataset.id);
+    let station = e.currentTarget.dataset.id;
+  
+    
 
-    let phone = e.currentTarget.dataset.phone;
-    console.log(phone);
+    wx.openLocation({
+      latitude: station.latitude,
+      longitude:station.longitude,
+      scale: 10, // 缩放比例 
+      name: station.name,
+      address: station.address
+    });
+    
 
-    wx.showModal({
-      title: '提示',
-      content: '联系充电侠',
-      success: function (res) {
-        if (res.confirm) {
-          wx.makePhoneCall({
-            phoneNumber: phone
-          });
-
-        }
-      }
-    })
 
   }
 })
@@ -58,9 +58,7 @@ function getInUserList(e) {
     header: {
       'Access-Token': app.globalData.accessToken,
     },
-
     data: {
-
       userId: app.globalData.userId,
       longitude: local.longitude,
       latitude: local.latitude
@@ -72,7 +70,7 @@ function getInUserList(e) {
       console.log("查找成功");
       if (res.statusCode == 200 && res.data.status == 200) {
         that.setData({
-          devList: res.data.list
+          stations: res.data.list
         });
       }
 

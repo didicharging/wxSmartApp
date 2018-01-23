@@ -45,7 +45,7 @@ Page({
 
       {
         id: 1,
-        iconPath: '/images/kefu.png',
+        iconPath: '/images/search.jpg',
         position: {
           left: 21,
           top: that.data.windowHeight - 70,
@@ -68,10 +68,9 @@ Page({
         clickable: true
       },
 
-
       {
         id: 3,
-        iconPath: '/images/wode3.png',
+        iconPath: '/images/phoneUser.png',
         position: {
           left: that.data.windowWeight  - 61,
           top: that.data.windowHeight - 70,
@@ -80,8 +79,6 @@ Page({
         },
         clickable: true
       }
-
-      
 
     ];
 
@@ -103,11 +100,10 @@ Page({
   },
 
   
-
   markertap:function(e){
     let that = this;
 
-    console.log("fhpioupapshfioahs");
+
     console.log(e.markerId);
 
    if(that.data.stations[e.markerId] != null ) {
@@ -209,6 +205,7 @@ Page({
       name: that.data.station.name,
       address: that.data.station.address  
     });
+
     that.setData({
       maskState: false,
     });
