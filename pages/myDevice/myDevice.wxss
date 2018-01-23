@@ -3,6 +3,24 @@ page{
   font-size: 28rpx;
 }
 
+
+.choose-type{
+    /* background-color: #fff; */
+    padding: 20rpx 100rpx 0rpx 100rpx;
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    z-index: 150;
+}
+.choose-type>view{
+    display: inline-block;
+    text-align: center;
+    /* width: 50%; */
+    flex: 1;
+    /* line-height: 80rpx; */
+    vertical-align: middle;
+}
+
 .devTip{
   font-size: 40rpx;
   text-align: center;

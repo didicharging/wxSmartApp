@@ -1,0 +1,6 @@
+<view>
+  <view>姓名：<input type='text'/></view>
+  <view>电话：<input type='text'/></view>
+  <view>身份证号：<input type='text'/></view>
+  <view>车牌：<input type='text'/></view>
+</view>

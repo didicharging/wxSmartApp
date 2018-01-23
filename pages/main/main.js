@@ -65,10 +65,22 @@ Page({
     wx.navigateTo({
       url: '/pages/yinyue/yinyue?index=' + e.currentTarget.dataset.id,
     })
-
-
   },
-
+  shedhob:function(e){
+    console.log(e);
+    console.log("aaaa");
+    if (e.currentTarget.dataset.index==0){
+      wx.navigateTo({
+        url: '../carousel/carousel'
+      })
+    }
+    if (e.currentTarget.dataset.index == 1) {
+      wx.navigateTo({
+        url: '../menu/menu'
+      })
+    }
+    
+  },
   //调图片详情
   bindShareDetail: function (e) {
     goToShareDetail(e.currentTarget.dataset.id, 'home');

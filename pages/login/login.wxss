@@ -57,19 +57,16 @@ button {
     z-index: 20;
   bottom: 0;
 }
-.invitation button{
-  color: #fff;
- width: 50%;
-  height: 100rpx;
-    line-height: 100rpx;
-    text-align: center;
-    font-size: 32rpx;  
-   
-    /*font-weight: 600;*/
-    background-color: red;
-   float: left;
-    margin: 0;
-    border: none;
-    /* border-radius: 20rpx; */
-  /* margin-bottom: 40rpx; */
+.tex{
+  z-index: 99;
+  height: 60rpx;
+  line-height: 60rpx;
+  position: fixed;
+  color: #36c6fa;
+  text-align: center;
+  background: 0;
+  border: 1rpx solid #36c6fa;
+  top: 15rpx;
+  right: 15rpx;
+  border-radius:10rpx;
 }

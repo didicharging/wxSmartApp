@@ -1,0 +1,3 @@
+<view class='btn'>
+  <button bindtap='modth'>支付</button>
+</view>

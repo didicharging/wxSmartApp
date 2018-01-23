@@ -15,13 +15,18 @@
    
     <view class='input'>
       <view class='tip'>
-        请输入份数
+        请输入份数(n)
       </view>
 
-      Y<input bindblur="bindInputBlur" type="number" focus="{{inputFocus}}" value='{{initMoney}}' />
+      <view class='number'>
+       <view class='content'>
+         <input bindblur="bindInputBlur" type="number" />
+       </view>
+      </view>
+
     </view>
 
-    <view class='pay'>
+    <view class='pay' bindtap='pay'>
       <image  src='https://didicharging-v2.oss-cn-beijing.aliyuncs.com/code/pay.png'></image>
     </view>
 

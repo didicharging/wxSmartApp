@@ -7,7 +7,7 @@
 <view class='btn-area zui'>
   <text>最近浏览</text>
 </view>
-<view class='images'>
+<view class='imagess'>
     <view class='methe' wx:for='{{video_data}}'>
       <image src='{{item.user.profileImage}}' mode='aspectFill' class='imagw' catchtap="goToHistoryShare" data-id='{{item.user.id}}'></image>
     </view>
@@ -23,9 +23,14 @@
 <button open-type="share" class='footer-btn1'>分享给朋友</button>
 </view>
 </view>
-
-<view class='banner'>
-   <image src='{{imgUrls.img_url}}'></image>
+<view class='btn-area zui'><text>相关视频</text></view>
+<view class='imagesf'>
+  <view class='banner' wx:for='{{relae}}'>
+    <image src='{{item.imgUrl}}' class='images' data-id="{{item.id}}" bindtap='tiao'></image>
+    <view class='texts' data-id="{{item.id}}" bindtap='tiao'>
+      <text>{{item.description}}</text>
+    </view>
+  </view>
 </view>
 
 <view class="nav">

@@ -7,20 +7,46 @@ page{
   height: 300rpx;
 }
 
-
-
 .description{
   display: flex;
   justify-content: center;
   padding-top:20rpx; 
 }
 
+
+
 .submit{
   margin-top:40rpx; 
+  
+}
+
+.submit .input .number{
+  display: flex;
+  justify-content: center;
+}
+
+.submit .input .number .content{
+  border-bottom: 2rpx solid black;
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  width: 60%;
+
+  font-size: 60rpx;
+
+  padding-top: 40rpx; 
+  
 }
 
 
+.number input{
+  height: 100rpx;
+  padding-left: 20rpx;
+  text-align: center
+} 
+
 .submit .pay {
+  margin-top: 30px; 
   display: flex;
   justify-content: center;
 }
@@ -31,6 +57,6 @@ page{
 } 
 
 .agreement{
-  padding-top: 30rpx; 
+  padding-top: 60rpx; 
   text-align: center;
 }

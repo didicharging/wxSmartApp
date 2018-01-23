@@ -27,6 +27,7 @@ Page({
     VIDEO_PATH: VIDEO_PATH,
     src: '',
     video_data: [],
+    relae: [],
     danmuList: [
       {
         text: '第 1s 出现的弹幕',
@@ -40,7 +41,8 @@ Page({
       }
 
     ],
-    a: true
+    a: true,
+    
   },
 
 
@@ -65,7 +67,6 @@ Page({
       data: {
         id: option.index,
         userId: app.globalData.userId,
-
       },
       header: {
         "Access-token": app.globalData.accessToken,
@@ -74,14 +75,14 @@ Page({
       success: function (res) {
         console.log("bbb");
         console.log(res.data.passVisit)
-        that.setData({ video_data: res.data.passVisit, movieAct: res.data.danmu })
-        that.setData({ movieUrl: res.data.movie.imgUrl})
+        console.log(res.data.relativeMovie);
+        that.setData({ video_data: res.data.passVisit })
+        that.setData({ relae: res.data.relativeMovie})
+        that.setData({ movieAct: res.data.danmu })
+        that.setData({ movieUrl: res.data.movie.imgUrl })
+        
         console.log("------------------------------------");
-
         var danmu = res.data.danmu;
-        
-        
-
         console.log(danmu);
         for (var i = 0; i < danmu.length; i++) {
 
@@ -102,7 +103,14 @@ Page({
 
   },
 
-
+  tiao: function (e) {
+    console.log("aaaa");
+    console.log(e)
+    //这里用数组
+    wx.navigateTo({
+      url: '/pages/yinyue/yinyue?index=' + e.currentTarget.dataset.id,
+    })
+  },
 
   bindInputBlur: function (e) {
     this.inputValue = e.detail.value

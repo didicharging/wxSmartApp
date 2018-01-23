@@ -3,9 +3,11 @@
     "pages/login/login",
     "pages/guidance/guidance",
     "pages/yinyue/yinyue",
+    
     "pages/laidian/laidian",
     "pages/xundian/xundian",
     "pages/invest/invest",
+    
   
     "pages/map/map",
     "pages/myWallet/myWallet",
@@ -41,7 +43,9 @@
     "pages/walletLog/walletLog",
     "pages/performance/performance",
     "pages/month/month",
-    "pages/week/week"
+    "pages/week/week",
+    "pages/carousel/carousel",
+    "pages/menu/menu"
   ],
   
 

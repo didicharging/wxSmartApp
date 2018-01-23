@@ -2,7 +2,6 @@
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": false,
-
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -11,18 +10,16 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.6.0",
 	"appid": "wxb578ca87ab1f91c7",
-	"projectname": "ss",
+	"projectname": "ddd",
 	"condition": {
 		"search": {
 			"current": -1,
 			"list": []
 		},
-    
 		"conversation": {
 			"current": -1,
 			"list": []
 		},
-
 		"miniprogram": {
 			"current": -1,
 			"list": [

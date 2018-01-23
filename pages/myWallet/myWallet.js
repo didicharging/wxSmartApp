@@ -270,6 +270,8 @@ Page({
       choosePay: e.detail.value 
     });
   },
+
+  
   bindPayMoney: function () {
     let that = this;
     let payMoney = this.data.choosePay;
@@ -290,6 +292,7 @@ Page({
     goToWalletLog();
   }
 })
+
 function getWalletInfo (that) {
 
 
@@ -321,9 +324,6 @@ function getWalletInfo (that) {
           });
           console.log("我不是充电侠");
         }
-
-    
-
       }
     }
   })
