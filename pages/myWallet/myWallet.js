@@ -47,6 +47,13 @@ Page({
     // console.log(walletInfo.stateName);
    
   },
+
+  bindInvest:function(){
+    wx.navigateTo({
+      url: '/pages/invest/invest',
+    })  
+  },
+
   // 提现
   bindWithdrawals: function () {
       let that = this;

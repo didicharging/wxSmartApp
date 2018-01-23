@@ -1,21 +1,37 @@
-<view class="pages">
- <!--提示信息  -->
- <view class='description'>
-   月回报率5%
-   每份1000元
+<view class="page">
+ 
+  
+ <view class='banner'>
+   <image src='http://didicharging-v2.oss-cn-beijing.aliyuncs.com/code/invest.jpg'></image>
  </view>
 
-<!-- 投资额度选择 表单提交 -->
-<view class='submit'>
-  请输入份数
-    <input bindblur="bindInputBlur" type="number" focus="{{inputFocus}}" value='{{initMoney}}' />
+  <!--提示信息  -->
+  <view class='description'>
+    月回报率5% 每份1000元
+  </view>
 
+  <!-- 投资额度选择 表单提交 -->
+  <view class='submit'>
+   
+    <view class='input'>
+      <view class='tip'>
+        请输入份数
+      </view>
 
-</view>
+      Y<input bindblur="bindInputBlur" type="number" focus="{{inputFocus}}" value='{{initMoney}}' />
+    </view>
 
-<!--协议补充  -->
-<view class='agreement'>
-   赎回期12--24个月
-</view>
+    <view class='pay'>
+      <image  src='https://didicharging-v2.oss-cn-beijing.aliyuncs.com/code/pay.png'></image>
+    </view>
+
+  </view>
+
+  <!--协议补充  -->
+  <view class='agreement'>
+    <view>
+      赎回期12--24个月
+    </view>
+  </view>
 
 </view>
