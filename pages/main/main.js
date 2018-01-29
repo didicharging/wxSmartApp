@@ -65,9 +65,8 @@ Page({
     wx.navigateTo({
       url: '/pages/yinyue/yinyue?index=' + e.currentTarget.dataset.id,
     })
-
-
   },
+
 
   //调图片详情
   bindShareDetail: function (e) {
@@ -176,6 +175,7 @@ Page({
         openTip: true
       })
     }
+
     //hu获取视频数据
    wx.request({
       url: PATH + "/resource-service/movie/list",
@@ -245,13 +245,24 @@ Page({
    
     // 列表信息
     getShareList(that, that.data.page, that.data.status);
+    
     if (that.data.openMask!= false){
-      yinyue()
+      
+      wx.playBackgroundAudio({
+        dataUrl: 'http://didicharging-v2.oss-cn-beijing.aliyuncs.com/sound/didi1.wav',
+      })
+
+
     }
+
     setTimeout(function () {
       guanbi(that)
-    }, 2000)
+    }, 5000)
+    
   },
+
+
+
   bindUpper: function (e) {
     let that = this;
     that.setData({
@@ -517,6 +528,8 @@ function getBanner(that) {
 
 // 关闭模态框
 function guanbi (that) {
+
+  console.log("fghjl;'")
   that.setData({
     openMask: false
   })

@@ -22,7 +22,6 @@ Page({
       })
   },
 
-
   bindHome: function () {
     let that = this;
     wx.getSetting({
@@ -318,11 +317,11 @@ function wxLogin(that, newUser) {
                     wx.redirectTo({
                       //  url: '../main/main?sence=' + that.data.sence
             //          url: '../myWallet/myWallet'
-                      url: mainPage + that.data.sence         
+                   url: mainPage + that.data.sence         
 
                     })
                            
-                  }, 3000);
+                  }, 1000);
 
                 } else {
                   wx.hideLoading();

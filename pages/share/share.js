@@ -391,7 +391,7 @@ function submit(that, submitData) {
       if (res.statusCode == 200 && res.data.status == 200) {
         newsTip(res.data.message);
         setTimeout(function () {
-          // reToMainPage();
+  
           wx.reLaunch({
             url: '../main/main?share=ok&share_id=' + res.data.shareId
           })
