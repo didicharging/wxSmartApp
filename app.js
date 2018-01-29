@@ -18,8 +18,8 @@ App({
         wx.setStorageSync('kScreenW', kScreenW)
         wx.setStorageSync('kScreenH', kScreenH)
         wx.setStorageSync('windowWidth', res.windowWidth)
-        wx.setStorageSync('windowHeight', res.windowHeight)        
-
+        wx.setStorageSync('windowHeight', res.windowHeight)  
+             
       }
     });
      

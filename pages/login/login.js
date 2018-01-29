@@ -22,7 +22,6 @@ Page({
       })
   },
 
-
   bindHome: function () {
     let that = this;
     wx.getSetting({
@@ -324,6 +323,7 @@ function wxLogin(that, newUser) {
                     wx.redirectTo({
                       //  url: '../main/main?sence=' + that.data.sence
             //          url: '../myWallet/myWallet'
+// <<<<<<< HEAD
                       url: mainPage + that.data.sence         
 
                     })
