@@ -10,10 +10,37 @@ page{
   flex-wrap:wrap;
 }
 .one button{
-  width: 50%;
+  width: 40%;
   background: #ffd843;
   color: #fff;
   height: 100rpx;
   line-height: 100rpx;
   font-size: 42rpx;
+}
+.img{
+  width: 100%;
+  height: 500rpx;
+  text-align: center;
+}
+.meth{
+  width: 100%;
+  height: 240rpx;
+  text-align: center;
+  line-height:240rpx;
+}
+.img image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.text{
+  width: 100%;
+  height: 100rpx;
+}
+.text text{
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
 }
