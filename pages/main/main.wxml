@@ -48,7 +48,7 @@
         <view class="box-1">
           <view class="list-item" wx:for="{{arr1}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="bindShareDetail">
             <view class="classname">
-              <image src="{{item.imgUrl}}" mode="widthFix"></image>
+              <image src="{{item.imgUrl}}" mode="widthFix" class='image'></image>
             </view>
             <view class="info-content">
              <view class="local">

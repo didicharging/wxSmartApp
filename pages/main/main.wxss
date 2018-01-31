@@ -675,4 +675,12 @@ left:-10rpx;
 .username{
   margin-top: 6rpx;
 }
-
+.classname image{
+  border-radius: 15rpx;
+}
+.box-2 image{
+  border-radius: 15rpx;
+}
+/* .mengban image{
+  border-radius: 15rpx;
+} */

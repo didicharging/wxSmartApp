@@ -118,3 +118,11 @@ color: #fff;
   width: 100%;
   height: 1200rpx;
 }
+.met{
+  width: 100%;
+  height: 300rpx;
+}
+.met image{
+  width: 100%;
+  height: 300rpx;
+}

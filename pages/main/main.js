@@ -525,7 +525,7 @@ function getBanner(that) {
 
              wx.showModal({
                title: '提示',
-               content: '有人给你点赞了，请在消息列表查看',
+               content: '有人给你点赞了，请在我的通知查看',
                showCancel:false,
                success: function (res) {
                 
