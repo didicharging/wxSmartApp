@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/login/login",
+    
     "pages/guidance/guidance",
+    "pages/login/login",
     "pages/yinyue/yinyue",
     
     "pages/laidian/laidian",
@@ -17,7 +18,7 @@
     "pages/receiveDev/receiveDev",
     "pages/reciveSuccess/reciveSuccess",
     
-    "pages/scaneCode/scaneCode", 
+    "pages/scaneCode/scaneCode",
     "pages/paySuccess/paySuccess",
     "pages/payShareSuccess/payShareSuccess",    
     "pages/payShare/payShare",

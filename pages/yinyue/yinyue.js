@@ -274,7 +274,7 @@ function getBanner(that) {
         that.setData({
           imgUrls: res.data.list[a]
         });
-
+        console.log("aaaaaaa");
         console.log(that.data.imgUrls);
 
       }

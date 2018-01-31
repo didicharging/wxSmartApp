@@ -1,3 +1,6 @@
+<view class='met'>
+  <image src="{{imgUrls.img_url}}" class="slide-image"/>
+</view>
 <view class="section tc">
  <video id="myVideo" src="{{VIDEO_PATH}}/{{index}}.mp4" controls='{{a}}' binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls
 ></video>

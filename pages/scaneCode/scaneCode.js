@@ -22,249 +22,49 @@ Page({
 
   data: {
     IMG_PATH: IMG_PATH,
-    device: null,
+    message:[]
   },
 
   onLoad: function (options) {
 
     console.log(options);
     let that = this;
-
     wx.request({
-
       url: PATH + '/resource-service/device/scaneCode',
       method: 'GET',
       header: {
         'Access-Token': app.globalData.accessToken,
       },
-
       data: {
         deviceNo: options.deviceNo,
+        //deviceNo: "didi5010001007",
         userId: app.globalData.userId,
       },
-
       success: function (data) {
-        console.log(data)
-
-        // 设置提示信息
-        that.setData({ message: data.data.message });
-        that.setData({ state: data.data.status});
- 
-
-        //集团用户 员工管理
-        if (data.statusCode == 200 && data.data.status == 204) { 
-          console.log("开始管理员工");
-        }
-
-        //错误提示
-        if (data.statusCode == 200 && data.data.status == 210) {
-
-          wx.showModal({
-            title: '提示',
-            content: '设备故障',
-            showCancel: false,
-            success: function (res) {
-              if (res.confirm) {
-                wx.redirectTo({
-                  url: '../main/main',
-                })
-              }
-            }
+        console.log(data.data.device);
+        that.setData({ message: data.data.device });
+        if (data.data.device.type == 4 || data.data.device.type == 5 || data.data.device.type == 6){
+          that.setData({
+            da: true
           })
-
-        }
-
-
-
-
-
-        //押金不足直接跳
-        if (data.statusCode == 200 && data.data.status == 213) {
-          var money = data.data.money;
-
-          wx.redirectTo({
-            url: '../payShare/payShare?deviceId=' + data.data.device.id + '&money=' + data.data.money + "&reminShare=" + data.data.reminShare,
+        } else if (data.data.device.type == 3){
+          that.setData({
+            xu: true,
+            huan: true,
+            zhu: true
+          })
+        } else if (data.data.device.type == 1 || data.data.device.type == 2 || data.data.device.type == 7 || data.data.device.type == 8 || data.data.device.type == 9){
+          that.setData({
+            huan: true,
+            xu: true,
+            da: true
           })
         }
-
-        that.setData({ device: data.data.device });
-
-        if (data.data.device.rentalType == 1) {
-          that.setData({ rentalType: "小时" });
-          that.setData({ rental: data.data.device.rentalH });
-        }
-
-        if (data.data.device.rentalType == 2) {
-          that.setData({ rentalType: "日" });
-          that.setData({ rental: data.data.device.rental });
-        }
-
-        if (data.data.device.rentalType == 3) {
-          that.setData({ rentalType: "月" });
-          that.setData({ rental: data.data.device.rentalM });
-        }
-
       }
 
     })
-
   },
 
-  getDeviceState: function () {
-
-
-    let that = this;
-
-    console.log(that.data);
-
-    //用户租用电池
-    if (that.data.state == 201) {
-      console.log("用户开始租用");
-      RentDevice(app.globalData.userId, that.data.device.id, PATH);
-
-    }
-
-    //用户换电
-    if (that.data.state == 202) {
-      
-      console.log("用户开始换电");
-      changeDevice(app.globalData.userId, that.data.device.id, PATH);
-
-    }
-
-    //充电侠回收电池 库管入库
-    if (that.data.state == 203 || that.data.state == 203 ) {
-      console.log("回收电池");
-      wx.request({
-        url: PATH + '/resource-service/device/ReciveDevice',
-        method: 'GET',
-        header: {
-          'Access-Token': app.globalData.accessToken,
-        },
-        data: {
-          deviceId: that.data.device.id,
-          userId: app.globalData.userId,
-        },
-        success: function (data) {
-
-
-          if (data.statusCode == 200 && data.data.status == 210) {
-
-            wx.showModal({
-              title: '提示',
-              content: data.data.message,
-              showCancel: false,
-              success: function (res) {
-                if (res.confirm) {
-                  wx.redirectTo({
-                    url: '../main/main',
-                  })
-                }
-              }
-            })
-
-          }
-          
-          if (data.statusCode == 200 && data.data.status == 200) {
-            wx.redirectTo({
-              url: '../reciveSuccess/reciveSuccess',
-            })
-
-          }
-
-
-
-
-        }
-      })
-    }
-
-    //超级管理员重复领取可报废设备
-    if (that.data.state == 209) {
-
-      wx.request({
-        url: PATH + '/resource-service/device/destroyDevice',
-        method: 'GET',
-        header: {
-          'Access-Token': app.globalData.accessToken,
-        },
-        data: {
-          deviceId: that.data.device.id,
-          userId: app.globalData.userId,
-        },
-        success: function (data) {
-  
-          wx.redirectTo({
-            url: '../main/main',
-          })
-
-        }
-      }) 
-
-    }
-
-  //  //充电侠三次扫码 充电完成
-  //   if (that.data.state == 221) {
-  //     wx.request({
-  //       url: PATH + '/resource-service/device/chargeFinish',
-  //       method: 'GET',
-  //       header: {
-  //         'Access-Token': app.globalData.accessToken,
-  //       },
-  //       data: {
-  //         deviceId: that.data.device.id,
-  //         userId: app.globalData.userId,
-  //       },
-  //       success: function (data) {
-
-  //         wx.showModal({
-  //           title: '提示',
-  //           content: data.data.message,
-  //           showCancel: false,
-  //           success: function (res) {
-  //             if (res.confirm) {
-  //               wx.redirectTo({
-  //                 url: '../main/main',
-  //               })
-  //             }
-
-  //           }
-  //         })
-
-  //       }
-  //     })
-  //   }
-
-    //重复领取
-    if (that.data.state == 206 ) {
-     
-      wx.showModal({
-        title: '提示',
-        content: '已领过了',
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })
-
-    }
-
-    //成功领取
-    if (that.data.state == 200){
-     
-      wx.redirectTo({
-        url: '../reciveSuccess/reciveSuccess',
-      })
-
-    }
-
-    
-  
-  },
 
 
   // 去地图
