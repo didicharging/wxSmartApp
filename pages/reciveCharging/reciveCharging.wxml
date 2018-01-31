@@ -14,10 +14,6 @@
 
 </view>
 
-<view class='amount'>
-   嘀嘀币余额{{wallet.Amount}}   
-</view>
-
 
 <view class="recharge">
 

@@ -45,11 +45,11 @@ Page({
 
       {
         id: 1,
-        iconPath: '/images/search.jpg',
+        iconPath: '/images/search.png',
         position: {
           left: 21,
           top: that.data.windowHeight - 70,
-          width: 40,
+          width: 80,
           height: 40
         },
         clickable: true
@@ -72,9 +72,9 @@ Page({
         id: 3,
         iconPath: '/images/phoneUser.png',
         position: {
-          left: that.data.windowWeight  - 61,
+          left: that.data.windowWeight  - 100,
           top: that.data.windowHeight - 70,
-          width: 40,
+          width: 80,
           height: 40
         },
         clickable: true
