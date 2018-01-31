@@ -73,8 +73,6 @@ Page({
 
     });
 
-  
-
   },
 
   // 去地图
@@ -143,9 +141,6 @@ Page({
               wx.redirectTo({
                 url: '../scaneCode/scaneCode?deviceNo=' + that.data.device.deviceNo,
               });
-
-
-          
 
             },
 

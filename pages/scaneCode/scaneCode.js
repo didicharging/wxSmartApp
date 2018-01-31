@@ -37,12 +37,14 @@ Page({
       },
       data: {
         deviceNo: options.deviceNo,
-        //deviceNo: "didi5010001007",
+
         userId: app.globalData.userId,
-      },
+      },  
       success: function (data) {
         console.log(data.data.device);
-        that.setData({ message: data.data.device });
+        
+        that.setData({ device: data.data.device });
+
         if (data.data.device.type == 4 || data.data.device.type == 5 || data.data.device.type == 6){
           that.setData({
             da: true
@@ -66,6 +68,9 @@ Page({
   },
 
 
+  zhu:function(){
+    
+  },
 
   // 去地图
   goToMap: function () {
