@@ -1,7 +1,7 @@
 import { goToUser, goToShare, goToMyWallet, goToUserInfo, goToMyDevice } from "../../libs/router";
 import moment from "../../libs/moment"; // 引入moment插件
 let app = getApp();
-let PATH = app.globalData.PATH;
+let PATH = app.globalData.PATH; 
 
 let IMG_PATH = app.globalData.IMG_PATH;
 let userInfoSync = wx.getStorageSync("userInfo");
@@ -37,7 +37,9 @@ Page({
     if (that.data.status == 'invest') {
       getInvestList(this);
     }
-
+    if (that.data.status == 'met'){
+      metode(this);
+    }
     
 
 
@@ -126,6 +128,30 @@ function getInvestList(e) {
 
   console.log("拉取设备列表正常");
 
+}
+function metode(e){
+  let that =e;
+  wx.request({
+    url: PATH + '/resource-service/pay/getMyOrders',
+    method: 'get',
+    header: {
+      'Access-Token': app.globalData.accessToken,
+    },
+
+    data: {
+      userId: app.globalData.userId
+    },
+
+    success: function (res) {
+      console.log(res.data.list);
+      for (let i = 0; i < res.data.list.length; i++) {
+        res.data.list[i].inDate = moment(res.data.list[i].updateTime).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
+      }
+      that.setData({
+        devList: res.data.list
+      });
+    }
+  });
 }
 
 

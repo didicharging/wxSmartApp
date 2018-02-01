@@ -268,7 +268,7 @@ Page({
   },
   //保修
 
-
+  
   // 去地图
   goToMap: function () {
     gofujin(app.globalData.location)
