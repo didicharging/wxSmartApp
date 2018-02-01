@@ -21,8 +21,7 @@ let userInfoSync = wx.getStorageSync("userInfo");
 Page({
 
   data: {
-    IMG_PATH: IMG_PATH,
-    message:[]
+    IMG_PATH: IMG_PATH
   },
 
   onLoad: function (options) {
@@ -36,40 +35,97 @@ Page({
         'Access-Token': app.globalData.accessToken,
       },
       data: {
-        deviceNo: options.deviceNo,
+
 
         userId: app.globalData.userId,
-      },  
+        deviceNo: options.deviceNo
+      },
       success: function (data) {
-        console.log(data.data.device);
-        
-        that.setData({ device: data.data.device });
+        that.setData({ device: data.data.device })
+        console.log(data);
+        if (data.data.isChargeMan == "yes"){
 
-        if (data.data.device.type == 4 || data.data.device.type == 5 || data.data.device.type == 6){
-          that.setData({
-            da: true
-          })
-        } else if (data.data.device.type == 3){
           that.setData({
             xu: true,
             huan: true,
-            zhu: true
+            zhu: true,
+            da: true,
+            xiu: true
           })
-        } else if (data.data.device.type == 1 || data.data.device.type == 2 || data.data.device.type == 7 || data.data.device.type == 8 || data.data.device.type == 9){
-          that.setData({
-            huan: true,
-            xu: true,
-            da: true
-          })
+        }else{
+          if (data.data.device.type == 4 || data.data.device.type == 5 || data.data.device.type == 6) {
+            that.setData({
+              da: true,
+              hui: true,
+              fei: true
+            })
+          } else if (data.data.device.type == 3) {
+            that.setData({
+              xu: true,
+              huan: true,
+              zhu: true,
+              hui: true,
+              fei: true
+            })
+          } else if (data.data.device.type == 1 || data.data.device.type == 2 || data.data.device.type == 7 || data.data.device.type == 8 || data.data.device.type == 9) {
+            that.setData({
+              huan: true,
+              xu: true,
+              da: true,
+              hui: true,
+              fei: true
+            })
+          } 
         }
       }
 
     })
   },
 
+  zhu: function () {
+  
+  let that=this;
 
-  zhu:function(){
-    
+
+    wx.request({
+      url: PATH + '/resource-service/device/RentDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log(data.data);
+        if (data.data.status == 210){
+          console.log("设备故障");
+          wx.showModal({
+            title: '设备故障',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              
+            }
+          })
+          return;
+        } else if (data.data.status == 213){
+          wx.redirectTo({
+            url: '../payShare/payShare?deviceId=' + that.data.device.id + '&money=' + data.data.money + '&reminShare=' + data.data.reminShare,
+          })
+        } else if (data.data.status == 211) {
+          wx.redirectTo({
+            url: '../reciveCharging/reciveCharging?deviceId=' + that.data.device.id,
+          })
+        } else if (data.data.status == 200) {
+          wx.redirectTo({
+            url: '../reciveSuccess/reciveSuccess',
+          })
+        }
+      }
+    })
+
   },
 
   // 去地图

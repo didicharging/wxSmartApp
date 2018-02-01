@@ -29,7 +29,8 @@ Page({
     rental: null,
     payMoney: null,
     device: null,
-    canPay: null
+    canPay: null,
+    reminShare:null
   },
 
   onLoad: function (options) {
@@ -66,7 +67,7 @@ Page({
 
         if (data.data.device.rentalType == 3) {
           that.setData({ rentalType: "月" });
-          that.setData({ rental: parseFloat(data.data.device.rentalM / 100.0) });
+          that.setData({ rental: parseFloat(data.data.device.rentalM) });
         }
 
       }
