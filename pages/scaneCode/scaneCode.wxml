@@ -9,12 +9,21 @@
 </view>
 <view class='one'>
   <button hidden='{{zhu}}' bindtap='zhu'>租电</button>
+<<<<<<< HEAD
   <button hidden='{{huan}}' bindtap='huan'>换电</button>
   <button hidden='{{xu}}'>续租</button>
   <button hidden='{{xiu}}'>报修</button>
   <button hidden='{{da}}'>搭电</button>
   <button hidden='{{hui}}' bindtap='hui'>回收</button>
   <button hidden='{{fei}}' bindtap='fei'>报废</button>
+=======
+  <button hidden='{{huan}}'>换电</button>
+  <button hidden='{{xu}}'>续租</button>
+  <button hidden='{{xiu}}'>报修</button>
+  <button hidden='{{da}}'>搭电</button>
+  <button hidden='{{hui}}'>回收</button>
+  <button hidden='{{fei}}'>报废</button>
+>>>>>>> 7000fc5949d324130fd9ce8a4c72df19adfb0895
 </view>
 
 

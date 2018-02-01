@@ -83,6 +83,7 @@ Page({
   
   let that=this;
 
+<<<<<<< HEAD
     wx.request({
       url: PATH + '/resource-service/device/RentDevice',
       method: 'GET',
@@ -267,7 +268,51 @@ Page({
     })
   },
   //保修
+=======
+  zhu: function () {
+  
+  let that=this;
+>>>>>>> 7000fc5949d324130fd9ce8a4c72df19adfb0895
 
+    wx.request({
+      url: PATH + '/resource-service/device/RentDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log(data.data);
+        if (data.data.status == 210){
+          console.log("设备故障");
+          wx.showModal({
+            title: '设备故障',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              
+            }
+          })
+          return;
+        } else if (data.data.status == 213){
+          wx.redirectTo({
+            url: '../payShare/payShare?deviceId=' + that.data.device.id + '&money=' + data.data.money + '&reminShare=' + data.data.reminShare,
+          })
+        } else if (data.data.status == 211) {
+          wx.redirectTo({
+            url: '../reciveCharging/reciveCharging?deviceId=' + that.data.device.id,
+          })
+        } else if (data.data.status == 200) {
+          wx.redirectTo({
+            url: '../reciveSuccess/reciveSuccess',
+          })
+        }
+      }
+    })
+  },
 
   // 去地图
   goToMap: function () {
