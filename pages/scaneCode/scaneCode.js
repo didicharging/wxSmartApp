@@ -83,6 +83,7 @@ Page({
   
   let that=this;
 
+
     wx.request({
       url: PATH + '/resource-service/device/RentDevice',
       method: 'GET',
@@ -266,7 +267,6 @@ Page({
       }
     })
   },
-  //保修
 
   
   // 去地图
