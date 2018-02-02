@@ -21,11 +21,7 @@ Page({
     that.setData({
       status: "user"
     });
-<<<<<<< HEAD
 
-  
-=======
->>>>>>> bc0e2b8966edd57f7a0db133131c37818f4ae222
   },
 
 
@@ -48,16 +44,16 @@ Page({
       metode(this);
     }
     
-<<<<<<< HEAD
-},
-=======
+
+
+
     that.setData({
       _num: e.target.dataset.num
     })
 
 
   },
->>>>>>> bc0e2b8966edd57f7a0db133131c37818f4ae222
+
 
 
   bindgetInUserList: function () {
@@ -160,8 +156,8 @@ function metode(e){
     success: function (res) {
       console.log(res.data.list);
       for (let i = 0; i < res.data.list.length; i++) {
-        res.data.list[i].inDate = moment(res.data.list[i].updateTime).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
-        res.data.list[i].endDate = moment(res.data.list[i].updateTime).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
+        res.data.list[i].inDate = moment(res.data.list[i].startDate).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
+        res.data.list[i].endDate = moment(res.data.list[i].endDate).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
       }
       that.setData({
         devList: res.data.list
