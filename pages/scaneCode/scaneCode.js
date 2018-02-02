@@ -271,7 +271,11 @@ Page({
     })
   },
 
+<<<<<<< HEAD
  
+=======
+  
+>>>>>>> 6f1de751a77e4fe121fb04d951fd9a6fa4edef36
   // 去地图
   goToMap: function () {
     gofujin(app.globalData.location)

@@ -1,9 +1,12 @@
     <view class='choose-type'>
-        <view class="">
+        <view class="one">
             <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="user">我在用的</view>
         </view>
-        <view class="">
+        <view class="tow">
             <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="invest">我投资的</view>
+        </view>
+        <view class="sherr">
+            <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="met">我的订单</view>
         </view>
     </view>
 
@@ -53,10 +56,27 @@
       </view>
     </scroll-view>    
 </block>
+<block wx:if="{{status=='met'}}">
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
 
+      <view class="devTip" wx:if="{{devList.length == 0}}">没有设备</view>  
 
+      <view class="dev-item" wx:for="{{devList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+          <image src="{{item.imgUrl}}"></image>
+        </view>
 
+        <view class="dev-info">
+          <view >设备名称：{{item.deviceName}}</view>
+          <view >领取时间：{{item.inDate}}</view>
+        </view>
 
+        <view class='dev-remainder'>
+           <text>{{item.timeInfo}}</text>
+        </view>
 
+      </view>
 
-
+    </scroll-view>
+     
+</block>
