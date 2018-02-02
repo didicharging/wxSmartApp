@@ -67,9 +67,26 @@ page{
     display: flex;
     align-items: center;
 }
-
-
-
-
+/* .one:hover{
+  background: #ffd843;
+  color: #fff;
+}
+.tow:hover{
+  background: #ffd843;
+  color: #fff;
+}
+.sherr:hover{
+  background: #ffd843;
+  color: #fff;
+} */
+.on{
+  background: #ffd843;
+  color: #fff;
+}
+.status-btn{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+}
 
 

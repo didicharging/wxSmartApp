@@ -39,7 +39,7 @@ background-color: #ec0c0c;
 }
 .footer_btn{
 /* margin-top: 5%; */
-width: 30%;
+width: 25%;
 height: 70rpx;
 line-height: 70rpx;
 float: right;
@@ -67,7 +67,7 @@ height:130rpx;
 }
 .footer-btn1{
 margin-top: 2%;
-width: 90%;
+width: 38%;
 border: 1px solid #ccc;
 background: red;
 color: #fff;
@@ -109,10 +109,17 @@ color: #fff;
 }
 .texts{
   justify-content:center;
+  height: 70%;
+}
+.texts{
+  margin-left: 20rpx;
+  margin-top: 15rpx;
 }
 .images{
   height: 300rpx;
-  width: 70%
+  width: 70%;
+  margin-left: 15rpx;
+  border-radius: 35rpx;
 }
 .imagesf{
   width: 100%;

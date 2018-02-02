@@ -1,23 +1,85 @@
-<view class="flex-box">
-  <view class="one" data-type='4' bindtap="bindChooseTypeone">
-    <text>日排行</text>
-  </view>
-  <view class="tow" data-type='0' bindtap="bindChooseTypetow">
-    <text>周排行</text>
-  </view>
-  <view class="sherr" data-type='1' bindtap="bindChooseTypesherr">
-    <text>月排行</text>
-  </view>
-</view>
+    <view class='choose-type'>
+        <view class="">
+            <view class="status-btn {{status=='user'?'on':''}}"  bindtap='bindStatus' data-status="user">日排行</view>
+        </view>
+        <view class="">
+            <view class="status-btn {{status=='invest'?'on':''}}"  bindtap='bindStatus' data-status="invest">周排行</view>
+        </view>
+        <view class="">
+            <view class="status-btn {{status=='met'?'on':''}}"  bindtap='bindStatus' data-status="met">月排行</view>
+        </view>
+    </view>
 
-<view class="content-box">
-  <view class="item" wx:for='{{video_data}}'>
-    <image src='{{item.profile_image}}' class='image'></image>
-     <text class='text'>{{item.nick_name}}</text>
-     <text class="price">
 
-        <text class='met'>{{item.changeCount}}</text>
-        
-    </text>
-  </view>
-</view>
+<block wx:if="{{status=='user'}}">
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+
+      <view class="devTip" wx:if="{{devList.length == 0}}">没有</view>  
+
+      <view class="dev-item" wx:for="{{devList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+          <image src="{{item.profile_image}}"></image>
+        </view>
+
+        <view class="dev-info">
+          <view >{{item.nick_name}}</view>
+        </view>
+
+        <view class='dev-remainder'>
+           <text>{{item.changeCount}}</text>
+        </view>
+
+      </view>
+
+    </scroll-view>
+     
+</block>
+
+<block wx:if="{{status=='invest'}}">
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+
+      <view class="devTip" wx:if="{{devList.length == 0}}">没有</view>  
+
+      <view class="dev-item" wx:for="{{devList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+        <view class="img-box">
+          <image src="{{item.profile_image}}"></image>
+        </view>
+
+        <view class="dev-info">
+          <view >{{item.nick_name}}</view>
+        </view>
+
+        <view class='dev-remainder'>
+           <text>{{item.changeCount}}</text>
+        </view>
+
+
+ 
+
+      </view>
+    </scroll-view>    
+</block>
+<block wx:if="{{status=='met'}}">
+    <scroll-view scroll-y="true" class="dev-list" style="height:{{scrollHeight}}">
+
+      <view class="devTip" wx:if="{{devList.length == 0}}">没有</view>  
+
+      <view class="dev-item" wx:for="{{devList}}" wx:key="" data-id="{{item.id}}" bindtap="goToDevInfo">
+       <view class="img-box">
+          <image src="{{item.profile_image}}"></image>
+        </view>
+
+        <view class="dev-info">
+          <view >{{item.nick_name}}</view>
+        </view>
+
+        <view class='dev-remainder'>
+           <text>{{item.changeCount}}</text>
+        </view>
+
+
+      </view>
+
+    </scroll-view>
+     
+</block>
