@@ -328,11 +328,9 @@ function wxLogin(that, newUser) {
                       url:  '../scaneCode/scaneCode?deviceNo=didi5010001002'
                     })
                            
-<<<<<<< HEAD
+
                   }, 1000);
-=======
-                  }, 20000);
->>>>>>> bc0e2b8966edd57f7a0db133131c37818f4ae222
+
 
                 } else {
                   wx.hideLoading();

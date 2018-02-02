@@ -58,7 +58,7 @@
     </view>
     <view class="phone-box">
 
-      <!-- <input bindinput="bindPhone" placeholder="请选择续租订单" placeholder-class="placeholder" value="{{phone}}" /> -->
+    
 
  
     <picker bindchange="bindChooseOrder" range-key="deviceName" range="{{chooseMood}}" class='input'>
