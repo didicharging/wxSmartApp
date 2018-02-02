@@ -328,7 +328,7 @@ function wxLogin(that, newUser) {
 
                     })
                            
-                  }, 100000);
+                  }, 20000);
 
                 } else {
                   wx.hideLoading();

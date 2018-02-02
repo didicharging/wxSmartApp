@@ -651,6 +651,9 @@ left:-10rpx;
    float: left;
    margin: 0 3rpx; 
 }
+.section image{
+  border-radius: 35rpx;
+}
 .section1{    
    width: 49.8%;
    position: relative;
@@ -676,10 +679,13 @@ left:-10rpx;
   margin-top: 6rpx;
 }
 .classname image{
-  border-radius: 15rpx;
+  border-radius: 35rpx;
+}
+.box-1{
+  /* margin: 5rpx; */
 }
 .box-2 image{
-  border-radius: 15rpx;
+  border-radius: 35rpx;
 }
 /* .mengban image{
   border-radius: 15rpx;

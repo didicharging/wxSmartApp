@@ -49,8 +49,8 @@ Page({
         position: {
           left: 21,
           top: that.data.windowHeight - 70,
-          width: 80,
-          height: 40
+          width: 60,
+          height: 60
         },
         clickable: true
       },

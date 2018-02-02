@@ -18,7 +18,9 @@ Page({
   onLoad: function (option) {
     let that = this;
     getInUserList(that);
-  
+    that.setData({
+      status: "user"
+    });
   },
 
 
@@ -41,7 +43,9 @@ Page({
       metode(this);
     }
     
-
+    that.setData({
+      _num: e.target.dataset.num
+    })
 
 
   },
