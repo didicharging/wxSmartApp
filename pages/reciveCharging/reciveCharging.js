@@ -59,6 +59,7 @@ Page({
   //      deviceId: '3',
       },
       success: function (data) {
+        console.log("aaaaaaaaa");
         console.log(data)
         that.setData({ device: data.data.device });
 
@@ -226,7 +227,9 @@ Page({
               if (that.data.types == 'change') {
            
                 console.log("充值完的换电");
-                changeDevice(app.globalData.userId, that.data.device.id, PATH);
+                wx.redirectTo({
+                  url: '../scaneCode/scaneCode?deviceNo=' + that.data.device.deviceNo,
+                })
               
               }
 

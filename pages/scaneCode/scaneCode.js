@@ -81,10 +81,201 @@ Page({
 
     })
   },
-
+//租电
   zhu: function () {
   
   let that=this;
+
+<<<<<<< HEAD
+    wx.request({
+      url: PATH + '/resource-service/device/RentDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log(data.data);
+        if (data.data.status == 210){
+          console.log("设备故障");
+          wx.showModal({
+            title: '设备故障',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              
+            }
+          })
+          return;
+        } else if (data.data.status == 213){
+          wx.redirectTo({
+            url: '../payShare/payShare?deviceId=' + that.data.device.id + '&money=' + data.data.money + '&reminShare=' + data.data.reminShare,
+          })
+        } else if (data.data.status == 211) {
+          wx.redirectTo({
+            url: '../reciveCharging/reciveCharging?deviceId=' + that.data.device.id +'&type=rental',
+          })
+        } else if (data.data.status == 200) {
+          wx.redirectTo({
+            url: '../reciveSuccess/reciveSuccess',
+          })
+        } else if (data.data.status==210){
+          
+        }
+      }
+    })
+  },
+  //回收
+  hui:function(){
+    let that=this;
+    wx.request({
+      url: PATH + '/resource-service/device/ReciveDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function(data) {
+        console.log("aaaaaa");
+        console.log(data.data);
+        if (data.data.status==200){
+          wx.showModal({
+            title: '回收成功',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        } else if (data.data.status==210){
+          wx.showModal({
+            title: '领取失败',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        }
+      }
+    })
+  },
+  //报废
+  fei: function () {
+    let that = this;
+    wx.request({
+      url: PATH + '/resource-service/device/destroyDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log("aaaaaa");
+        console.log(data.data);
+        if (data.data.status == 200) {
+          wx.showModal({
+            title: '报废成功',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        } else if (data.data.status == 210) {
+          wx.showModal({
+            title: '报废失败',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        }
+      }
+    })
+  },
+  //换电
+  huan:function(){
+    let that=this;
+    wx.request({
+      url: PATH + '/resource-service/device/changeDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log("aaaaa");
+        console.log(data.data);
+        if (data.data.status==200){
+          wx.showModal({
+            title: '换电成功',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../reciveSuccess/reciveSuccess',
+              })
+            }
+          })
+          return;
+        } else if (data.data.status==211){
+          wx.showModal({
+            title: '余额不足',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../reciveCharging/reciveCharging?deviceId=' + that.data.device.id +'&type=change',
+              })
+            }
+          })
+        } else if (data.data.status==210){
+          wx.showModal({
+            title: '换电失败',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+        }
+      }
+    })
+  },
+  //保修
+=======
+  zhu: function () {
+  
+  let that=this;
+>>>>>>> 7000fc5949d324130fd9ce8a4c72df19adfb0895
 
 
     wx.request({

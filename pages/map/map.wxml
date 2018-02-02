@@ -27,7 +27,7 @@
       </view>
 
       <view class='desc'>
-
+  54
         <view class='station-desc'>站点名称 :{{station.name}} </view>
 
         <view class='chargeMan-desc'>充电大侠：{{station.user}} </view>
