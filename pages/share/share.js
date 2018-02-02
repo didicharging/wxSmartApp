@@ -27,12 +27,14 @@ Page({
     content: "",
     character: 140
   },
+  
   onShow: function () {
     flag = 0;
     this.setData({
       userId: app.globalData.userId
     })
   },
+
   onLoad: function (options) {
     let that = this;
     let location = app.globalData.location;

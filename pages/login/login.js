@@ -324,8 +324,8 @@ function wxLogin(that, newUser) {
                       //  url: '../main/main?sence=' + that.data.sence
             //          url: '../myWallet/myWallet'
             
-                      url: mainPage + that.data.sence         
-
+              //        url: mainPage + that.data.sence         
+                      url:  '../scaneCode/scaneCode?deviceNo=didi5010001002'
                     })
                            
                   }, 1000);

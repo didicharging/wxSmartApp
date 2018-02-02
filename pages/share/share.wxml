@@ -34,12 +34,14 @@
       {{deviceCode}}
     </picker>
   </view>
+  
   <view class="share-type flex-row">
     <view class="title">选择心情:</view>
     <picker bindchange="bindChooseMood" range-key="content" range="{{chooseMood}}">
       {{mood}}
     </picker>
   </view>
+
   <view class="flex-row" wx:if="{{mood == '自定义心情'}}">
     <!--<view class="title">上传心情:</view>-->
     <view class="content">

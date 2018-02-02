@@ -18,6 +18,10 @@ Page({
   onLoad: function (option) {
     let that = this;
     getInUserList(that);
+    that.setData({
+      status: "user"
+    });
+
   
   },
 
@@ -41,10 +45,7 @@ Page({
       metode(this);
     }
     
-
-
-
-  },
+},
 
 
   bindgetInUserList: function () {
@@ -129,6 +130,8 @@ function getInvestList(e) {
   console.log("拉取设备列表正常");
 
 }
+
+
 function metode(e){
   let that =e;
   wx.request({
@@ -146,11 +149,13 @@ function metode(e){
       console.log(res.data.list);
       for (let i = 0; i < res.data.list.length; i++) {
         res.data.list[i].inDate = moment(res.data.list[i].updateTime).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
+        res.data.list[i].endDate = moment(res.data.list[i].updateTime).format('YYYY-MM-DD HH:mm:ss'); // 转化日期格式
       }
       that.setData({
         devList: res.data.list
       });
     }
+
   });
 }
 

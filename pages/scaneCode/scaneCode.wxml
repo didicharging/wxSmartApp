@@ -10,12 +10,12 @@
 <view class='one'>
   <button hidden='{{zhu}}' bindtap='zhu'>租电</button>
 
-  <button hidden='{{huan}}'>换电</button>
-  <button hidden='{{xu}}'>续租</button>
-  <button hidden='{{xiu}}'>报修</button>
+  <button hidden='{{huan}}' bindtap='huan'>换电</button>
+  <button hidden='{{xu}}' bindtap='contiueRent'>续租</button>
+  <button hidden='{{xiu}}'bindtap="repair">报修</button> 
   <button hidden='{{da}}'>搭电</button>
-  <button hidden='{{hui}}'>回收</button>
-  <button hidden='{{fei}}'>报废</button>
+  <button hidden='{{hui}}' bindtap='hui'>回收</button>
+  <button hidden='{{fei}}' bindtap='fei'>报废</button>
 
 </view>
 
@@ -47,4 +47,35 @@
     <view>我的</view>
   </view>
 
+</view>
+
+
+<view class="mask {{maskState?'mask-on':''}}">
+  
+  <view class="container">
+    <view class="close-mask">
+      <image bindtap="bindCloseMask" src="{{IMG_PATH}}/close-icon.png"></image>
+    </view>
+    <view class="phone-box">
+
+      <!-- <input bindinput="bindPhone" placeholder="请选择续租订单" placeholder-class="placeholder" value="{{phone}}" /> -->
+
+ 
+    <picker bindchange="bindChooseOrder" range-key="deviceName" range="{{chooseMood}}" class='input'>
+      {{mood}}
+    </picker>
+
+
+    </view>
+
+
+    <view class="test-box">
+      <input bindinput="bindCode" placeholder="请输入续租时间" placeholder-class="placeholder" value="{{code}}"/>
+
+      <view bindtap="bindGetCode" class="classname">{{rentalType}}</view> 
+    </view>
+    
+    <view class="test-sub" bindtap="bindSubCode">提交</view>
+
+  </view>
 </view>

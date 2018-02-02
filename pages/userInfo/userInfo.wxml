@@ -52,6 +52,8 @@
 
 <view class="submit" bindtap="submit">完成</view>
 
+
+
 <view class="mask {{maskState?'mask-on':''}}">
   
   <view class="container">
@@ -64,9 +66,7 @@
     <view class="test-box">
       <input bindinput="bindCode" placeholder="输入验证码" placeholder-class="placeholder" value="{{code}}"/>
       <view bindtap="bindGetCode" class="classname">{{getCodeText}}</view>
-    </view>
-    
-
+    </view>   
     <view class="test-sub" bindtap="bindSubCode">提交</view>
   </view>
 </view>

@@ -28,6 +28,7 @@ Page({
 
     console.log(options);
     let that = this;
+
     wx.request({
       url: PATH + '/resource-service/device/scaneCode',
       method: 'GET',
@@ -42,6 +43,27 @@ Page({
       },
       success: function (data) {
         that.setData({ device: data.data.device })
+        
+
+
+        if (data.data.device.rentalType == 1) {
+          that.setData({ rentalType: "小时" });
+          that.setData({ rental: data.data.device.rentalH });
+        }
+
+        if (data.data.device.rentalType == 2) {
+          that.setData({ rentalType: "日" });
+          that.setData({ rental: data.data.device.rental });
+        }
+
+        if (data.data.device.rentalType == 3) {
+          that.setData({ rentalType: "月" });
+          that.setData({ rental: data.data.device.rentalM });
+        }
+
+
+
+
         console.log(data);
         if (data.data.isChargeMan == "yes"){
 
@@ -81,6 +103,12 @@ Page({
 
     })
   },
+
+
+
+
+
+
 //租电
   zhu: function () {
   
@@ -128,6 +156,179 @@ Page({
       }
     })
   },
+
+
+
+  repair:function(){
+    let that = this;
+    wx.request({
+      url: PATH + '/resource-service/device/repairDevice',
+      method: 'GET',
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+      data: {
+        userId: app.globalData.userId,
+        deviceId: that.data.device.id
+      },
+      success: function (data) {
+        console.log("aaaaaa");
+        console.log(data.data);
+        if (data.data.status == 200) {
+          wx.showModal({
+            title: '回收成功',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        } else if (data.data.status == 210) {
+          wx.showModal({
+            title: '领取失败',
+            content: data.data.message,
+            showCancel: false,
+            success: function (res) {
+              wx.redirectTo({
+                url: '../main/main',
+              })
+            }
+          })
+          return;
+        }
+      }
+    })
+
+  },
+
+  contiueRent:function(){
+
+    console.log("续租");
+    
+    let that=this;
+
+    wx.request({
+      url: PATH + "/resource-service/pay/getMyOrders",
+      header: {
+        'Access-Token': app.globalData.accessToken,
+      },
+
+      method: "GET",
+
+      data: {
+        userId: app.globalData.userId
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.statusCode == 200) {
+          let moodList = res.data.list;
+
+      
+           
+          that.setData({
+            chooseMood: moodList,
+            mood: moodList[0].deviceName,
+            orderId: moodList[0].id,
+
+          });
+
+        }
+      },
+    });
+
+    this.setData({
+      maskState: true,
+    });
+
+  },
+
+
+  bindChooseOrder: function (e) {
+    let that=this;
+  console.log(e);
+
+    this.setData({
+      mood: that.data.chooseMood[e.detail.value].deviceName,
+      orderId: that.data.chooseMood[e.detail.value].id,
+    })
+    
+  },
+
+
+
+
+  bindCloseMask: function () {
+    console.log("关闭模态框");
+    this.setData({
+      maskState: false,
+    });
+  },
+
+  bindSubCode: function () {
+    let that = this;
+
+    console.log("开始提交");
+
+    // if (data.phone.length != 11) {
+    //   wx.showToast({
+    //     title: "不是正确的手机号码",
+    //     icon: 'loading',
+    //     duration: 1000
+    //   });
+    //   return false;
+    // }
+    // if (!checkPhone(data.phone)) {
+    //   wx.showToast({
+    //     title: "不是正确的手机号码",
+    //     icon: 'loading',
+    //     duration: 1000
+    //   });
+    //   return false;
+    // }
+    // if (data.code == '') {
+    //   wx.showToast({
+    //     title: "验证码不能为空",
+    //     icon: 'loading',
+    //     duration: 1000
+    //   });
+    //   return false;
+    // }
+    // if (data.codeTrue != data.code) {
+    //   wx.showToast({
+    //     title: "验证码不正确",
+    //     icon: 'loading',
+    //     duration: 1000
+    //   });
+    //   return false;
+    // }
+    // that.data.user.mobile = that.data.phone;
+    // wx.showToast({
+    //   title: "手机验证成功",
+    //   icon: 'success',
+    //   duration: 1500,
+    //   success: function () {
+    //     setTimeout(function () {
+    //       that.setData({
+    //         user: that.data.user,
+    //         phone: "",
+    //         code: "",
+    //         codeTrue: "",
+    //         maskState: false,
+    //       });
+    //     }, 1500)
+    //   }
+    // });
+
+  },
+
+
+
+
+
+
   //回收
   hui:function(){
     let that=this;
@@ -172,6 +373,8 @@ Page({
       }
     })
   },
+
+
   //报废
   fei: function () {
     let that = this;
@@ -200,6 +403,7 @@ Page({
             }
           })
           return;
+
         } else if (data.data.status == 210) {
           wx.showModal({
             title: '报废失败',
@@ -216,6 +420,8 @@ Page({
       }
     })
   },
+
+  
   //换电
   huan:function(){
     let that=this;
@@ -230,7 +436,7 @@ Page({
         deviceId: that.data.device.id
       },
       success: function (data) {
-        console.log("aaaaa");
+
         console.log(data.data);
         if (data.data.status==200){
           wx.showModal({
@@ -271,11 +477,7 @@ Page({
     })
   },
 
-<<<<<<< HEAD
- 
-=======
-  
->>>>>>> 6f1de751a77e4fe121fb04d951fd9a6fa4edef36
+
   // 去地图
   goToMap: function () {
     gofujin(app.globalData.location)

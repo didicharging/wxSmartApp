@@ -1,9 +1,9 @@
 {
   "pages":[
     
-    "pages/guidance/guidance",
     "pages/login/login",
     "pages/yinyue/yinyue",
+    "pages/guidance/guidance",
     
     "pages/laidian/laidian",
     "pages/xundian/xundian",
