@@ -1,6 +1,6 @@
     <view class='choose-type'>
         <view class="">
-            <view class="status-btn {{status=='user'?'on':''}}"  bindtap='bindStatus' data-status="user">我在用的</view>
+            <view class="status-btn {{status=='user'?'on':''}}"  bindtap='bindStatus' data-status="user">我在用的</view> 
         </view>
         <view class="">
             <view class="status-btn {{status=='invest'?'on':''}}"  bindtap='bindStatus' data-status="invest">我投资的</view>
@@ -28,7 +28,8 @@
         </view>
 
         <view class='dev-remainder'>
-           <text>{{item.timeInfo}}</text>
+           <text>{{item.timeInfo}}</text>]
+           <button class='method' >充电</button>
         </view>
 
       </view>

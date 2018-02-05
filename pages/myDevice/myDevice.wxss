@@ -61,7 +61,10 @@ page{
 } 
 
 
-
+.method{
+  background: #ffd843;
+  margin-left: 20rpx;
+}
 
 .dev-item .dev-remainder{
     display: flex;
