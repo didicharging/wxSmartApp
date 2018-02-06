@@ -5,7 +5,7 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#fff" >
       <block wx:for="{{imgUrls}}" wx:key >
         <swiper-item>
-          <image  src="{{item.img_url}}" class="slide-image" data-item="{{item}}" data-index="{{index}}" wx:key="{{index}}" bindtap='shedhob'/>
+          <image  src="{{item.img_url}}" class="slide-image" data-item="{{item}}" data-index="{{index}}" wx:key="{{index}}" />
         </swiper-item>
       </block>
     </swiper>

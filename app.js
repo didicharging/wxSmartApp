@@ -1,11 +1,12 @@
 //app.js
 
 
-let path = "http://localhost/di";
+
+//let path = "http://localhost/di";
 
 //let path ="https://app.liguangxu.top/di";
 
-//let path = "https://api.didicharging.com/di";
+ let path = "https://api.didicharging.com/di";
 
 App({
   onLaunch: function () {
@@ -21,6 +22,7 @@ App({
         wx.setStorageSync('windowHeight', res.windowHeight)  
              
       }
+
     });
      
   }, 
@@ -49,6 +51,7 @@ App({
                     rawData: res.rawData,
                     signature: res.signature
                   },
+
                   //post success
                   success: function (res2) {
 
@@ -79,3 +82,4 @@ App({
   }
   
 })
+
