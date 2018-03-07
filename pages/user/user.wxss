@@ -108,7 +108,7 @@ page{
 }
 .items .item:first-child{
     flex: none;
-    width: 300rpx;
+    /* width: 300rpx; */
 }
 .notice .tip{
   display: inline-block;

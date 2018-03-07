@@ -57,10 +57,10 @@ Page({
   // 提现
   bindWithdrawals: function () {
       let that = this;
-      if (that.data.walletInfo.amount < 100) {
+      if (that.data.walletInfo.amount < 10000) {
             wx.showModal({
                 title: '当前无法提现',
-                content: '嘀嘀币不足100无法提现',
+                content: '嘀嘀币不足10000无法提现',
                 showCancel: false,
                 confirmText: "知道了"
             })
@@ -85,18 +85,31 @@ Page({
                             success: function (res) {
                                 console.log(res);
                                 if (res.statusCode == 200) {
-                                    wx.showToast({
-                                        title: '申请成功',
-                                        icon: "success",
-                                        duration: 2500,
-                                        success: function() {
-                                            setTimeout(function () {
-                                                getWalletInfo(that);
-                                            }, 2500)
-                                        }
+                                    if(res.data.status==200){
+                                        wx.showToast({
+                                            title: '申请成功',
+                                            icon: "success",
+                                            duration: 2500,
+                                            success: function() {
+                                                setTimeout(function () {
+                                                    getWalletInfo(that);
+                                                }, 2500)
+                                            }
+                                        })
 
-                                    })
+                                    }
+                                    if (res.data.status == 210){
+                                        wx.showModal({
+                                          title: '申请失败',
+                                          content: res.data.message,
+                                          showCancel: false,
+                                          confirmText: "知道了"
+                                        })
+
+                                    }
+
                                 }
+
                             }
                         })
                   }
@@ -270,6 +283,8 @@ Page({
       choosePay: e.detail.value 
     });
   },
+
+
 
   
   bindPayMoney: function () {

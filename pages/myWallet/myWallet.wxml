@@ -33,9 +33,21 @@
       <text>{{walletInfo.shareAmount}} 元</text>
     </view>
     
-    <view class="btn" bindtap="bindRefundMoney">
-      <view>退共享金</view>
-    </view> 
+
+
+
+    <block wx:if="{{!isshow}}">    
+      <view class="btn" bindtap="bindRefundMoney">
+        <view>退共享金</view>
+      </view>    
+    </block>
+    
+    <block wx:if="{{isshow}}">    
+      <view class="btn" bindtap="bindWithdrawals">
+        <view>提现</view>
+      </view>    
+    </block>
+
   </view>
 
 
@@ -81,6 +93,9 @@
   </block>
 
 </view>
+
+
+
 
 <view class="input-money" bindtap="bindInputMoney">{{inputMoneyTip}}</view>
 <view class="submit" bindtap="bindPayMoney">

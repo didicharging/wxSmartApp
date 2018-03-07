@@ -6,7 +6,7 @@
 
 //let path ="https://app.liguangxu.top/di";
 
- let path = "https://api.didicharging.com/di";
+let path = "https://api.didicharging.com/di";
 
 App({
   onLaunch: function () {

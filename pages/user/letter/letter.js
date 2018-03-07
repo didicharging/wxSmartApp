@@ -39,6 +39,15 @@ Page({
       value: e.detail.value
     })
   },
+
+  goToShareHistory: function (e) {
+    let id = e.currentTarget.dataset.id;
+    let that=this;
+    wx.navigateTo({
+      url: '../../shareHistory/shareHistory?id=' + that.data.id
+    });
+  },
+
   bindReply: function () {
     let that = this;
     console.log(that.data.value);

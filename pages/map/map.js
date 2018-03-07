@@ -48,7 +48,7 @@ Page({
         iconPath: '/images/search.png',
         position: {
           left: 21,
-          top: that.data.windowHeight - 70,
+          top: that.data.windowHeight - 90,
           width: 60,
           height: 60
         },
@@ -72,10 +72,10 @@ Page({
         id: 3,
         iconPath: '/images/phoneUser.png',
         position: {
-          left: that.data.windowWeight  - 100,
-          top: that.data.windowHeight - 70,
-          width: 80,
-          height: 40
+          left: that.data.windowWeight  - 80,
+          top: that.data.windowHeight - 90,
+          width: 60,
+          height: 60
         },
         clickable: true
       }

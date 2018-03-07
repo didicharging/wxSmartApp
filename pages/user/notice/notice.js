@@ -6,7 +6,7 @@ let PATH = app.globalData.PATH;
 Page({
 
   data: {
-    notice: 'comment', // letter
+    notice: 'letter', // letter
   },
 
   onLoad: function (options) {

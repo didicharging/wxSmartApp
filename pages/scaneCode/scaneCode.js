@@ -42,7 +42,8 @@ Page({
 
 
         userId: app.globalData.userId,
-        deviceNo: options.deviceNo
+        // deviceNo: options.deviceNo
+        deviceNo:"didi7010030495"
       },
       success: function (data) {
         that.setData({ device: data.data.device })
@@ -108,15 +109,10 @@ Page({
   },
 
 
-
-
-
-
   //租电
   zhu: function () {
 
     let that = this;
-
 
     wx.request({
       url: PATH + '/resource-service/device/RentDevice',

@@ -14,10 +14,10 @@
     <!-- 导航栏 -->
     <view class='choose-type'>
         <view class="">
-            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">悬疑</view>
+            <view class="status-btn {{status=='hot'?'on':''}}"  bindtap='bindStatus' data-status="hot">排行</view>
         </view>
         <view class="">
-            <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="new">内涵</view>
+            <view class="status-btn {{status=='new'?'on':''}}"  bindtap='bindStatus' data-status="new">最新</view>
         </view>
            <view class="">
             <view class="status-btn {{status=='video'?'on':''}}"  bindtap='bindStatus' data-status="video">视 频</view>

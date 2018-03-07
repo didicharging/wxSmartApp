@@ -347,18 +347,23 @@ Page({
     }
     pushLikeOrContent(that, 2)
   },
+  
   goToHistoryShare: function () {
     let that = this;
     wx.navigateTo({
       url: '../shareHistory/shareHistory?id=' + that.data.share.userId + '&isNotice=' + that.data.isNotice
     });
   },
+
   goToShareHistory: function (e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../shareHistory/shareHistory?id=' + id
     });
   }
+
+
+  
 })
 
 function pushLikeOrContent(that, actType) {

@@ -7,14 +7,19 @@
   <view class="items">
     <view class="item" data-page="myWallet" bindtap="goToNewPage">
       <image class="coin" src="{{IMG_PATH}}/coin.png"></image>
-      <text>嘀嘀币：{{userInfo.amount}}</text>
+      <text>嘀嘀币：{{userInfo.amount}}</text>  
+       <!-- <text>嘀嘀币：456789</text>  -->
     </view>
     <view class="item" data-page="myDevice" bindtap="goToNewPage">
       <!-- <text>分享：{{userInfo.sharePictureNum + userInfo.shareDeviceNum}}</text> -->
-      <text>设备：{{userInfo.deviceCount }}</text>
+       <text>设备：{{userInfo.deviceCount }}</text> 
+   
     </view>
+
     <view class="item">
-      <text>爱心：{{userInfo.electric}}</text>
+       <!-- <image class="coin" src="{{IMG_PATH}}/man.png"></image> -->
+       <text>爱心：{{userInfo.electric}}</text> 
+      <!-- <text>：789456</text> -->
     </view>
   </view>
 </view>
